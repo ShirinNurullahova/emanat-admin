@@ -1,0 +1,109 @@
+.two{
+    position: relative;
+
+    &-components{
+        // position: fixed;
+        // left: 0;
+      width: 15%;
+      padding: 20px;
+      background-color: rgba(34, 37, 42, 0.95);
+
+        .scroll-bar {
+         
+            text-align: left;
+        
+            height: 100vh;
+           
+            margin-top: 30%;
+            a:-webkit-any-link {
+                color: transparent !important;
+                cursor: pointer;
+                text-decoration: none !important;
+            }
+            &-dropdown {
+                &-el {
+                    &-p {
+                        position: relative;
+                        p {
+                            color: #bbbec2;
+                            font-size: 14px;
+                            padding: 6px 15px 6px 38px
+                        }
+                    }
+                    &-p:hover p{
+                        color:#17C2D7
+                    }
+                    &-p::before {
+                        transition: all 0.4s ease-out;
+                        border-radius: 5px;
+                        background: #57595d;
+                        content: '';
+                        position: absolute;
+                        left: 5px;
+                        height: 1px;
+                        width: 15px;
+                        top: 17px;
+                    }
+                    &-p:hover::before {
+                        width: 200px;
+                        background: #17C2D7;
+                    }
+                }
+            }
+            &-el {
+                &-text {
+                    display: block;
+                    margin-block-start: 0em;
+                    margin-block-end: 0em;
+                    margin-inline-start: 0px;
+                    margin-inline-end: 0px;
+                    color: rgba(255, 255, 255, 0.4);
+                    margin-bottom: 5px;
+                    font-size: 12px;
+                }
+                &-down {
+                    position: relative;
+                    justify-content: space-between;
+                    &-div {
+                        display: flex;
+                        align-items: center;
+                    }
+                    .svg-icon-two {
+                        width: 1em;
+                        height: 1em;
+                    }
+                    .svg-icon-two path,
+                    .svg-icon-two polygon,
+                    .svg-icon-two rect {
+                        fill: #bbbec2;
+                    }
+                    .svg-icon {
+                        width: 1.5em;
+                        height: 1.5em;
+                    }
+                    .svg-icon path,
+                    .svg-icon polygon,
+                    .svg-icon rect {
+                        fill: #bbbec2;
+                    }
+                    display: flex;
+                    align-items: center;
+                    p {
+                        color: #bbbec2;
+                        margin-left: 10%;
+                    }
+                }
+                &-down:hover .svg-icon-two path, .svg-icon-two polygon, .svg-icon-two rect {
+                    fill: #17C2D7;
+                }
+                &-down:hover  .svg-icon path, .svg-icon polygon, .svg-icon rect {
+                    fill: #17C2D7;
+                }
+                &-down:hover p{
+                    color:#17C2D7
+                }
+            }  
+        }
+    }
+  display: flex;
+}

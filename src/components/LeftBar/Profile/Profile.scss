@@ -1,0 +1,55 @@
+.profile-part {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;
+    background-color: rgba(34, 37, 42, 0.95);
+    padding: 20px;
+    width: 15%;
+    position: relative;
+    transition-property: transform;
+    transition-duration: 1s;
+
+    &-img {
+        margin-right: 5%;
+
+        img {
+            width: 30px;
+            height: 30px;
+            
+        }
+       
+    }
+    &-text{
+        color: white;
+        font-size: 20px;
+        p {
+            display: block;
+            margin-block-start: 0em !important;
+            margin-block-end: 0em !important;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+    }
+    &-hr{
+      
+        position: absolute;
+        bottom: 20px;
+        width: 80%;
+        height: 1px;
+        color:#a5a8ad;
+        // left: 3%;
+        z-index: 999;
+        background-color: #a5a8ad;
+    }
+}
+.profile-part:hover img{
+    animation-name: rotate; 
+    animation-duration: 2s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
