@@ -2,54 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
-
-
-const Banner = () => {
-    const [id, setId] = useState("");
-    const [initialValues, setInitialValues] = useState(null)
-    const initialValuesRaw = {}
-
-    const fetchData = () => {
-            
-        axios.get((`${process.env.REACT_APP_URL}/admin/main/header`))
-            .then(res => {
-                initialValuesRaw.azTitle = res.data[0]?.azTitle;
-                initialValuesRaw.azDescription = res.data[0]?.azDescription;
-                initialValuesRaw.ruTitle = res.data[0]?.ruTitle;
-                initialValuesRaw.ruDescription = res.data[0]?.ruDescription;
-                initialValuesRaw.enTitle = res.data[0]?.enTitle;
-                initialValuesRaw.enDescription = res.data[0]?.enDescription;
-                initialValuesRaw.MainPageHeaderImage = res.data[0]?.images[0]?.url;
-                setInitialValues(initialValuesRaw)
-                setId(res.data[0]?._id)
-            })
-            .catch((err) => console.log(err));
-    }
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
+const MainIcons = ({initialValues}) => {
     const onSubmitHandler = async (values) => {
         console.log(values);
         const dataForm = new FormData()
-        dataForm.append('id', id)
-        dataForm.append('azTitle', values.azTitle)
-        dataForm.append('enTitle', values.enTitle)
-        dataForm.append('ruTitle', values.ruTitle)
+        dataForm.append('id', values._id)
+        dataForm.append('azTitle', values.azSubtitle)
+        dataForm.append('enTitle', values.enSubtitle)
+        dataForm.append('ruTitle', values.ruSubtitle)
         dataForm.append('azDescription', values.azDescription)
         dataForm.append('enDescription', values.enDescription)
         dataForm.append('ruDescription', values.ruDescription)
         if (values.image) {
             dataForm.append('MainPageHeaderImage', values.image)
         } else {
-            dataForm.append('MainPageHeaderImage', values.MainPageHeaderImage)
+            dataForm.append('MainPageHeaderImage', values.icon)
         }
-        console.log(dataForm);
+     
         try {
-            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/main/header`, dataForm)
+            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/main/service/sections`, dataForm)
             if (response.status == 200) {
-                fetchData()
+            
             }
 
         } catch (error) {
@@ -58,19 +31,10 @@ const Banner = () => {
     }
 
 
-    return (
-        <div className='middle-main'>
-            <div className='middle-main-comp'>
-                <div className='middle-main-comp-p'>
-                    <p>
-                        Ana Səhifə
-                    </p>
-                </div>
-                <div className='middle-main-comp-bottom'>
-                    <p><span>Claradix</span> / Ana Səhifə</p>
-                </div>
-            </div>
-            <div className='middle-main-bottom'>
+
+  return (
+    <div>
+         <div className='middle-main-bottom'>
                 {initialValues &&
                     <Formik
                         initialValues={initialValues}
@@ -88,7 +52,7 @@ const Banner = () => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (az)</label>
-                                        <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
+                                        <Field onChange={handleChange} value={values.azSubtitle} type="text" name="azSubtitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Description (az)</label>
@@ -98,7 +62,7 @@ const Banner = () => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
+                                        <Field onChange={handleChange} value={values.ruSubtitle} type="text" name="ruSubtitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Description (ru)</label>
@@ -109,7 +73,7 @@ const Banner = () => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (en)</label>
-                                        <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
+                                        <Field onChange={handleChange} value={values.enSubtitle} type="text" name="enSubtitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Description (en)</label>
@@ -130,9 +94,8 @@ const Banner = () => {
                 }
 
             </div>
-
-        </div>
-    )
+    </div>
+  )
 }
 
-export default Banner
+export default MainIcons

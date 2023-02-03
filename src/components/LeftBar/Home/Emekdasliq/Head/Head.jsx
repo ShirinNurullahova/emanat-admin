@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
+import Icons from '../Icons/Icons';
 
 
 
-const Banner = () => {
-    const [id, setId] = useState("");
+const Head = ({id ,setId}) => {
     const [initialValues, setInitialValues] = useState(null)
-    const initialValuesRaw = {}
+    const initialValuesRaw = {};
 
     const fetchData = () => {
-            
-        axios.get((`${process.env.REACT_APP_URL}/admin/main/header`))
+        axios.get((`${process.env.REACT_APP_URL}/admin/main/cooperation/head`))
             .then(res => {
-                initialValuesRaw.azTitle = res.data[0]?.azTitle;
-                initialValuesRaw.azDescription = res.data[0]?.azDescription;
-                initialValuesRaw.ruTitle = res.data[0]?.ruTitle;
-                initialValuesRaw.ruDescription = res.data[0]?.ruDescription;
-                initialValuesRaw.enTitle = res.data[0]?.enTitle;
-                initialValuesRaw.enDescription = res.data[0]?.enDescription;
-                initialValuesRaw.MainPageHeaderImage = res.data[0]?.images[0]?.url;
+                initialValuesRaw.azTitle = res.data.dtoHead[0]?.azTitle;
+                initialValuesRaw.azDescription = res.data.dtoHead[0]?.azDescription;
+                initialValuesRaw.ruTitle = res.data.dtoHead[0]?.ruTitle;
+                initialValuesRaw.ruDescription = res.data.dtoHead[0]?.ruDescription;
+                initialValuesRaw.enTitle = res.data.dtoHead[0]?.enTitle;
+                initialValuesRaw.enDescription = res.data.dtoHead[0]?.enDescription;
+                initialValuesRaw.MainPageCooperationImage = res.data.dtoHead[0]?.images[0]?.url;
                 setInitialValues(initialValuesRaw)
-                setId(res.data[0]?._id)
+                setId(res.data.dtoHead[0]?._id)
             })
             .catch((err) => console.log(err));
     }
@@ -29,9 +28,7 @@ const Banner = () => {
     useEffect(() => {
         fetchData();
     }, []);
-
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', id)
         dataForm.append('azTitle', values.azTitle)
@@ -40,14 +37,16 @@ const Banner = () => {
         dataForm.append('azDescription', values.azDescription)
         dataForm.append('enDescription', values.enDescription)
         dataForm.append('ruDescription', values.ruDescription)
+    
         if (values.image) {
-            dataForm.append('MainPageHeaderImage', values.image)
+            console.log("jbkln");
+            dataForm.append('MainPageCooperationImage', values.image)
         } else {
-            dataForm.append('MainPageHeaderImage', values.MainPageHeaderImage)
+            dataForm.append('MainPageCooperationImage', values.MainPageCooperationImage)
         }
-        console.log(dataForm);
+
         try {
-            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/main/header`, dataForm)
+            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/main/cooperation/head`, dataForm)
             if (response.status == 200) {
                 fetchData()
             }
@@ -67,7 +66,7 @@ const Banner = () => {
                     </p>
                 </div>
                 <div className='middle-main-comp-bottom'>
-                    <p><span>Claradix</span> / Ana Səhifə</p>
+                    <p><span>Claradix</span> / CooperationHead</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>
@@ -130,9 +129,9 @@ const Banner = () => {
                 }
 
             </div>
-
+          
         </div>
     )
 }
 
-export default Banner
+export default Head

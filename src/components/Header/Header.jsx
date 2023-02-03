@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../Header/Header.scss'
 import SearchBar from './SearchBar/SearchBar';
 
@@ -16,13 +17,16 @@ const Header = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
   return (
     <div className='header'>
       <ul className='header-content'>
         <div>
-          <li>
+         <Link to="/">
+         <li>
             Ana səhifə
           </li>
+         </Link>
           <li>
             Haqqımızda
           </li>
@@ -32,9 +36,13 @@ const Header = () => {
           <li>
             Karyera
           </li>
+          <Link to='/news'>
           <li>
-            Terminal xəritəsi
+            News
           </li>
+          
+          </Link>
+         
         </div>
         <div>
           <li  onClick={() => setToggle(!toggle)}>

@@ -6,9 +6,7 @@ let endPoints = [
     `${process.env.REACT_APP_URL}/auth/signup`,
     `${process.env.REACT_APP_URL}/auth/forgot-password`,
     `${process.env.REACT_APP_URL}/auth/reset-password/`,
-    `${process.env.REACT_APP_URL}/auth/verify-account`,
-    `${process.env.REACT_APP_URL}/admin/main/header`,
-    `${process.env.REACT_APP_URL}/admin/main/information`
+    `${process.env.REACT_APP_URL}/auth/verify-account`
 
 
 ]
