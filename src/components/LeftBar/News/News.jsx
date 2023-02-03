@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Card } from './Card/Card';
 import Modal from './Modal/Modal';
+import '../News/News.scss'
 const News = () => {
     const [id , setId]=useState(null)
     const [btn, setBtn] = useState(null)
