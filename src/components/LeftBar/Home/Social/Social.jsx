@@ -61,12 +61,12 @@ const Social = () => {
     <div className='middle-main'>
     <div className='middle-main-comp'>
         <div className='middle-main-comp-p'>
-            <p>
+            {/* <p>
                 Ana Səhifə
-            </p>
+            </p> */}
         </div>
         <div className='middle-main-comp-bottom'>
-            <p><span>Claradix</span> / Social</p>
+            <p>/ Social</p>
         </div>
     </div>
     <div className='middle-main-bottom'>

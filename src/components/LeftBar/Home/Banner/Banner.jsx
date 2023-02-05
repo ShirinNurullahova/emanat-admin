@@ -63,11 +63,11 @@ const Banner = () => {
             <div className='middle-main-comp'>
                 <div className='middle-main-comp-p'>
                     <p>
-                        Ana Səhifə
+                        Home
                     </p>
                 </div>
                 <div className='middle-main-comp-bottom'>
-                    <p><span>Claradix</span> / Ana Səhifə</p>
+                    <p>/ Banner</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>

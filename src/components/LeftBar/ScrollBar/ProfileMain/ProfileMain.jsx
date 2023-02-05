@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import pp from '../../../../Images/profile.jpg';
+import pp from '../../../../Images/favicon.png';
 import '../ProfileMain/ProfileMain.scss'
 const ProfileMain = () => {
     const [toggle, setToggle] = useState(true)
@@ -12,7 +12,7 @@ const ProfileMain = () => {
             </div>
             <div className='profile-main-text'>
                 <p>Welcome,</p>
-                <p className={`profile-main-text-p ${!toggle && 'clickDiv'} `}>Shirin Nur</p>
+                <p className={`profile-main-text-p ${!toggle && 'clickDiv'} `}>eManat</p>
                 {!toggle && (
 
                     <div className='toogleMenu'>

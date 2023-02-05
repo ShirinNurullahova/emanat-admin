@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
-import Icons from '../Icons/Icons';
 
 
-
-const Head = ({id ,setId}) => {
+const Features = () => {
+    const [id, setId] = useState("");
     const [initialValues, setInitialValues] = useState(null)
-    const initialValuesRaw = {};
+    const initialValuesRaw = {}
 
     const fetchData = () => {
-        axios.get((`${process.env.REACT_APP_URL}/admin/main/cooperation/head`))
+        axios.get((`${process.env.REACT_APP_URL}/admin/main/payPoint`))
             .then(res => {
-                initialValuesRaw.azTitle = res.data.dtoHead[0]?.azTitle;
-                initialValuesRaw.azDescription = res.data.dtoHead[0]?.azDescription;
-                initialValuesRaw.ruTitle = res.data.dtoHead[0]?.ruTitle;
-                initialValuesRaw.ruDescription = res.data.dtoHead[0]?.ruDescription;
-                initialValuesRaw.enTitle = res.data.dtoHead[0]?.enTitle;
-                initialValuesRaw.enDescription = res.data.dtoHead[0]?.enDescription;
-                initialValuesRaw.MainPageCooperationImage = res.data.dtoHead[0]?.images[0]?.url;
+                initialValuesRaw.azTitle = res.data[0]?.azTitle;
+                initialValuesRaw.azDescription = res.data[0]?.azDescription;
+                initialValuesRaw.ruTitle = res.data[0]?.ruTitle;
+                initialValuesRaw.ruDescription = res.data[0]?.ruDescription;
+                initialValuesRaw.enTitle = res.data[0]?.enTitle;
+                initialValuesRaw.enDescription = res.data[0]?.enDescription;
+                initialValuesRaw.MainPagePayPointImage = res.data[0]?.images[0]?.url;
                 setInitialValues(initialValuesRaw)
-                setId(res.data.dtoHead[0]?._id)
+                setId(res.data[0]?._id)
             })
             .catch((err) => console.log(err));
     }
@@ -28,7 +27,9 @@ const Head = ({id ,setId}) => {
     useEffect(() => {
         fetchData();
     }, []);
+
     const onSubmitHandler = async (values) => {
+        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', id)
         dataForm.append('azTitle', values.azTitle)
@@ -37,16 +38,14 @@ const Head = ({id ,setId}) => {
         dataForm.append('azDescription', values.azDescription)
         dataForm.append('enDescription', values.enDescription)
         dataForm.append('ruDescription', values.ruDescription)
-    
         if (values.image) {
-            console.log("jbkln");
-            dataForm.append('MainPageCooperationImage', values.image)
+            dataForm.append('MainPagePayPointImage', values.image)
         } else {
-            dataForm.append('MainPageCooperationImage', values.MainPageCooperationImage)
+            dataForm.append('MainPagePayPointImage', values.MainPagePayPointImage)
         }
-
+        console.log(dataForm);
         try {
-            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/main/cooperation/head`, dataForm)
+            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/main/payPoint`, dataForm)
             if (response.status == 200) {
                 fetchData()
             }
@@ -55,18 +54,16 @@ const Head = ({id ,setId}) => {
             alert("error")
         }
     }
-
-
     return (
         <div className='middle-main'>
             <div className='middle-main-comp'>
                 <div className='middle-main-comp-p'>
                     {/* <p>
-                        Ana Səhifə
-                    </p> */}
+                Ana Səhifə
+            </p> */}
                 </div>
                 <div className='middle-main-comp-bottom'>
-                    <p>/ CooperationHead</p>
+                    <p>/ PayPoint</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>
@@ -129,9 +126,9 @@ const Head = ({id ,setId}) => {
                 }
 
             </div>
-          
+
         </div>
     )
 }
 
-export default Head
+export default Features

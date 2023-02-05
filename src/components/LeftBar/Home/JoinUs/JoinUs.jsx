@@ -59,12 +59,12 @@ const JoinUs = () => {
     <div className='middle-main'>
     <div className='middle-main-comp'>
         <div className='middle-main-comp-p'>
-            <p>
+            {/* <p>
                 Ana Səhifə
-            </p>
+            </p> */}
         </div>
         <div className='middle-main-comp-bottom'>
-            <p><span>Claradix</span> / Join Us</p>
+            <p>/ Join Us</p>
         </div>
     </div>
     <div className='middle-main-bottom'>

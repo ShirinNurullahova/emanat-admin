@@ -17,7 +17,7 @@ const News = () => {
                         </p>
                     </div>
                     <div className='news-main-comp-bottom'>
-                        <p><span>Claradix</span> / News</p>
+                        <p></p>
                         <div className='news-main-comp-bottom-btn' onClick={() => setBtn("Add news")}>
                             <button>
                                 Add New

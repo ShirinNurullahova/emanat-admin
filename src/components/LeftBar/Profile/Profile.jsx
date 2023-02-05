@@ -9,7 +9,7 @@ const Profile = () => {
             </div>
             <div className='profile-part-text'>
                 <p>
-                    Claradix
+                   eManat
                 </p>
             </div>
             <div className='profile-part-hr'>

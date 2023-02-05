@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-const MainHead = ({initialValues}) => {
+const MainHead = ({ initialValues }) => {
     console.log(initialValues);
 
     const onSubmitHandler = async (values) => {
@@ -14,7 +14,7 @@ const MainHead = ({initialValues}) => {
         dataForm.append('azTitle', values.azTitle)
         dataForm.append('enTitle', values.enTitle)
         dataForm.append('ruTitle', values.ruTitle)
-      
+
         if (values.image) {
             dataForm.append('MainPageHeadServicesImage', values.image)
         } else {
@@ -34,7 +34,16 @@ const MainHead = ({initialValues}) => {
 
     return (
         <div className='middle-main'>
-
+            <div className='middle-main-comp'>
+                <div className='middle-main-comp-p'>
+                    {/* <p>
+                Ana Səhifə
+            </p> */}
+                </div>
+                <div className='middle-main-comp-bottom'>
+                    <p>/ Features</p>
+                </div>
+            </div>
             <div className='middle-main-bottom'>
                 {initialValues &&
                     <Formik

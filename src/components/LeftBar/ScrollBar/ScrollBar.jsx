@@ -51,7 +51,7 @@ const ScrollBar = () => {
                     {!toggle && (
                         <div className='scroll-bar-dropdown'>
                             <div className='scroll-bar-dropdown-el'>
-                                <Link to='/login'>
+                                {/* <Link to='/login'>
                                     <div className='scroll-bar-dropdown-el-p'>
                                         <p>Login</p>
                                     </div>
@@ -70,7 +70,7 @@ const ScrollBar = () => {
                                     <div className='scroll-bar-dropdown-el-p'>
                                         <p>Verify Account</p>
                                     </div>
-                                </Link>
+                                </Link> */}
                                 <Link to='/reset'>
                                     <div className='scroll-bar-dropdown-el-p'>
                                         <p>Reset Password</p>
