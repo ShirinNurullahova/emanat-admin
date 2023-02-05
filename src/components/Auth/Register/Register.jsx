@@ -26,7 +26,7 @@ const Register = () => {
         e.preventDefault();
         try {
             const response = await axios.post(`${process.env.REACT_APP_URL}/auth/signup`, cred)
-            if(response.status === 200){
+            if(response.status === 201 || response.status === 200){
                 navigate("/verify");
             } else if (response.data.message === "User already exists") {
                 alert("User already exists")

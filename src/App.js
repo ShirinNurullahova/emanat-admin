@@ -44,7 +44,8 @@ function App() {
     if (!localDataAuth && !localDataRefresh &&
       windowLocation !== "/forgot"
       && windowLocation !== "/reset"
-      && windowLocation !== "/register") {
+      && windowLocation !== "/register"
+      && windowLocation !== "/verify") {
       navigate("/login");
     } else if (localDataAuth && localDataRefresh && windowLocation === "/login") {
       navigate("/");
