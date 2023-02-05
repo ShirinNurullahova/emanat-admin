@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Login from "./components/Auth/Login/Login";
-import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { axiosInterceptorHandle } from './utils/AxiosInterceptor'
 import Main from "./pages/Main/Main";
 import Register from "./components/Auth/Register/Register";
@@ -19,7 +18,7 @@ import HashTag from "./components/LeftBar/ScrollBar/HashTag/HashTag";
 
 function App() {
   const header = document.getElementsByClassName("main-page-up")
-
+  const two_components = document.getElementsByClassName("two-components")
 
   let navigate = useNavigate()
 
@@ -27,12 +26,15 @@ function App() {
   axiosInterceptorHandle(navigate);
 
   useEffect(() => {
-    if (windowLocation.includes("login") || windowLocation.includes("register") ||  windowLocation.includes("forgot") || windowLocation.includes("verify") ||  windowLocation.includes("reset")) {
+    console.log(windowLocation);
+    if (windowLocation.includes("login") || windowLocation.includes("register") || windowLocation.includes("forgot") || windowLocation.includes("verify") || windowLocation.includes("reset")|| windowLocation.includes("logout")) {
       header[0].style.display = 'none'
+      two_components[0].style.display='none'
     } else {
       header[0].style.display = 'flex'
+      two_components[0].style.display='block'
     }
-    
+
     let localDataAuth = false;
     let localDataRefresh = false;
 
@@ -41,25 +43,27 @@ function App() {
 
     if (!localDataAuth && !localDataRefresh &&
       windowLocation !== "/forgot"
-      && windowLocation.split("/")[1] !== "reset") {
+      && windowLocation !== "/reset"
+      && windowLocation !== "/register") {
       navigate("/login");
     } else if (localDataAuth && localDataRefresh && windowLocation === "/login") {
       navigate("/");
     }
   }, [windowLocation])
-
+ 
   return (
-    <div className="App">
+    <div className="App" >
       <div className='main-page-up'>
         <Profile />
         <Header />
       </div>
       <div className="two">
+        <div className='two-components'>
         <ScrollBar />
-      
+       </div>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/hashtag" element={<HashTag/>} />
+          <Route path="/hashtag" element={<HashTag />} />
 
           <Route path="/news" element={<News />} />
           <Route path="/login" element={<Login />} />

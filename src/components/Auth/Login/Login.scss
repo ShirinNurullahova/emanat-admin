@@ -60,6 +60,11 @@
                     span:first-child{
                         color:#007bff;
                     }
+                    span:last-child{
+                        span{
+                        padding-left: 8px;
+                        }
+                    }
                 }
             }
             padding: 22px;

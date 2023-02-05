@@ -50,8 +50,8 @@ const Login = () => {
                         </div>
                         <button type="submit" className='loginBtn'>LOGIN</button>
                         <div className='login-div-el-form-end'>
-                            <span ><i className="fa fa-lock"></i>Forgot password?</span>
-                            <span>Don't have an account?<i>Register</i></span>
+                            <span onClick={()=>navigate('/reset')}><i className="fa fa-lock"></i>Forgot password?</span>
+                            <span>Don't have an account?<span onClick={()=>navigate('/register')}>Register</span></span>
                         </div>
                     </form>
                 </div>

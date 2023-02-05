@@ -9,8 +9,7 @@ const ScrollBar = () => {
     const [toggle, setToggle] = useState(true)
 
     return (
-
-        <div className='two-components'>
+        <>
             <ProfileMain />
             <div className='scroll-bar'>
                 <div className='scroll-bar-el'>
@@ -104,7 +103,7 @@ const ScrollBar = () => {
                 </div>
 
             </div>
-        </div>
+        </>
 
 
     )

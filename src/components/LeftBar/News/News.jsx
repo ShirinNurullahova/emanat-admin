@@ -4,9 +4,9 @@ import { Card } from './Card/Card';
 import Modal from './Modal/Modal';
 import '../News/News.scss'
 const News = () => {
-    const [id , setId]=useState(null)
+    const [id, setId] = useState(null)
     const [btn, setBtn] = useState(null)
-    
+
     return (
         <div className='news'>
             <div className='news-main'>
@@ -28,13 +28,13 @@ const News = () => {
 
             </div>
             <div className='news-card'>
-                <Card setId={setId} setBtn={setBtn} btn={btn}/>
+                <Card setId={setId} setBtn={setBtn} btn={btn} />
             </div>
             {btn &&
                 <div className='news-modal'>
-                    
-                    <Modal id={id} setBtn={setBtn} btn={btn}/>
-                 
+
+                    <Modal id={id} setBtn={setBtn} btn={btn} />
+
 
 
                 </div>

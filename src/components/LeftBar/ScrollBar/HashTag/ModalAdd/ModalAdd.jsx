@@ -8,8 +8,7 @@ const ModalAdd = ({setOpen}) => {
         "ruHashtag": "",
         "enHashtag": "",
         "page": ''
-    }
-       
+    }   
     );
 
     
