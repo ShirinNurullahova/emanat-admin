@@ -1,34 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
-import AboutTargetSection from '../AboutTargetSection/AboutTargetSection';
+import AboutBranchSection from './AboutBranchSection/AboutBranchSection';
 
 
-
-const AboutTargetHead = () => {
-    const [ initialValues1 , setInitialValues1]= useState(null)
-    const [ initialValues2 , setInitialValues2]= useState(null)
-    const [ initialValues3 , setInitialValues3]= useState(null)
-
+const AboutBranchHead = () => {
     const [id, setId] = useState("");
-    const [ data ,setData]= useState(null)
     const [initialValues, setInitialValues] = useState(null)
+    const [initialValues1, setInitialValues1] = useState(null)
+    const [initialValues2, setInitialValues2] = useState(null)
+    const [initialValues3, setInitialValues3] = useState(null)
+
     const initialValuesRaw = {}
 
     const fetchData = () => {
-            
-        axios.get((`${process.env.REACT_APP_URL}/admin/about/target/head`))
+
+        axios.get((`${process.env.REACT_APP_URL}/admin/about/branch/head`))
             .then(res => {
                 console.log(res)
                 initialValuesRaw.azTitle = res.data.message.dtoHead[0]?.azTitle;
-                initialValuesRaw.ruTitle = res.data.message.dtoHead[0]?.ruTitle;
                 initialValuesRaw.enTitle = res.data.message.dtoHead[0]?.enTitle;
-                initialValuesRaw.AboutPageTargetsImage = res.data.message.dtoHead[0]?.images[0]?.url;
+                initialValuesRaw.ruTitle = res.data.message.dtoHead[0]?.ruTitle;
+                initialValuesRaw.AboutPageBranchImage = res.data.message.dtoHead[0]?.images[0]?.url;
                 setInitialValues(initialValuesRaw)
+
+                setInitialValues1(res.data.message.dtoSection[0])
+                setInitialValues2(res.data.message.dtoSection[1])
+
+                setInitialValues3(res.data.message.dtoSection[2])
+
                 setId(res.data.message.dtoHead[0]?._id)
-                setInitialValues1(res.data.message.dtoHead[0]?.sections[0])
-                setInitialValues2(res.data.message.dtoHead[0]?.sections[1])
-                setInitialValues3(res.data.message.dtoHead[0]?.sections[2])
             })
             .catch((err) => console.log(err));
     }
@@ -45,13 +46,13 @@ const AboutTargetHead = () => {
         dataForm.append('enTitle', values.enTitle)
         dataForm.append('ruTitle', values.ruTitle)
         if (values.image) {
-            dataForm.append('AboutPageTargetsImage', values.image)
+            dataForm.append('AboutPageBranchImage', values.image)
         } else {
-            dataForm.append('AboutPageTargetsImage', values.AboutPageTargetsImage)
+            dataForm.append('AboutPageBranchImage', values.AboutPageBranchImage)
         }
         console.log(dataForm);
         try {
-            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/about/target/head`, dataForm)
+            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/about/branch/head`, dataForm)
             if (response.status == 200) {
                 fetchData()
             }
@@ -64,14 +65,7 @@ const AboutTargetHead = () => {
 
     return (
         <div className='middle-main'>
-            <div className='middle-main-comp'>
-                <div className='middle-main-comp-p'>
-                   
-                </div>
-                <div className='middle-main-comp-bottom'>
-                    <p>/ Target Head</p>
-                </div>
-            </div>
+
             <div className='middle-main-bottom'>
                 {initialValues &&
                     <Formik
@@ -92,14 +86,14 @@ const AboutTargetHead = () => {
                                         <label>Title (az)</label>
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
-                                   
+
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (ru)</label>
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
-                                   
+
                                 </div>
 
                                 <div className='middle-main-bottom-form-div'>
@@ -107,7 +101,7 @@ const AboutTargetHead = () => {
                                         <label>Title (en)</label>
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
-                                    
+
 
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Image</label>
@@ -123,14 +117,12 @@ const AboutTargetHead = () => {
                 }
 
             </div>
-
-                
-             <AboutTargetSection initialValues={initialValues1}/>
-             <AboutTargetSection initialValues={initialValues2}/>
-             <AboutTargetSection initialValues={initialValues3}/>
+           <AboutBranchSection initialValues={initialValues1}/>
+           <AboutBranchSection initialValues={initialValues2}/>
+           <AboutBranchSection initialValues={initialValues3}/>
 
         </div>
     )
 }
 
-export default AboutTargetHead
+export default AboutBranchHead
