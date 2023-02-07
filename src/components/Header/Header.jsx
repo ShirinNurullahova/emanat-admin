@@ -33,9 +33,12 @@ const Header = () => {
             </li>
           </Link>
 
+          <Link to='/partnership'>
           <li>
             Əməkdaşlıq
           </li>
+          </Link>
+
           <li>
             Karyera
           </li>

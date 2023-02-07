@@ -1,57 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
-import AboutModal from '../AboutModal/AboutModal'
 import axios from 'axios';
 
 
-const AboutServiceHead = () => {
-    const [btn, setBtn] = useState(null)
-    const [id, setId] = useState(null)
-    const [initialValues, setInitialValues] = useState(null)
-    const [data, setData] = useState(null)
-    const fetchData = () => {
-        axios.get((`${process.env.REACT_APP_URL}/admin/about/services/head`))
-            .then(res => {
-                console.log(res)
-                setInitialValues(res.data.dtoHead[0])
-                setData(res.data.dtoSection)
-            })
-            .catch((err) => console.log(err));
-    }
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+const ServiceHead = ({ initialValues }) => {
+    console.log(initialValues);
 
     const onSubmitHandler = async (values) => {
-        let updatedVelus = {}
-        updatedVelus.id = values._id;
-        updatedVelus.azTitle = values.azTitle
-        updatedVelus.ruTitle = values.ruTitle
-        updatedVelus.enTitle = values.enTitle
+        console.log(values);
+        const dataForm = new FormData()
+        dataForm.append('id', values._id)
+        dataForm.append('azTitle', values.azTitle)
+        dataForm.append('enTitle', values.enTitle)
+        dataForm.append('ruTitle', values.ruTitle)
 
+        if (values.image) {
+            dataForm.append('MarketingPageServiceHeadImage', values.image)
+        } else {
+            dataForm.append('MarketingPageServiceHeadImage', values.images[0]?.url)
+        }
+        console.log(dataForm);
         try {
-            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/about/services/head`, updatedVelus)
+            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/marketing/service/head`, dataForm)
+            if (response.status == 200) {
+            }
+
         } catch (error) {
             alert("error")
         }
     }
 
-    const onClickHandler = (e) => {
-        setBtn("Edit icons")
-        setId(e)
-    }
 
     return (
         <div className='middle-main'>
             <div className='middle-main-comp'>
                 <div className='middle-main-comp-p'>
-                    <p>
-                        About
-                    </p>
                 </div>
                 <div className='middle-main-comp-bottom'>
-                    <p>/ Service Head</p>
+                    <p>/ Gains</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>
@@ -60,13 +47,13 @@ const AboutServiceHead = () => {
                         initialValues={initialValues}
                         onSubmit={(values) => {
                             onSubmitHandler(values);
-
                         }}
                     >
                         {({
                             values,
                             handleChange,
                             handleSubmit,
+                            setFieldValue
                         }) => (
                             <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                 <div className='middle-main-bottom-form-div'>
@@ -76,7 +63,6 @@ const AboutServiceHead = () => {
                                     </div>
 
                                 </div>
-
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (ru)</label>
@@ -84,6 +70,7 @@ const AboutServiceHead = () => {
                                     </div>
 
                                 </div>
+
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (en)</label>
@@ -91,46 +78,23 @@ const AboutServiceHead = () => {
                                     </div>
 
                                 </div>
+                                <div className='middle-main-bottom-form-div-el'>
+                                    <label>Image</label>
+                                    <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
+                                </div>
+
                                 <div className='middle-main-bottom-form-btn'>
                                     <button type='submit'>Save</button>
                                 </div>
                             </Form>
                         )}
-                    </Formik>}
-            </div>
-          
-            <div className='about-services-btn'>
-            
-                <button onClick={() => setBtn("Add icons")}>
-                    Add
-                </button>
-            </div>
-            <div className='about-services-section'>
-              
-                {
-                    data &&
-                    data.map((e) => {
-                        return (
-                            <div className='about-services-section-div' onClick={() => onClickHandler(e)}>
-                                <div className='about-services-section-div-img'>
-                                    <img src={e.icon} />
-                                </div>
-                                <div className='about-services-section-div-title'>
-                                    <p>{e.azDescription}</p>
-                                </div>
-                            </div>
-                        )
-                    })
+                    </Formik>
                 }
-            </div>
-            {
-                btn &&
 
-                <AboutModal id={id} setBtn={setBtn} btn={btn}/>
-            }
+            </div>
 
         </div>
     )
 }
 
-export default AboutServiceHead
+export default ServiceHead
