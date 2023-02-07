@@ -22,14 +22,17 @@ const Header = () => {
     <div className='header'>
       <ul className='header-content'>
         <div>
-         <Link to="/">
-         <li>
-            Ana səhifə
-          </li>
-         </Link>
-          <li>
-            Haqqımızda
-          </li>
+          <Link to="/">
+            <li>
+              Ana səhifə
+            </li>
+          </Link>
+          <Link to='/about'>
+            <li>
+              Haqqımızda
+            </li>
+          </Link>
+
           <li>
             Əməkdaşlıq
           </li>
@@ -37,21 +40,26 @@ const Header = () => {
             Karyera
           </li>
           <Link to='/news'>
-          <li>
-            News
-          </li>
-          
+            <li>
+              Xəbərlər
+            </li>
+
           </Link>
-         
+          <Link to='/vakansiya'>
+            <li>
+              Vakansiyalar
+            </li>
+
+          </Link>
         </div>
         <div>
-          <li  onClick={() => setToggle(!toggle)}>
+          <li onClick={() => setToggle(!toggle)}>
             <svg className="svg-icon search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">A magnifying glass icon.</desc><g className="search-path" fill="none"
                 stroke="#848F91"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" /><circle cx="8" cy="8" r="7" /></g></svg>
-            {!toggle && (
+            {/* {!toggle && (
                <SearchBar toggle={toggle}/>
-            )}
+            )} */}
           </li>
           <li>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-power" viewBox="0 0 16 16"> <path d="M7.5 1v7h1V1h-1z" />
@@ -61,7 +69,7 @@ const Header = () => {
         </div>
       </ul>
       <div className='header-progress-bar'>
-        <div className='header-progress-bar-style' style={{ width: `${scrollTop}%`}}>
+        <div className='header-progress-bar-style' style={{ width: `${scrollTop}%` }}>
         </div>
       </div>
     </div>

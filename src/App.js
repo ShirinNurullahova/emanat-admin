@@ -15,6 +15,8 @@ import Header from "./components/Header/Header";
 import ScrollBar from "./components/LeftBar/ScrollBar/ScrollBar";
 import './App.css';
 import HashTag from "./components/LeftBar/ScrollBar/HashTag/HashTag";
+import Vakansiya from "./components/LeftBar/Vakansiyalar/Vakansiya";
+import About from "./components/LeftBar/About/About";
 
 function App() {
   const header = document.getElementsByClassName("main-page-up")
@@ -65,6 +67,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/hashtag" element={<HashTag />} />
+          <Route path="/vakansiya" element={<Vakansiya />} />
+          <Route path="/about" element={<About />} />
 
           <Route path="/news" element={<News />} />
           <Route path="/login" element={<Login />} />

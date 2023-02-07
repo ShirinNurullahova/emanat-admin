@@ -20,9 +20,10 @@ const Login = () => {
     }
     const handleSubmitLogin = async e => {
         e.preventDefault();
+        console.log(cred)
         try {
             const response =await axios.post(`${process.env.REACT_APP_URL}/auth/login`, cred)
-            if(response.status ===200){
+            if(response.status ===200 || response.status ===201){
                    navigate('/')
             }
         } catch (error) {}

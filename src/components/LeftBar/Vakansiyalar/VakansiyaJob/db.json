@@ -1,0 +1,142 @@
+[
+    {
+        "azTitle": "Fəaliyyət növü",
+        "enTitle": "Fəaliyyət növü en",
+        "ruTitle": "Fəaliyyət növü ru",
+        "azItems": [
+            "Satış təmsilçisi"
+        ],
+        "enItems": [
+            "Satış təmsilçisi"
+        ],
+        "ruItems": [
+            "Satış təmsilçisi"
+        ]
+    },
+    {
+        "azTitle": "Son müraciət tarixi",
+        "enTitle": "Son müraciət tarixi",
+        "ruTitle": "Son müraciət tarixi",
+        "azItems": [
+            "06.02.2023"
+        ],
+        "enItems": [
+            "06.02.2023"
+        ],
+        "ruItems": [
+            "06.02.2023"
+        ]
+    },
+    {
+        "azTitle": "Ərazi",
+        "enTitle": "Ərazi",
+        "ruTitle": "Ərazi",
+        "azItems": [
+            "Şəki / Şəki ərazisi üzrə"
+        ],
+        "enItems": [
+            "Şəki / Şəki ərazisi üzrə"
+        ],
+        "ruItems": [
+            "Şəki / Şəki ərazisi üzrə"
+        ]
+    },
+    {
+        "azTitle": "İş növü",
+        "enTitle": "İş növü",
+        "ruTitle": "İş növü",
+        "azItems": [
+            "Tam iş günü"
+        ],
+        "enItems": [
+            "Tam iş günü"
+        ],
+        "ruItems": [
+            "Tam iş günü"
+        ]
+    },
+    {
+        "azTitle": "Öhdəliklər",
+        "enTitle": "Öhdəliklər",
+        "ruTitle": "Öhdəliklər",
+        "azItems": [
+            "Təhkim olunmuş zona üzrə yerləşən terminallara nəzarət",
+            "Yeni yerlərin tapılması",
+            "Mütəmadi monitorinqin aparılması",
+            "Terminalların götürülməsi və qoyulmasının təşkil olunması",
+            "Sənədləşmə işlərinin aparılması.",
+            "Satış sahəsi üzrə iş təcrübəsinin olması mütləqdir.",
+            "Avtomobil olması mütləqdir."
+        ],
+        "enItems": [
+            "Təhkim olunmuş zona üzrə yerləşən terminallara nəzarət",
+            "Yeni yerlərin tapılması",
+            "Mütəmadi monitorinqin aparılması",
+            "Terminalların götürülməsi və qoyulmasının təşkil olunması",
+            "Sənədləşmə işlərinin aparılması.",
+            "Satış sahəsi üzrə iş təcrübəsinin olması mütləqdir.",
+            "Avtomobil olması mütləqdir."
+        ],
+        "ruItems": [
+            "Təhkim olunmuş zona üzrə yerləşən terminallara nəzarət",
+            "Yeni yerlərin tapılması",
+            "Mütəmadi monitorinqin aparılması",
+            "Terminalların götürülməsi və qoyulmasının təşkil olunması",
+            "Sənədləşmə işlərinin aparılması.",
+            "Satış sahəsi üzrə iş təcrübəsinin olması mütləqdir.",
+            "Avtomobil olması mütləqdir."
+        ]
+    },
+    {
+        "azTitle": "Tələblər",
+        "enTitle": "Tələblər",
+        "ruTitle": "Tələblər",
+        "azItems": [
+            "Yaş həddi: 25-45 yaş",
+            "Satış sahəsi üzrə ən azı 2 il iş təcrübəsi",
+            "Şəhər ərazini yaxşı tanımalı",
+            "Yol hərəkəti qaydalarını yaxşı bilməli",
+            "Sürücülük vəsiqəsi (minimum “B” kateqoriya)"
+        ],
+        "enItems": [
+            "Yaş həddi: 25-45 yaş",
+            "Satış sahəsi üzrə ən azı 2 il iş təcrübəsi",
+            "Şəhər ərazini yaxşı tanımalı",
+            "Yol hərəkəti qaydalarını yaxşı bilməli",
+            "Sürücülük vəsiqəsi (minimum “B” kateqoriya)"
+        ],
+        "ruItems": [
+            "Yaş həddi: 25-45 yaş",
+            "Satış sahəsi üzrə ən azı 2 il iş təcrübəsi",
+            "Şəhər ərazini yaxşı tanımalı",
+            "Yol hərəkəti qaydalarını yaxşı bilməli",
+            "Sürücülük vəsiqəsi (minimum “B” kateqoriya)"
+        ]
+    },
+    {
+        "azTitle": "İş şəraiti",
+        "enTitle": "İş şəraiti",
+        "ruTitle": "İş şəraiti",
+        "azItems": [
+            "Təyin olunmuş ərazi üzrə;",
+            "İş rejimi həftənin 5 günü (09:00-18:00);",
+            "Əmək haqqının 15 gündən bir ödənilməsi;",
+            "Tibbi sığorta təminatının verilməsi;",
+            "Nahar təminatının qarşılanması."
+        ],
+        "enItems": [
+            "Təyin olunmuş ərazi üzrə;",
+            "İş rejimi həftənin 5 günü (09:00-18:00);",
+            "Əmək haqqının 15 gündən bir ödənilməsi;",
+            "Tibbi sığorta təminatının verilməsi;",
+            "Nahar təminatının qarşılanması."
+        ],
+        "ruItems": [
+            "Təyin olunmuş ərazi üzrə;",
+            "İş rejimi həftənin 5 günü (09:00-18:00);",
+            "Əmək haqqının 15 gündən bir ödənilməsi;",
+            "Tibbi sığorta təminatının verilməsi;",
+            "Nahar təminatının qarşılanması."
+        ]
+    }
+]

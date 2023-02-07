@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Card } from './Card/Card';
 import Modal from './Modal/Modal';
 import '../News/News.scss'
+import NewsMain from './NewsMain/NewsMain';
 const News = () => {
     const [id, setId] = useState(null)
     const [btn, setBtn] = useState(null)
@@ -39,6 +40,8 @@ const News = () => {
 
                 </div>
             }
+
+            <NewsMain/>
         </div>
     )
 }
