@@ -1,0 +1,52 @@
+.modal {
+  position: absolute;
+  z-index: 999;
+  background-color: #6c757d;
+  float: left;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+.modal-form {
+  border-radius: 3px;
+  width: 360px;
+  padding: 20px;
+  font-weight: 400;
+  color: #a5a8ad;
+  background-color: #282b2f;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  text-align: center;
+}
+.modal-form-btn {
+  margin: 5%;
+}
+.modal-form-btn button {
+  color: #fff;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  outline: none;
+  border-radius: 50px;
+  width: 50%;
+  padding: 5px;
+}
+.modal-form-div {
+  text-align: left;
+}
+.modal-form-div-el {
+  display: flex;
+  flex-direction: column;
+}
+.modal-form-div-el input {
+  padding: 5px;
+  box-shadow: none;
+  background-color: transparent;
+  border: 1px solid #393d42;
+  font-size: 14px;
+  border-radius: 50px;
+  color: #77797c;
+  outline: none;
+}
+.modal-form-div-el label {
+  margin: 3%;
+}/*# sourceMappingURL=Modal.css.map */

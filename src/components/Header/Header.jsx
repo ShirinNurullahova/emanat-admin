@@ -38,10 +38,11 @@ const Header = () => {
             Əməkdaşlıq
           </li>
           </Link>
-
+          <Link to='/career'>
           <li>
             Karyera
           </li>
+          </Link>
           <Link to='/news'>
             <li>
               Xəbərlər

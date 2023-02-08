@@ -18,6 +18,7 @@ import HashTag from "./components/LeftBar/ScrollBar/HashTag/HashTag";
 import Vakansiya from "./components/LeftBar/Vakansiyalar/Vakansiya";
 import About from "./components/LeftBar/About/About";
 import Partnership from "./components/LeftBar/PartnerShip/Partnership";
+import Career from "./components/LeftBar/Career/Career";
 
 function App() {
   const header = document.getElementsByClassName("main-page-up")
@@ -71,6 +72,7 @@ function App() {
           <Route path="/vakansiya" element={<Vakansiya />} />
           <Route path="/about" element={<About />} />
           <Route path="/partnership" element={<Partnership/>}/>
+          <Route path="/career" element={<Career/>}/>
 
           <Route path="/news" element={<News />} />
           <Route path="/login" element={<Login />} />

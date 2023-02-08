@@ -1,0 +1,19 @@
+.hashtag {
+  background-color: rgba(34, 37, 42, 0.95);
+  width: 85%;
+  padding: 60px;
+}
+.hashtag-btn {
+  text-align: right;
+}
+.hashtag-btn button {
+  cursor: pointer;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}/*# sourceMappingURL=HashTag.css.map */
