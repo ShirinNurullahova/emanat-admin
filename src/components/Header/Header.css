@@ -1,0 +1,60 @@
+.header {
+  top: 0;
+  left: 0;
+  width: 85% !important;
+  z-index: 999px;
+  background-color: rgba(34, 37, 42, 0.95);
+  padding: 20px;
+  width: 80%;
+  overflow: hidden;
+}
+.header a:-webkit-any-link {
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+}
+.header-progress-bar {
+  background-color: #a5a8ad;
+  width: 95%;
+  height: 1px;
+  color: #a5a8ad;
+  position: sticky;
+  top: 0;
+  left: 3%;
+  z-index: 1;
+}
+.header-progress-bar-style {
+  height: 1px;
+  background-color: #17C2D7;
+}
+.header .svg-icon.search-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+}
+.header-content-div {
+  width: 100%;
+}
+.header-content-div img {
+  width: 15px;
+  height: 15px;
+}
+.header-content div {
+  display: flex;
+}
+.header-content div li {
+  list-style: none;
+  text-decoration: none;
+  margin-right: 40px;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.header-content div li:hover {
+  color: white;
+  transition: 0.2s ease;
+}/*# sourceMappingURL=Header.css.map */

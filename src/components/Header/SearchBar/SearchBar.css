@@ -1,0 +1,61 @@
+.searchbar {
+  transition: all 1s ease-in-out;
+  background: #22252a;
+  border-left: 2px solid #fff;
+  padding: 20px;
+  right: -600px;
+  width: 600px;
+  height: 100vh;
+  z-index: 999;
+}
+.searchbar-div {
+  transition: all 0.4s ease-in-out;
+  display: inline-block !important;
+  background: transparent;
+  border-color: transparent;
+  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.searchbar-div-el {
+  border-radius: 3px;
+  font-weight: 400;
+  color: #a5a8ad;
+  background: #282b2f;
+  padding: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+.searchbar-div-el-form {
+  width: 100%;
+}
+.searchbar-div-el-form-div {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+.searchbar-div-el-form-div-input {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  box-shadow: none;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 14px;
+  color: #77797c;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.open {
+  transition: all 1s ease-in-out;
+  right: 0;
+}/*# sourceMappingURL=SearchBar.css.map */

@@ -18,6 +18,11 @@ import HashTag from "./components/LeftBar/ScrollBar/HashTag/HashTag";
 import Vakansiya from "./components/LeftBar/Vakansiyalar/Vakansiya";
 import About from "./components/LeftBar/About/About";
 import Partnership from "./components/LeftBar/PartnerShip/Partnership";
+import Faq from "./components/LeftBar/Faq/Faq";
+import Cooperative from "./components/LeftBar/Cooperative/Cooperative";
+import InternShipProgram from "./components/LeftBar/InternShipProgram/InternShipProgram"
+import Uni from "./components/LeftBar/Home/Uni/Uni";
+import Career from "./components/LeftBar/Career/Career";
 
 function App() {
   const header = document.getElementsByClassName("main-page-up")
@@ -70,8 +75,12 @@ function App() {
           <Route path="/hashtag" element={<HashTag />} />
           <Route path="/vakansiya" element={<Vakansiya />} />
           <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/cooperative" element={<Cooperative />} />
           <Route path="/partnership" element={<Partnership/>}/>
-
+          <Route path="/internship" element={<InternShipProgram/>}/>
+          <Route path="/uni" element={<Uni />} />
+          <Route path="/career" element={<Career/>}/>
           <Route path="/news" element={<News />} />
           <Route path="/login" element={<Login />} />
           <Route path='/register' element={<Register />} />

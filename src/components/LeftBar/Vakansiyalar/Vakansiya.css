@@ -1,0 +1,10 @@
+.main-vakansiya {
+  background-color: rgba(34, 37, 42, 0.95);
+  width: 85%;
+  padding-right: 20px;
+}
+.main-vakansiya .text {
+  padding-left: 20px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+}/*# sourceMappingURL=Vakansiya.css.map */

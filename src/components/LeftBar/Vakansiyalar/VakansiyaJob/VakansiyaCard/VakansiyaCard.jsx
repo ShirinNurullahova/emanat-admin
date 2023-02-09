@@ -36,7 +36,7 @@ const VakansiyaCard = ({ setId, btn, setBtn }) => {
     return (
         <>
             {
-                data && data?.length &&
+                
                 data?.map((e) => (
                     <div className='card' onClick={() => onClickHandler(e.id)}>
                         <p>{e && e?.sections[0]?.items[0]}</p>
