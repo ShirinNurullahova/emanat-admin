@@ -1,6 +1,7 @@
 import React from 'react'
 import '../Career/Career.scss'
 import CareerExperience from './CareeerExperience/CareeerExperience'
+import CareerAnswer from './CareerAnswer/CareerAnswer'
 import CareerFuture from './CareerFuture/CareerFuture'
 import CareerHeader from './CareerHeader/CareerHeader'
 import CareerOurvalues from './CareerOurvalues/CareerOurvalues'
@@ -13,6 +14,7 @@ const Career = () => {
         <CareerWhyEmanat/>
         <CareerExperience/>
         <CareerFuture/>
+        <CareerAnswer/>
         </div>
     )
 }

@@ -23,6 +23,11 @@ import Cooperative from "./components/LeftBar/Cooperative/Cooperative";
 import InternShipProgram from "./components/LeftBar/InternShipProgram/InternShipProgram"
 import Uni from "./components/LeftBar/Home/Uni/Uni";
 import Career from "./components/LeftBar/Career/Career";
+import Hr from "./components/Auth/Forms/Hr/Hr";
+import Terminal from "./components/Auth/Forms/Terminal/Terminal";
+import BusinessCooperation from "./components/Auth/Forms/BusinessCooperation/BusinessCooperation";
+import MarketingCooperation from "./components/Auth/Forms/MarketingCooperation/MarketingCooperation";
+import Contact from "./components/Auth/Forms/Contact/Contact";
 
 function App() {
   const header = document.getElementsByClassName("main-page-up")
@@ -88,7 +93,11 @@ function App() {
           <Route path='/verify' element={<Verify />} />
           <Route path='/reset' element={<Reset />} />
           <Route path='/logout' element={<Logout />} />
-
+          <Route path="/hr" element={<Hr/>}/>
+          <Route path="/terminal" element={<Terminal/>}/>
+          <Route path="/business-cooperation" element={<BusinessCooperation/>}/>
+          <Route path="/marketing-cooperation" element={<MarketingCooperation/>}/>
+          <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </div>
     </div>
