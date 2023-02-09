@@ -5,8 +5,8 @@ import UniSection from '../UniSection/UniSection';
 
 const UniPageHead = () => {
   const [id, setId] = useState("");
-  const [initialValues1, setInitialValues1] = useState('')
-  const [initialValues, setInitialValues] = useState(null)
+  const [initialValues1, setInitialValues1] = useState('');
+  const [initialValues, setInitialValues] = useState(null);
 
   const fetchData = () => {
 
