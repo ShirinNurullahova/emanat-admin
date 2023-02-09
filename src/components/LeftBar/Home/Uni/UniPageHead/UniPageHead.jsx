@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
+import UniSection from '../UniSection/UniSection';
 
 const UniPageHead = () => {
   const [id, setId] = useState("");
-  const [initialValues, setInitialValues] = useState(null)
+  const [initialValues1, setInitialValues1] = useState('');
+  const [initialValues, setInitialValues] = useState(null);
 
   const fetchData = () => {
 
@@ -12,7 +14,8 @@ const UniPageHead = () => {
       .then(res => {
         console.log(res.data.dtoHead[0]);
         setInitialValues(res.data.dtoHead[0])
-        setId(res.data.dtoHead[0]._id)
+        setInitialValues1(res.data.dtoHead[0]?.sections[0])
+        setId(res.data.dtoHead[0]?._id)
       })
       .catch((err) => console.log(err));
   }
@@ -34,7 +37,7 @@ const UniPageHead = () => {
     try {
       const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/uniPage/head`, dataForm)
       if (response.status == 200) {
-           fetchData()
+        fetchData()
       }
 
     } catch (error) {
@@ -45,8 +48,8 @@ const UniPageHead = () => {
     <div>
       <div className='middle-main-bottom'>
         {
-        
-        initialValues &&
+
+          initialValues &&
           <Formik
             initialValues={initialValues}
             onSubmit={(values) => {
@@ -99,6 +102,7 @@ const UniPageHead = () => {
         }
 
       </div>
+      <UniSection  initialValues={initialValues1}/>
     </div>
   )
 }
