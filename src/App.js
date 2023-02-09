@@ -22,6 +22,7 @@ import Faq from "./components/LeftBar/Faq/Faq";
 import Cooperative from "./components/LeftBar/Cooperative/Cooperative";
 import InternShipProgram from "./components/LeftBar/InternShipProgram/InternShipProgram"
 import Uni from "./components/LeftBar/Home/Uni/Uni";
+import Career from "./components/LeftBar/Career/Career";
 
 function App() {
   const header = document.getElementsByClassName("main-page-up")
@@ -79,6 +80,7 @@ function App() {
           <Route path="/partnership" element={<Partnership/>}/>
           <Route path="/internship" element={<InternShipProgram/>}/>
           <Route path="/uni" element={<Uni />} />
+          <Route path="/career" element={<Career/>}/>
           <Route path="/news" element={<News />} />
           <Route path="/login" element={<Login />} />
           <Route path='/register' element={<Register />} />
