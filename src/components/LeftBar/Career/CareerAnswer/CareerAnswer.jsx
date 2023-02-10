@@ -7,7 +7,7 @@ import AnswerSectionsCreate from './AnswerSectionsCreate/AnswerSectionsCreate';
 const CareerAnswer = () => {
     const [initialValuesHead, setInitialValuesHead] = useState(null)
 const [initialValuesSection , setInitialValuesSection]= useState(null);
-const [id,setId]=useState(null)
+const [id,setId]=useState('')
     const fetchData = () => {
         
         axios.get((`${process.env.REACT_APP_URL}/admin/career/answers/head`))

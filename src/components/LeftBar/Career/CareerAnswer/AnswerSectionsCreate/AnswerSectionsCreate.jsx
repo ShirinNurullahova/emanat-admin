@@ -86,7 +86,7 @@ const AnswerSectionsCreate = ({ id,initialValues }) => {
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save</button>
+                                    <button type='submit'>Add</button>
                                 </div>
                             </Form>
                         )}

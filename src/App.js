@@ -28,6 +28,7 @@ import Terminal from "./components/Auth/Forms/Terminal/Terminal";
 import BusinessCooperation from "./components/Auth/Forms/BusinessCooperation/BusinessCooperation";
 import MarketingCooperation from "./components/Auth/Forms/MarketingCooperation/MarketingCooperation";
 import Contact from "./components/Auth/Forms/Contact/Contact";
+import TerminalMap from "./components/Auth/Terminals/TerminalMap/TerminalMap";
 
 function App() {
   const header = document.getElementsByClassName("main-page-up")
@@ -98,6 +99,7 @@ function App() {
           <Route path="/business-cooperation" element={<BusinessCooperation/>}/>
           <Route path="/marketing-cooperation" element={<MarketingCooperation/>}/>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/map" element={<TerminalMap/>}/>
         </Routes>
       </div>
     </div>
