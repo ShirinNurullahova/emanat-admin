@@ -21,9 +21,9 @@ const Logout = () => {
         <div className='logout'>
             <div className="logout-div">
                 <div className="logout-div-el">
-                    <p className="logout-div-el-p">Logout</p>
+                    {/* <p className="logout-div-el-p">Çıxış</p> */}
                     <form className="logout-div-el-form" action="/" onSubmit={handleSubmitLogout}>
-                        <button type="submit" className="logout-btn">LOGOUT</button>
+                        <button type="submit" className="logout-btn">Çıxış</button>
                     </form>
                 </div>
             </div>

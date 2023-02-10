@@ -13,10 +13,9 @@ const HashTag = () => {
 
         axios.get((`${process.env.REACT_APP_URL}/tag/hashTag`))
             .then(res => {
-                console.log(res.data);
                 setData(res.data);
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -29,7 +28,7 @@ const HashTag = () => {
         <div className='hashtag'>
             <div className='hashtag-btn' onClick={()=> setOpen(!open)}>
                 <button>
-                    Add
+                    Əlavə et
                 </button>
             </div>
             {data &&

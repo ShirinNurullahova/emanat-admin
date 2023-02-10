@@ -3,30 +3,27 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
 const Modal = ({ id, open, setOpen, icon }) => {
-    console.log(id);
     const [initialValues, setInitialValues] = useState(null)
     const initialValuesAdd = {
         MainPageCooperationIcon: '',
     }
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
        
-        if (open === "Edit icons") {
+        if (open === "Redaktə et") {
             dataForm.append('id', values.id)
-        } else if (open === "Add icons") {
+        } else if (open === "Əlavə et") {
             dataForm.append('id', id)
         }
 
         if (values.image) {
-            console.log("dsfg");
             dataForm.append('MainPageCooperationIcon', values.image)
           } else {
             dataForm.append('MainPageCooperationIcon', values.url)
           }
 
-        if (open === "Add icons") {
+        if (open === "Əlavə et") {
             try {
                 const response = await axios.post(`${process.env.REACT_APP_URL}/admin/main/cooperation/icons`, dataForm)
                 if (response.status == 200) {
@@ -37,8 +34,7 @@ const Modal = ({ id, open, setOpen, icon }) => {
                 alert("error")
             }
 
-        } else if (open === "Edit icons") {
-            console.log("editttt");
+        } else if (open === "Redaktə et") {
             try {
                 const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/main/cooperation/icons`, dataForm)
                 if (response.status == 200) {
@@ -63,9 +59,9 @@ const Modal = ({ id, open, setOpen, icon }) => {
 
     return (
         <div>
-            {(open === "Add icons" || initialValues) &&
+            {(open === "Əlavə et" || initialValues) &&
                 <Formik
-                    initialValues={open === "Add icons" ? initialValuesAdd : initialValues}
+                    initialValues={open === "Əlavə et" ? initialValuesAdd : initialValues}
                     onSubmit={(values) => {
                         onSubmitHandler(values);
                     }}
@@ -78,7 +74,7 @@ const Modal = ({ id, open, setOpen, icon }) => {
                             <div className='modal-form-div'>
 
                                 <div className='modal-form-div-el'>
-                                    <label>Image</label>
+                                    <label>Şəkil</label>
                                     <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
                                 </div>
 

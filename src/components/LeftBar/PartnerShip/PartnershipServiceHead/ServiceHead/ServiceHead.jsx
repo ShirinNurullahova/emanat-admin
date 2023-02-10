@@ -5,10 +5,8 @@ import axios from 'axios';
 
 
 const ServiceHead = ({ initialValues }) => {
-    console.log(initialValues);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', values._id)
         dataForm.append('azTitle', values.azTitle)
@@ -20,7 +18,6 @@ const ServiceHead = ({ initialValues }) => {
         } else {
             dataForm.append('MarketingPageServiceHeadImage', values.images[0]?.url)
         }
-        console.log(dataForm);
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/marketing/service/head`, dataForm)
             if (response.status == 200) {

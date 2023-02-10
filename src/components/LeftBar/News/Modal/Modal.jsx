@@ -24,7 +24,7 @@ const Modal = ({ id, setBtn, btn }) => {
         .then(res => {
           setInitialValues(res.data.message);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {});
 
     }
   }, [id])
@@ -40,7 +40,7 @@ const Modal = ({ id, setBtn, btn }) => {
     dataForm.append('enDescription', values.enDescription)
     dataForm.append('ruDescription', values.ruDescription)
     dataForm.append('page', values.page)
-    if (btn === "Edit news") {
+    if (btn === "Redaktə et") {
       dataForm.append('id', values._id)
     }
     if (values.image) {
@@ -49,7 +49,7 @@ const Modal = ({ id, setBtn, btn }) => {
       dataForm.append('NewsImage', values.newsImage)
     }
 
-    if (btn === "Add news") {
+    if (btn === "Əlavə et") {
       try {
         const response = await axios.post(`${process.env.REACT_APP_URL}/admin/news`, dataForm)
         if (response.status == 200) {
@@ -59,7 +59,7 @@ const Modal = ({ id, setBtn, btn }) => {
       } catch (error) {
         alert("error")
       }
-    } else if (btn === "Edit news") {
+    } else if (btn === "Redaktə et") {
       try {
         const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/news`, dataForm)
         if (response.status == 200) {
@@ -77,9 +77,9 @@ const Modal = ({ id, setBtn, btn }) => {
   return (
 
     <div className='modal' >
-      {(btn === "Add news" || initialValues) && 
+      {(btn === "Əlavə et" || initialValues) && 
         <Formik
-          initialValues={btn === "Add news" ? initialValuesAdd : initialValues}
+          initialValues={btn === "Redaktə et" ? initialValuesAdd : initialValues}
           onSubmit={(values) => {
             onSubmitHandler(values);
           }}
@@ -93,35 +93,35 @@ const Modal = ({ id, setBtn, btn }) => {
             <Form className='modal-form' onSubmit={handleSubmit}>
               <div className='modal-form-div'>
                 <div className='modal-form-div-el'>
-                  <label>Title (az)</label>
+                  <label>Başlıq (az)</label>
                   <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Description (az)</label>
+                  <label>Təsvir (az)</label>
                   <Field value={values.azDescription} type="text" placeholder='' name="azDescription" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Title (ru)</label>
+                  <label>Başlıq (ru)</label>
                   <Field value={values.ruTitle} type="text" name="ruTitle" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Description (ru)</label>
+                  <label>Təsvir (ru)</label>
                   <Field value={values.ruDescription} type="text" placeholder='' name="ruDescription" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Title (en)</label>
+                  <label>Başlıq (en)</label>
                   <Field value={values.enTitle} type="text" name="enTitle" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Description (en)</label>
+                  <label>Təsvir (en)</label>
                   <Field value={values.enDescription} type="text" placeholder='' name="enDescription" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Page</label>
+                  <label>Səhifə</label>
                   <Field value={values.page} type="text" placeholder='' name="page" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Image</label>
+                  <label>Şəkil</label>
                   <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
                 </div>
               </div>

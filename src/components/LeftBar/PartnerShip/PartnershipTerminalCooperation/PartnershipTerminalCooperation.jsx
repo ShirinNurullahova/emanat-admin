@@ -13,7 +13,6 @@ const PartnershipTerminalCooperation = () => {
             
         axios.get((`${process.env.REACT_APP_URL}/admin/marketing/terminal-cooperation`))
             .then(res => {
-                console.log(res.data)
                 initialValuesRaw.azTitle = res.data[0]?.azTitle;
                 initialValuesRaw.azDescription = res.data[0]?.azDescription;
                 initialValuesRaw.ruTitle = res.data[0]?.ruTitle;
@@ -24,7 +23,7 @@ const PartnershipTerminalCooperation = () => {
                 setInitialValues(initialValuesRaw)
                 setId(res.data[0]?._id)
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -32,7 +31,6 @@ const PartnershipTerminalCooperation = () => {
     }, []);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', id)
         dataForm.append('azTitle', values.azTitle)
@@ -46,7 +44,7 @@ const PartnershipTerminalCooperation = () => {
         } else {
             dataForm.append('MarketingPageTerminalCooperationImage', values.MarketingPageTerminalCooperationImage)
         }
-        console.log(dataForm);
+    
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/marketing/terminal-cooperation`, dataForm)
             if (response.status == 200) {

@@ -32,16 +32,16 @@ const Forgot = () => {
     return (
         <div className='forgot-password'>
             <div className='forgot-password-div'>
-                <p className='text'><strong>Oops</strong>,<br/> forgot something?</p>
-                <p>Write email</p>
+                <p className='text'><strong>Oops</strong>,<br/>Nəyisə unutmusan?</p>
+                <p>Email yaz</p>
                 <form action="" onSubmit={handleSubmitUpdate}>
                     <div className="form-group">
                         <input onChange={handleChangeUpdate} name="email" type="email" className="form-control round" id="signup-password" placeholder="email" />
                     </div>
-                    <button type="submit" className='forgot-btn'>Send</button>
+                    <button type="submit" className='forgot-btn'>Göndər</button>
 
                     <div className='backto'>
-                        <span >Know your password? <Link to="/login">Login</Link></span>
+                        <span >Parolu bilirsən? <Link to="/login">Giriş</Link></span>
                     </div>
                 </form>
             </div>

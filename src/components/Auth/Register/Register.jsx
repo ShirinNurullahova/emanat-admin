@@ -37,13 +37,13 @@ const Register = () => {
     return (
         <div className='register-div'>
             <div className='register-div-el'>
-                <p className="register-div-el-p">Create an account</p>
+                <p className="register-div-el-p">Hesab yarat</p>
                 <form className="register-div-el-form" onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <input placeholder="Firstname" onChange={handleChange}  type="text" name='firstName' className="form-control round" />
+                        <input placeholder="Firstname" onChange={handleChange}  type="text" name='ad' className="form-control round" />
                     </div>
                     <div className="form-group">
-                        <input placeholder='Lastname' onChange={handleChange}  type="text" name='lastName' className="form-control round" />
+                        <input placeholder='Lastname' onChange={handleChange}  type="text" name='soyad' className="form-control round" />
 
                     </div>
                     <div className="form-group">
@@ -52,21 +52,21 @@ const Register = () => {
                     </div>
 
                     <div className="form-group">
-                        <input className="form-control round" onChange={handleChange}  placeholder='password' type="text" name='password' />
+                        <input className="form-control round" onChange={handleChange}  placeholder='parol' type="text" name='password' />
 
                     </div>
 
                     <div className="form-group">
-                        <input onChange={handleChange}  className="form-control round" placeholder='Confirm password' type="text" name='confirmPassword' />
+                        <input onChange={handleChange}  className="form-control round" placeholder='parolun təsdiqi' type="text" name='confirmPassword' />
                     </div>
 
                     <div className="form-group">
-                        <input onChange={handleChange}  className="form-control round" placeholder='phone' type="text" name='phone' />
+                        <input onChange={handleChange}  className="form-control round" placeholder='nömrə' type="text" name='phone' />
                     </div>
                     <div className="form-group">
                     <button type="submit" className='form-group-register'>
 
-                        Register
+                      Qeydiyyatdan keç
                     
                     </button>
                     </div>

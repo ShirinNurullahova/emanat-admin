@@ -31,19 +31,19 @@ const Reset = () => {
         <div className='reset'>
            
                 <div className="reset-div">
-                    <p className="reset-div-p">Reset password</p>
+                    <p className="reset-div-p">Parolu yeniləmək</p>
                     <form className="reset-div-form" action="/" onSubmit={handleSubmitUpdate}>
                         <div className="form-group">
                             
-                            <input onChange={handleChangeUpdate}  type="text" name='resetToken' className="form-control round" id="signin-email" defaultValue="resetToken" placeholder="reset token" />
+                            <input onChange={handleChangeUpdate}  type="text" name='resetToken' className="form-control round" id="signin-email" defaultValue="resetToken" placeholder="yenilə tokeni" />
                         </div>
                         <div className="form-group">
-                            <input onChange={handleChangeUpdate}  type="password" className="form-control round" name='password' id="signin-password" defaultValue="thisisthepassword" placeholder="Password" />
+                            <input onChange={handleChangeUpdate}  type="password" className="form-control round" name='password' id="signin-password" defaultValue="thisisthepassword" placeholder="parol" />
                         </div>
                         <div className="form-group">
-                            <input onChange={handleChangeUpdate}  type="password" className="form-control round" name='confirmPassword' id="signin-password" defaultValue="thisisthepassword" placeholder="Confirm Password" />
+                            <input onChange={handleChangeUpdate}  type="password" className="form-control round" name='confirmPassword' id="signin-password" defaultValue="thisisthepassword" placeholder="parolun təsdiqi" />
                         </div>
-                        <button type="submit" className="reset-btn">Reset Password</button>
+                        <button type="submit" className="reset-btn">Parolu yenilə</button>
                     </form>
                 </div>
          

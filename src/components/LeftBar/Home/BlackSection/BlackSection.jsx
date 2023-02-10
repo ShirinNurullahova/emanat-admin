@@ -14,7 +14,7 @@ const BlackSection = () => {
               setInitialValues2(res.data[1])
               setInitialValues3(res.data[2])
           })
-          .catch((err) => console.log(err));
+          .catch((err) =>{});
   }
 
   useEffect(() => {
@@ -25,12 +25,10 @@ const BlackSection = () => {
     <div className='middle-main'>
       <div className='middle-main-comp'>
         <div className='middle-main-comp-p'>
-          {/* <p>
-            Ana Səhifə
-          </p> */}
+         
         </div>
         <div className='middle-main-comp-bottom'>
-          <p>/ BlackSection</p>
+          <p>/ ana səhifə əlavəsi</p>
         </div>
       </div>
       <div className='middle-main-bottom'>

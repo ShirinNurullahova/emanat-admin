@@ -12,13 +12,12 @@ const [initialValuesSection3 , setInitialValuesSection3]= useState(null)
         
         axios.get((`${process.env.REACT_APP_URL}/admin/marketing/work-with/head`))
             .then(res => {
-                console.log(res);
                 setInitialValuesSection1(res.data.message.dtoHead[0].sections[0])
                 setInitialValuesSection2(res.data.message.dtoHead[0].sections[1])
                 setInitialValuesSection3(res.data.message.dtoHead[0].sections[2])
                 setInitialValuesHead(res.data.message.dtoHead[0])
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {

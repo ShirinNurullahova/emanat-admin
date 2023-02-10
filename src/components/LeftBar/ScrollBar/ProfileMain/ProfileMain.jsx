@@ -11,15 +11,15 @@ const ProfileMain = () => {
                 <img src={pp} />
             </div>
             <div className='profile-main-text'>
-                <p>Welcome,</p>
+                <p>Profil,</p>
                 <p className={`profile-main-text-p ${!toggle && 'clickDiv'} `}>eManat</p>
                 {!toggle && (
 
                     <div className='toogleMenu'>
-                        <p>My Profile</p>
-                        <p>Messages</p>
-                        <p>Settings</p>
-                        <p>Logout</p>
+                        <p>Mənim profilim</p>
+                        <p>Mesajlar</p>
+                        <p>Parametrlər</p>
+                        <p>Çıxış</p>
 
                     </div>
 

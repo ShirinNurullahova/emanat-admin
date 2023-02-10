@@ -17,7 +17,7 @@ const Icons = ({ setId, setOpen, open , setIcon }) => {
             .then(res => {
                 setData(res.data.dtoIcons);
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const Icons = ({ setId, setOpen, open , setIcon }) => {
     }, [open]);
 
     const onClickHandler = (e) => {
-        setOpen("Edit icons")
+        setOpen("Redaktə et")
         setIcon(e)
     }
 

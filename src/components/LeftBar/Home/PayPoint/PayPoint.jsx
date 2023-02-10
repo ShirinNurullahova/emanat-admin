@@ -21,7 +21,7 @@ const Features = () => {
                 setInitialValues(initialValuesRaw)
                 setId(res.data[0]?._id)
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -29,7 +29,6 @@ const Features = () => {
     }, []);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', id)
         dataForm.append('azTitle', values.azTitle)
@@ -43,7 +42,7 @@ const Features = () => {
         } else {
             dataForm.append('MainPagePayPointImage', values.MainPagePayPointImage)
         }
-        console.log(dataForm);
+      
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/main/payPoint`, dataForm)
             if (response.status == 200) {
@@ -63,7 +62,7 @@ const Features = () => {
             </p> */}
                 </div>
                 <div className='middle-main-comp-bottom'>
-                    <p>/ PayPoint</p>
+                    <p>/ ödəmə nöqtələri</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>
@@ -83,42 +82,42 @@ const Features = () => {
                             <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (az)</label>
+                                        <label>Başlıq (az)</label>
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Description (az)</label>
+                                        <label>Təsvir (az)</label>
                                         <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (ru)</label>
+                                        <label>Başlıq (ru)</label>
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Description (ru)</label>
+                                        <label>Təsvir (ru)</label>
                                         <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                     </div>
                                 </div>
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (en)</label>
+                                        <label>Başlıq (en)</label>
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Description (en)</label>
+                                        <label>Təsvir (en)</label>
                                         <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                     </div>
 
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Image</label>
+                                        <label>Şəkil</label>
                                         <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save</button>
+                                    <button type='submit'>Yadda saxla</button>
                                 </div>
                             </Form>
                         )}

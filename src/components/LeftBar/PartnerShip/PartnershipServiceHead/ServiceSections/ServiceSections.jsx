@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const ServiceSections = ({initialValues}) => {
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = {}
         dataForm.id= values._id
         dataForm.azDescription= values.azDescription
@@ -13,7 +12,6 @@ const ServiceSections = ({initialValues}) => {
         dataForm.azSubTitle= values.azSubTitle
         dataForm.enSubTitle= values.enSubTitle
         dataForm.ruSubTitle=values.ruSubTitle
-        // console.log( dataForm.get("azSubTitle"));
         
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/marketing/service/sections`, dataForm)
