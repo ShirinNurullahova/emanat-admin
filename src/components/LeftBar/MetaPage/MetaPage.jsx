@@ -11,11 +11,10 @@ const MetaPage = () => {
     const fetchData = () => {
         axios.get((`${process.env.REACT_APP_URL}/admin/meta`))
             .then(res => {
-                console.log(res)
                 setInitialValues(res.data[0])
                 setId(res.data[0]?._id)
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -23,7 +22,6 @@ const MetaPage = () => {
     }, []);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = {}
         dataForm.id = values._id
         dataForm.azTitle = values.azTitle
@@ -54,7 +52,7 @@ const MetaPage = () => {
                         </p>
                     </div>
                     <div className='middle-main-comp-bottom'>
-                        <p>/ Banner</p>
+                        <p>/ əsas</p>
                     </div>
                 </div>
                 <div className='middle-main-bottom'>
@@ -73,32 +71,32 @@ const MetaPage = () => {
                                 <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                     <div className='middle-main-bottom-form-div'>
                                         <div className='middle-main-bottom-form-div-el'>
-                                            <label>Title (az)</label>
+                                            <label>Başlıq (az)</label>
                                             <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                         </div>
                                         <div className='middle-main-bottom-form-div-el'>
-                                            <label>Description (az)</label>
+                                            <label>Təsvir (az)</label>
                                             <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                                         </div>
                                     </div>
                                     <div className='middle-main-bottom-form-div'>
                                         <div className='middle-main-bottom-form-div-el'>
-                                            <label>Title (ru)</label>
+                                            <label>Başlıq (ru)</label>
                                             <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                         </div>
                                         <div className='middle-main-bottom-form-div-el'>
-                                            <label>Description (ru)</label>
+                                            <label>Təsvir (ru)</label>
                                             <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                         </div>
                                     </div>
 
                                     <div className='middle-main-bottom-form-div'>
                                         <div className='middle-main-bottom-form-div-el'>
-                                            <label>Title (en)</label>
+                                            <label>Başlıq (en)</label>
                                             <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                         </div>
                                         <div className='middle-main-bottom-form-div-el'>
-                                            <label>Description (en)</label>
+                                            <label>Təsvir (en)</label>
                                             <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                         </div>
 
@@ -111,7 +109,7 @@ const MetaPage = () => {
                                         </div>
                                     </div>
                                     <div className='middle-main-bottom-form-btn'>
-                                        <button type='submit'>Save</button>
+                                        <button type='submit'>Yadda saxla</button>
                                     </div>
                                 </Form>
                             )}

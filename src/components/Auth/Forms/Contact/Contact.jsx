@@ -11,7 +11,6 @@ const Contact = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/admin/contactPage`)
       .then((res) => {
-        console.log(res.data);
         initialValuesRaw.azTitle = res.data[0]?.azTitle;
         initialValuesRaw.azDescription = res.data[0]?.azDescription;
         initialValuesRaw.azSubTitle = res.data[0]?.azSubTitle;
@@ -25,7 +24,7 @@ const Contact = () => {
         setInitialValues(initialValuesRaw);
         setId(res.data[0]?._id);
       })
-      .catch((err) => console.log(err));
+      .catch((err) =>{});
   };
 
   useEffect(() => {
@@ -33,7 +32,6 @@ const Contact = () => {
   }, []);
 
   const onSubmitHandler = async (values) => {
-    console.log(values);
     const dataForm = new FormData();
     dataForm.append("id", id);
     dataForm.append("azTitle", values.azTitle);
@@ -50,7 +48,7 @@ const Contact = () => {
     } else {
       dataForm.append("ContactPageImage", values.ContactPageImage);
     }
-    console.log(dataForm);
+  
     try {
       const response = await axios.patch(
         `${process.env.REACT_APP_URL}/admin/contactPage`,
@@ -69,10 +67,10 @@ const Contact = () => {
       <div className="middle-main">
         <div className="middle-main-comp">
           <div className="middle-main-comp-p">
-            <p>Contact</p>
+            <p>Əlaqə</p>
           </div>
           <div className="middle-main-comp-bottom">
-            <p>/ Contact</p>
+            <p>/əsas</p>
           </div>
         </div>
         <div className="middle-main-bottom">
@@ -90,7 +88,7 @@ const Contact = () => {
                 >
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Title (az)</label>
+                      <label>Başlıq (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azTitle}
@@ -99,7 +97,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Description (az)</label>
+                      <label>Təsvir (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azDescription}
@@ -109,7 +107,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>SubTitle (az)</label>
+                      <label>Kiçik başlıq (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azSubTitle}
@@ -121,7 +119,7 @@ const Contact = () => {
                   </div>
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Title (ru)</label>
+                      <label>Başlıq (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruTitle}
@@ -130,7 +128,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Description (ru)</label>
+                      <label>Təsvir (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruDescription}
@@ -139,7 +137,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>SubTitle (ru)</label>
+                      <label>Kiçik başlıq (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruSubTitle}
@@ -152,7 +150,7 @@ const Contact = () => {
 
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Title (en)</label>
+                      <label>Başlıq (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enTitle}
@@ -161,7 +159,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Description (en)</label>
+                      <label>Təsvir (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enDescription}
@@ -170,7 +168,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>SubTitle (en)</label>
+                      <label>Kiçik başlıq (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enSubTitle}
@@ -182,7 +180,7 @@ const Contact = () => {
                   </div>
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Image</label>
+                      <label>Şəkil</label>
                       <Field
                         value={values.filename}
                         onChange={(e) =>
@@ -194,7 +192,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="middle-main-bottom-form-btn">
-                    <button type="submit">Save</button>
+                    <button type="submit">Yadda saxla</button>
                   </div>
                 </Form>
               )}

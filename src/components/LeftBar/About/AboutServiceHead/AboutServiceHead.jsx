@@ -12,11 +12,10 @@ const AboutServiceHead = () => {
     const fetchData = () => {
         axios.get((`${process.env.REACT_APP_URL}/admin/about/services/head`))
             .then(res => {
-                console.log(res)
                 setInitialValues(res.data.dtoHead[0])
                 setData(res.data.dtoSection)
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -38,7 +37,7 @@ const AboutServiceHead = () => {
     }
 
     const onClickHandler = (e) => {
-        setBtn("Edit icons")
+        setBtn("Redaktə et")
         setId(e)
     }
 
@@ -47,11 +46,11 @@ const AboutServiceHead = () => {
             <div className='middle-main-comp'>
                 <div className='middle-main-comp-p'>
                     <p>
-                        About
+                       Haqqımızda
                     </p>
                 </div>
                 <div className='middle-main-comp-bottom'>
-                    <p>/ Service Head</p>
+                    <p>/ servis başlığı</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>
@@ -71,7 +70,7 @@ const AboutServiceHead = () => {
                             <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (az)</label>
+                                        <label>Başlıq (az)</label>
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
 
@@ -79,20 +78,20 @@ const AboutServiceHead = () => {
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (ru)</label>
+                                        <label>Başlıq (ru)</label>
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
 
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (en)</label>
+                                        <label>Başlıq (en)</label>
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
 
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save</button>
+                                    <button type='submit'>Yadda saxla</button>
                                 </div>
                             </Form>
                         )}
@@ -101,8 +100,8 @@ const AboutServiceHead = () => {
           
             <div className='about-services-btn'>
             
-                <button onClick={() => setBtn("Add icons")}>
-                    Add
+                <button onClick={() => setBtn("Əlavə et")}>
+                    Əlavə et
                 </button>
             </div>
             <div className='about-services-section'>

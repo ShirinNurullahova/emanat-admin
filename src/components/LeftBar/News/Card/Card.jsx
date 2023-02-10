@@ -17,7 +17,7 @@ export const Card = ({ setId, setBtn, btn }) => {
             .then(res => {
                 setData(res.data.message);
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
 // refresh evezine 
@@ -29,7 +29,7 @@ export const Card = ({ setId, setBtn, btn }) => {
     }, [btn]);
 
     const onClickHandler = (e) => {
-        setBtn("Edit news")
+        setBtn("Redaktə et")
         setId(e)
     }
     return (

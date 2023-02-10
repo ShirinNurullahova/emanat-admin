@@ -11,7 +11,6 @@ const BusinessCooperation = () => {
             
         axios.get((`${process.env.REACT_APP_URL}/admin/cooperationPage`))
             .then(res => {
-                console.log(res.data)
                 initialValuesRaw.azTitle = res.data[0]?.azTitle;
                 initialValuesRaw.azDescription = res.data[0]?.azDescription;
                 initialValuesRaw.azFooterHead = res.data[0]?.azFooterHead;
@@ -30,7 +29,7 @@ const BusinessCooperation = () => {
                 setInitialValues(initialValuesRaw)
                 setId(res.data[0]?._id)
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -38,7 +37,6 @@ const BusinessCooperation = () => {
     }, []);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', id)
         dataForm.append('azTitle', values.azTitle)
@@ -60,7 +58,6 @@ const BusinessCooperation = () => {
         } else {
             dataForm.append('CooperationPageImage', values.CooperationPageImage)
         }
-        console.log(dataForm);
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/cooperationPage`, dataForm)
             if (response.status == 200) {
@@ -79,11 +76,11 @@ const BusinessCooperation = () => {
             <div className='middle-main-comp'>
                 <div className='middle-main-comp-p'>
                     <p>
-                        Cooperation
+                        Biznes
                     </p>
                 </div>
                 <div className='middle-main-comp-bottom'>
-                    <p>/ Cooperation</p>
+                    <p>/ Koorperasiyası</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>
@@ -103,62 +100,62 @@ const BusinessCooperation = () => {
                             <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (az)</label>
+                                        <label>Başlıq (az)</label>
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Description (az)</label>
+                                        <label>Təsvir (az)</label>
                                         <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>FooterHead (az)</label>
+                                        <label>Son başlıq (az)</label>
                                         <Field onChange={handleChange} value={values.azFooterHead} type="text" placeholder='' name="azFooterHead" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>FooterDesc (az)</label>
+                                        <label>Son təsvir (az)</label>
                                         <Field onChange={handleChange} value={values.azFooterDesc} type="text" placeholder='' name="azFooterDesc" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (ru)</label>
+                                        <label>Başlıq (ru)</label>
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Description (ru)</label>
+                                        <label>Təsvir (ru)</label>
                                         <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>FooterHead (ru)</label>
+                                        <label>Son başlıq (ru)</label>
                                         <Field onChange={handleChange} value={values.ruFooterHead} type="text" placeholder='' name="ruFooterHead" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>FooterDesc (ru)</label>
+                                        <label>Son təsvir (ru)</label>
                                         <Field onChange={handleChange} value={values.ruFooterDesc} type="text" placeholder='' name="ruFooterDesc" />
                                     </div>
                                 </div>
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (en)</label>
+                                        <label>Başlıq (en)</label>
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Description (en)</label>
+                                        <label>Təsvir (en)</label>
                                         <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>FooterHead (en)</label>
+                                        <label>Son başlıq (en)</label>
                                         <Field onChange={handleChange} value={values.enFooterHead} type="text" placeholder='' name="enFooterHead" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>FooterDesc (en)</label>
+                                        <label>Son təsvir (en)</label>
                                         <Field onChange={handleChange} value={values.enFooterDesc} type="text" placeholder='' name="enFooterDesc" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
-                                        <label>Numbers</label>
+                                        <label>Nömrələr</label>
                                         <Field onChange={handleChange} value={values.numbers} type="text" placeholder='' name="numbers" />
                                     </div>
                                 </div>
@@ -170,12 +167,12 @@ const BusinessCooperation = () => {
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Image</label>
+                                        <label>Şəkil</label>
                                         <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save</button>
+                                    <button type='submit'>Yadda saxla</button>
                                 </div>
                             </Form>
                         )}

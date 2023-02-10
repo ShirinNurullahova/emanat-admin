@@ -20,7 +20,6 @@ const Login = () => {
     }
     const handleSubmitLogin = async e => {
         e.preventDefault();
-        console.log(cred)
         try {
             const response =await axios.post(`${process.env.REACT_APP_URL}/auth/login`, cred)
             if(response.status ===200 || response.status ===201){
@@ -33,7 +32,7 @@ const Login = () => {
          
             <div className="login-div">
                 <div className="login-div-el">
-                    <p className="login-div-el-p">Login to your account</p>
+                    <p className="login-div-el-p">Hesabınıza giriş edin</p>
                     <form className="login-div-el-form" action="/"  onSubmit={handleSubmitLogin}>
                         <div className="login-div-el-form-group">
                             <label htmlFor="signin-email" className="control-label"></label>
@@ -41,18 +40,18 @@ const Login = () => {
                         </div>
                         <div className="login-div-el-form-group">
                             <label htmlFor="signin-password" className="control-label"></label>
-                            <input onChange={handleChangeLogin} type="password" className="form-control round" name='password' id="signin-password" defaultValue="thisisthepassword" placeholder="Password" />
+                            <input onChange={handleChangeLogin} type="password" className="form-control round" name='password' id="signin-password" defaultValue="thisisthepassword" placeholder="Parol" />
                         </div>
-                        <div className="login-div-el-form-group">
+                        {/* <div className="login-div-el-form-group">
                             <label >
                                 <input type="checkbox" />
                                 <span>Remember me</span>
                             </label>
-                        </div>
-                        <button type="submit" className='loginBtn'>LOGIN</button>
+                        </div> */}
+                        <button type="submit" className='loginBtn'>Giriş</button>
                         <div className='login-div-el-form-end'>
-                            <span onClick={()=>navigate('/reset')}><i className="fa fa-lock"></i>Forgot password?</span>
-                            <span>Don't have an account?<span onClick={()=>navigate('/register')}>Register</span></span>
+                            <span onClick={()=>navigate('/reset')}><i className="fa fa-lock"></i>Parolu unutmusan?</span>
+                            <span>Hesabınız yoxdur?<span onClick={()=>navigate('/register')}>Qeydiyyatdan keç</span></span>
                         </div>
                     </form>
                 </div>

@@ -11,7 +11,6 @@ const CareerWhyEmanat = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/admin/career/eManat`)
       .then((res) => {
-        console.log(res.data);
         initialValuesRaw.azTitle = res.data[0]?.azTitle;
         initialValuesRaw.azDescription = res.data[0]?.azDescription;
         initialValuesRaw.ruTitle = res.data[0]?.ruTitle;
@@ -23,7 +22,7 @@ const CareerWhyEmanat = () => {
         setInitialValues(initialValuesRaw);
         setId(res.data[0]?._id);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   };
 
   useEffect(() => {
@@ -31,7 +30,6 @@ const CareerWhyEmanat = () => {
   }, []);
 
   const onSubmitHandler = async (values) => {
-    console.log(values);
     const dataForm = new FormData();
     dataForm.append("id", id);
     dataForm.append("azTitle", values.azTitle);
@@ -64,7 +62,7 @@ const CareerWhyEmanat = () => {
     } else {
       dataForm.append("CareerPageHeaderIcon", values.CareerPageHeaderIcon);
     }
-    console.log(dataForm);
+  
     try {
       const response = await axios.patch(
         `${process.env.REACT_APP_URL}/admin/career/eManat`,
@@ -82,7 +80,7 @@ const CareerWhyEmanat = () => {
     <div className="middle-main">
       <div className="middle-main-comp">
         <div className="middle-main-comp-bottom">
-          <p>/ Why e Manat</p>
+          <p>/ niyə emanat</p>
         </div>
       </div>
       <div className="middle-main-bottom">
@@ -97,7 +95,7 @@ const CareerWhyEmanat = () => {
               <Form className="middle-main-bottom-form" onSubmit={handleSubmit}>
                 <div className="middle-main-bottom-form-div">
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Title (az)</label>
+                    <label>Başlıq (az)</label>
                     <Field
                       onChange={handleChange}
                       value={values.azTitle}
@@ -106,7 +104,7 @@ const CareerWhyEmanat = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Description (az)</label>
+                    <label>Təsvir (az)</label>
                     <Field
                       onChange={handleChange}
                       value={values.azDescription}
@@ -118,7 +116,7 @@ const CareerWhyEmanat = () => {
                 </div>
                 <div className="middle-main-bottom-form-div">
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Title (ru)</label>
+                    <label>Başlıq (ru)</label>
                     <Field
                       onChange={handleChange}
                       value={values.ruTitle}
@@ -127,7 +125,7 @@ const CareerWhyEmanat = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Description (ru)</label>
+                    <label>Təsvir (ru)</label>
                     <Field
                       onChange={handleChange}
                       value={values.ruDescription}
@@ -139,7 +137,7 @@ const CareerWhyEmanat = () => {
 
                 <div className="middle-main-bottom-form-div">
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Title (en)</label>
+                    <label>Başlıq (en)</label>
                     <Field
                       onChange={handleChange}
                       value={values.enTitle}
@@ -148,7 +146,7 @@ const CareerWhyEmanat = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Description (en)</label>
+                    <label>Təsvir (en)</label>
                     <Field
                       onChange={handleChange}
                       value={values.enDescription}
@@ -158,7 +156,7 @@ const CareerWhyEmanat = () => {
                   </div>
 
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Image</label>
+                    <label>Şəkil</label>
                     <Field
                       value={values.filename}
                       onChange={(e) =>
@@ -182,7 +180,7 @@ const CareerWhyEmanat = () => {
                   </div>
                 </div>
                 <div className="middle-main-bottom-form-btn">
-                  <button type="submit">Save</button>
+                  <button type="submit">Yadda saxla</button>
                 </div>
               </Form>
             )}

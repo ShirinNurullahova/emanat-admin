@@ -3,11 +3,9 @@ import axios from 'axios';
 import { Formik, Field, Form } from 'formik';
 
 const AboutTargetSection = ({ initialValues }) => {
-    console.log({initialValues})
 
   
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = {}
          dataForm.id= values._id
         if (typeof values.ruSubTitle === 'string') {
@@ -57,32 +55,32 @@ const AboutTargetSection = ({ initialValues }) => {
                         <Form className='modal-form' >
                             <div className='modal-form-div'>
                                 <div className='modal-form-div-el'>
-                                    <label>Description (az)</label>
+                                    <label>Təsvir (az)</label>
                                     <Field onChange={handleChange} value={values.azDescription} type="text" name="azDescription" />
                                 </div>
                                 <div className='modal-form-div-el'>
-                                    <label>SubTitle (az)</label>
+                                    <label>Kiçik başlıq (az)</label>
                                     <Field onChange={handleChange} value={values.azSubTitle} type="text" name="azSubTitle" />
                                 </div>
                                 <div className='modal-form-div-el'>
-                                    <label>Description (ru)</label>
+                                    <label>Təsvir (ru)</label>
                                     <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                 </div>
                                 <div className='modal-form-div-el'>
-                                    <label>SubTitle (ru)</label>
+                                    <label>Kiçik başlıq  (ru)</label>
                                     <Field onChange={handleChange} value={values.ruSubTitle} type="text" name="ruSubTitle" />
                                 </div>
                                 <div className='modal-form-div-el'>
-                                    <label>Description (en)</label>
+                                    <label>Təsvir (en)</label>
                                     <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                 </div>
                                 <div className='modal-form-div-el'>
-                                    <label>SubTitle (en)</label>
+                                    <label>Kiçik başlıq  (en)</label>
                                     <Field onChange={handleChange} value={values.enSubTitle} type="text" name="enSubTitle" />
                                 </div>
                             </div>
                             <div className='modal-form-btn'>
-                                <button type='submit'>Save</button>
+                                <button type='submit'>Yadda saxla</button>
                             </div>
                         </Form>
                     )}

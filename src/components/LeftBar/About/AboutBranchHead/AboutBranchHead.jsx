@@ -17,7 +17,6 @@ const AboutBranchHead = () => {
 
         axios.get((`${process.env.REACT_APP_URL}/admin/about/branch/head`))
             .then(res => {
-                console.log(res)
                 initialValuesRaw.azTitle = res.data.message.dtoHead[0]?.azTitle;
                 initialValuesRaw.enTitle = res.data.message.dtoHead[0]?.enTitle;
                 initialValuesRaw.ruTitle = res.data.message.dtoHead[0]?.ruTitle;
@@ -31,7 +30,7 @@ const AboutBranchHead = () => {
 
                 setId(res.data.message.dtoHead[0]?._id)
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -39,7 +38,6 @@ const AboutBranchHead = () => {
     }, []);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', id)
         dataForm.append('azTitle', values.azTitle)
@@ -50,7 +48,6 @@ const AboutBranchHead = () => {
         } else {
             dataForm.append('AboutPageBranchImage', values.AboutPageBranchImage)
         }
-        console.log(dataForm);
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/about/branch/head`, dataForm)
             if (response.status == 200) {
@@ -83,14 +80,14 @@ const AboutBranchHead = () => {
                             <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (az)</label>
+                                        <label>Başlıq (az)</label>
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
 
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (ru)</label>
+                                        <label>Başlıq (ru)</label>
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
 
@@ -98,18 +95,18 @@ const AboutBranchHead = () => {
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (en)</label>
+                                        <label>Başlıq (en)</label>
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
 
 
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Image</label>
+                                        <label>Şəkil</label>
                                         <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save</button>
+                                    <button type='submit'>Yadda saxla</button>
                                 </div>
                             </Form>
                         )}

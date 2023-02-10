@@ -11,7 +11,6 @@ const CareerExperience = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/admin/career/experience`)
       .then((res) => {
-        console.log(res.data);
         initialValuesRaw.azTitle = res.data[0]?.azTitle;
         initialValuesRaw.azDescription = res.data[0]?.azDescription;
         initialValuesRaw.azSections = res.data[0]?.azSections;
@@ -27,7 +26,7 @@ const CareerExperience = () => {
         setInitialValues(initialValuesRaw);
         setId(res.data[0]?._id);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   };
 
   useEffect(() => {
@@ -35,7 +34,6 @@ const CareerExperience = () => {
   }, []);
 
   const onSubmitHandler = async (values) => {
-    console.log(values);
     const dataForm ={}
     dataForm.id= id;
     dataForm.azTitle=values.azTitle
@@ -64,22 +62,22 @@ const CareerExperience = () => {
     } else {
       dataForm.ruSections=values.ruSections
     }
-    console.log(dataForm);
-    try {
-      const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/career/experience`,dataForm);
-      if (response.status == 200) {
-        fetchData();
-      }
-    } catch (error) {
-      alert("error");
-    }
+   
+    // try {
+    //   const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/career/experience`,dataForm);
+    //   if (response.status == 200) {
+    //     fetchData();
+    //   }
+    // } catch (error) {
+    //   alert("error");
+    // }
   };
 
   return (
     <div className="middle-main">
       <div className="middle-main-comp">
         <div className="middle-main-comp-bottom">
-          <p>/ Experience</p>
+          <p>/ Təcrübə</p>
         </div>
       </div>
       <div className="middle-main-bottom">
@@ -94,7 +92,7 @@ const CareerExperience = () => {
               <Form className="middle-main-bottom-form" onSubmit={handleSubmit}>
                 <div className="middle-main-bottom-form-div">
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Title (az)</label>
+                    <label>Başlıq (az)</label>
                     <Field
                       onChange={handleChange}
                       value={values.azTitle}
@@ -103,7 +101,7 @@ const CareerExperience = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Description (az)</label>
+                    <label>Təsvir (az)</label>
                     <Field
                       onChange={handleChange}
                       value={values.azDescription}
@@ -113,7 +111,7 @@ const CareerExperience = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Sections (az)</label>
+                    <label>Bölmə (az)</label>
                     <Field
                       onChange={handleChange}
                       value={values.azSections}
@@ -123,7 +121,7 @@ const CareerExperience = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>SubTitle (az)</label>
+                    <label>Kiçik başlıq (az)</label>
                     <Field
                       onChange={handleChange}
                       value={values.azSubTitle}
@@ -135,7 +133,7 @@ const CareerExperience = () => {
                 </div>
                 <div className="middle-main-bottom-form-div">
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Title (ru)</label>
+                    <label>Başlıq (ru)</label>
                     <Field
                       onChange={handleChange}
                       value={values.ruTitle}
@@ -144,7 +142,7 @@ const CareerExperience = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Description (ru)</label>
+                    <label>Təsvir (ru)</label>
                     <Field
                       onChange={handleChange}
                       value={values.ruDescription}
@@ -153,7 +151,7 @@ const CareerExperience = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Sections (ru)</label>
+                    <label>Bölmə (ru)</label>
                     <Field
                       onChange={handleChange}
                       value={values.ruSections}
@@ -163,7 +161,7 @@ const CareerExperience = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>SubTitle (ru)</label>
+                    <label>Kiçik başlıq (ru)</label>
                     <Field
                       onChange={handleChange}
                       value={values.ruSubTitle}
@@ -176,7 +174,7 @@ const CareerExperience = () => {
 
                 <div className="middle-main-bottom-form-div">
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Title (en)</label>
+                    <label>Başlıq (en)</label>
                     <Field
                       onChange={handleChange}
                       value={values.enTitle}
@@ -185,7 +183,7 @@ const CareerExperience = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Description (en)</label>
+                    <label>Təsvir (en)</label>
                     <Field
                       onChange={handleChange}
                       value={values.enDescription}
@@ -194,7 +192,7 @@ const CareerExperience = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>Sections (en)</label>
+                    <label>Bölmə (en)</label>
                     <Field
                       onChange={handleChange}
                       value={values.enSections}
@@ -204,7 +202,7 @@ const CareerExperience = () => {
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
-                    <label>SubTitle (en)</label>
+                    <label>Kiçik başlıq (en)</label>
                     <Field
                       onChange={handleChange}
                       value={values.enSubTitle}
@@ -215,7 +213,7 @@ const CareerExperience = () => {
                   </div>
                 </div>
                 <div className="middle-main-bottom-form-btn">
-                  <button type="submit">Save</button>
+                  <button type="submit">Yadda saxla</button>
                 </div>
               </Form>
             )}

@@ -49,28 +49,23 @@ const Header = () => {
             </li>
 
           </Link>
-          <Link to='/vakansiya'>
-            <li>
-              Vakansiyalar
-            </li>
-
-          </Link>
+         
         </div>
-        {/* <div>
-          <li onClick={() => setToggle(!toggle)}>
+        <div>
+          {/* <li onClick={() => setToggle(!toggle)}>
             <svg className="svg-icon search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">A magnifying glass icon.</desc><g className="search-path" fill="none"
                 stroke="#848F91"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" /><circle cx="8" cy="8" r="7" /></g></svg>
             {!toggle && (
                <SearchBar toggle={toggle}/>
             )}
-          </li>
+          </li> */}
           <li>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-power" viewBox="0 0 16 16"> <path d="M7.5 1v7h1V1h-1z" />
               <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z" />
             </svg>
           </li>
-        </div> */}
+        </div>
       </ul>
       <div className='header-progress-bar'>
         <div className='header-progress-bar-style' style={{ width: `${scrollTop}%` }}>

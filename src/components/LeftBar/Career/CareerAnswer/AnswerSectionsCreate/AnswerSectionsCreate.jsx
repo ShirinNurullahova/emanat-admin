@@ -13,7 +13,6 @@ const AnswerSectionsCreate = ({ id,initialValues }) => {
     }
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = {};
         dataForm.id=id;
         dataForm.azDescription=values.azDescription
@@ -56,37 +55,37 @@ const AnswerSectionsCreate = ({ id,initialValues }) => {
                                 </div>
                                 <div className='middle-main-bottom-form-div'> 
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Description (az)</label>
+                                        <label>Təsvir (az)</label>
                                         <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>SubTitle (az)</label>
+                                        <label>Kiçik başlıq (az)</label>
                                         <Field onChange={handleChange} value={values.azSubTitle} type="text" name="azSubTitle" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Description (ru)</label>
+                                        <label>Təsvir (ru)</label>
                                         <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>SubTitle (ru)</label>
+                                        <label>Kiçik başlıq (ru)</label>
                                         <Field onChange={handleChange} value={values.ruSubTitle} type="text" name="ruSubTitle" />
                                     </div>
                                 </div>
 
                                 <div className='middle-main-bottom-form-div'>
                                  <div className='middle-main-bottom-form-div-el'>
-                                        <label>Description (en)</label>
+                                        <label>Təsvir (en)</label>
                                         <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                     </div>
                                 <div className='middle-main-bottom-form-div-el'>
-                                        <label>SubTitle (en)</label>
+                                        <label>Kiçik başlıq (en)</label>
                                         <Field onChange={handleChange} value={values.enSubTitle} type="text" name="enSubTitle" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save</button>
+                                    <button type='submit'>Əlavə et</button>
                                 </div>
                             </Form>
                         )}

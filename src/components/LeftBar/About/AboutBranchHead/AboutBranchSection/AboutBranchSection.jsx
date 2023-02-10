@@ -8,7 +8,6 @@ const AboutBranchSection = ({ initialValues }) => {
 
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', values._id)
         dataForm.append('azDescription', values.azDescription)
@@ -19,7 +18,7 @@ const AboutBranchSection = ({ initialValues }) => {
         } else {
             dataForm.append('AboutPageBranchSectionIcon', values.icon)
         }
-        console.log(dataForm);
+      
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/about/branch/sections`, dataForm)
             if (response.status == 200) {
@@ -52,14 +51,14 @@ const AboutBranchSection = ({ initialValues }) => {
                         <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Desc (az)</label>
+                                    <label>Təsvir (az)</label>
                                     <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                 </div>
 
                             </div>
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Desc (ru)</label>
+                                    <label>Təsvir (ru)</label>
                                     <Field onChange={handleChange} value={values.azDescription} type="text" name="azDescription" />
                                 </div>
 
@@ -67,18 +66,18 @@ const AboutBranchSection = ({ initialValues }) => {
 
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Desc (en)</label>
+                                    <label>Təsvir (en)</label>
                                     <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                 </div>
 
 
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Image</label>
+                                    <label>Şəkil</label>
                                     <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
                                 </div>
                             </div>
                             <div className='middle-main-bottom-form-btn'>
-                                <button type='submit'>Save</button>
+                                <button type='submit'>Yadda saxla</button>
                             </div>
                         </Form>
                     )}

@@ -1,15 +1,15 @@
-import "../Form.scss";
+import "../Terminal.scss";
 import React, { useState, useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
-const Hr = () => {
+const TerminalMap = () => {
   const [id, setId] = useState("");
   const [initialValues, setInitialValues] = useState(null);
   const initialValuesRaw = {};
 
   const fetchData = () => {
     axios
-      .get(`${process.env.REACT_APP_URL}/admin/hrPage`)
+      .get(`${process.env.REACT_APP_URL}/admin/map/head`)
       .then((res) => {
         initialValuesRaw.azTitle = res.data[0]?.azTitle;
         initialValuesRaw.azDescription = res.data[0]?.azDescription;
@@ -17,7 +17,6 @@ const Hr = () => {
         initialValuesRaw.ruDescription = res.data[0]?.ruDescription;
         initialValuesRaw.enTitle = res.data[0]?.enTitle;
         initialValuesRaw.enDescription = res.data[0]?.enDescription;
-        initialValuesRaw.HrFormPageImage = res.data[0]?.images[0]?.url;
         setInitialValues(initialValuesRaw);
         setId(res.data[0]?._id);
       })
@@ -29,23 +28,17 @@ const Hr = () => {
   }, []);
 
   const onSubmitHandler = async (values) => {
-    const dataForm = new FormData();
-    dataForm.append("id", id);
-    dataForm.append("azTitle", values.azTitle);
-    dataForm.append("enTitle", values.enTitle);
-    dataForm.append("ruTitle", values.ruTitle);
-    dataForm.append("azDescription", values.azDescription);
-    dataForm.append("enDescription", values.enDescription);
-    dataForm.append("ruDescription", values.ruDescription);
-    if (values.image) {
-      dataForm.append("HrFormPageImage", values.image);
-    } else {
-      dataForm.append("HrFormPageImage", values.HrFormPageImage);
-    }
-   
+    const dataForm = {}
+    dataForm.id= id
+    dataForm.azTitle=values.azTitle
+    dataForm.enTitle=values.enTitle
+    dataForm.ruTitle=values.ruTitle
+    dataForm.azDescription=values.azDescription
+    dataForm.enDescription=values.enDescription
+    dataForm.ruDescription=values.ruDescription
     try {
       const response = await axios.patch(
-        `${process.env.REACT_APP_URL}/admin/hrPage`,
+        `${process.env.REACT_APP_URL}/admin/map/head`,
         dataForm
       );
       if (response.status == 200) {
@@ -57,11 +50,11 @@ const Hr = () => {
   };
 
   return (
-    <div className="form">
+    <div className="terminal">
       <div className="middle-main">
         <div className="middle-main-comp">
           <div className="middle-main-comp-p">
-            <p>Hr</p>
+            <p>Xəritə</p>
           </div>
           <div className="middle-main-comp-bottom">
             <p>/ əsas</p>
@@ -75,7 +68,7 @@ const Hr = () => {
                 onSubmitHandler(values);
               }}
             >
-              {({ values, handleChange, handleSubmit, setFieldValue }) => (
+              {({ values, handleChange, handleSubmit}) => (
                 <Form
                   className="middle-main-bottom-form"
                   onSubmit={handleSubmit}
@@ -142,19 +135,6 @@ const Hr = () => {
                       />
                     </div>
                   </div>
-                  <div className="middle-main-bottom-form-div">
-                    <div className="middle-main-bottom-form-div-el">
-                      <label>Şəkil</label>
-                      <Field
-                        value={values.filename}
-                        onChange={(e) =>
-                          setFieldValue("image", e.currentTarget.files[0])
-                        }
-                        type="file"
-                        name="filename"
-                      />
-                    </div>
-                  </div>
                   <div className="middle-main-bottom-form-btn">
                     <button type="submit">Yadda saxla</button>
                   </div>
@@ -168,4 +148,4 @@ const Hr = () => {
   );
 };
 
-export default Hr;
+export default TerminalMap;

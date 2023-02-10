@@ -14,14 +14,14 @@ const News = () => {
                 <div className='news-main-comp'>
                     <div className='news-main-comp-p'>
                         <p>
-                            News
+                           Xəbərlər
                         </p>
                     </div>
                     <div className='news-main-comp-bottom'>
                         <p></p>
-                        <div className='news-main-comp-bottom-btn' onClick={() => setBtn("Add news")}>
+                        <div className='news-main-comp-bottom-btn' onClick={() => setBtn("Əlavə et")}>
                             <button>
-                                Add New
+                               Əlavə et
                             </button>
                         </div>
                     </div>

@@ -11,7 +11,6 @@ const MarketingCooperation = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/admin/marketingPage`)
       .then((res) => {
-        console.log(res.data);
         initialValuesRaw.azTitle = res.data[0]?.azTitle;
         initialValuesRaw.azDescription = res.data[0]?.azDescription;
         initialValuesRaw.azSubTitle = res.data[0]?.azSubTitle;
@@ -33,7 +32,7 @@ const MarketingCooperation = () => {
         setInitialValues(initialValuesRaw);
         setId(res.data[0]?._id);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   };
 
   useEffect(() => {
@@ -41,7 +40,6 @@ const MarketingCooperation = () => {
   }, []);
 
   const onSubmitHandler = async (values) => {
-    console.log(values);
     const dataForm = new FormData();
     dataForm.append("id", id);
     dataForm.append("azTitle", values.azTitle);
@@ -66,7 +64,7 @@ const MarketingCooperation = () => {
     } else {
       dataForm.append("MarketingPageImage", values.MarketingPageImage);
     }
-    console.log(dataForm);
+  
     try {
       const response = await axios.patch(
         `${process.env.REACT_APP_URL}/admin/marketingPage`,
@@ -85,10 +83,10 @@ const MarketingCooperation = () => {
       <div className="middle-main">
         <div className="middle-main-comp">
           <div className="middle-main-comp-p">
-            <p>Marketing</p>
+            <p>Marketinq</p>
           </div>
           <div className="middle-main-comp-bottom">
-            <p>/ Marketing</p>
+            <p>/ əsas</p>
           </div>
         </div>
         <div className="middle-main-bottom">
@@ -106,7 +104,7 @@ const MarketingCooperation = () => {
                 >
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Title (az)</label>
+                      <label>Başlıq (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azTitle}
@@ -115,7 +113,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Description (az)</label>
+                      <label>Təsvir (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azDescription}
@@ -125,7 +123,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>SubTitle (az)</label>
+                      <label>Kiçik başlıq (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azSubTitle}
@@ -135,7 +133,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>FooterHead (az)</label>
+                      <label>Son başlıq (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azFooterHead}
@@ -145,7 +143,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>FooterDesc (az)</label>
+                      <label>Son təsvir (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azFooterDesc}
@@ -157,7 +155,7 @@ const MarketingCooperation = () => {
                   </div>
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Title (ru)</label>
+                      <label>Başlıq (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruTitle}
@@ -166,7 +164,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Description (ru)</label>
+                      <label>Təsvir (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruDescription}
@@ -175,7 +173,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>SubTitle (ru)</label>
+                      <label>Kiçik başlıq (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruSubTitle}
@@ -185,7 +183,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>FooterHead (ru)</label>
+                      <label>Son başlıq (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruFooterHead}
@@ -195,7 +193,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>FooterDesc (ru)</label>
+                      <label>Son təsvir(ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruFooterDesc}
@@ -208,7 +206,7 @@ const MarketingCooperation = () => {
 
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Title (en)</label>
+                      <label>Başlıq (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enTitle}
@@ -217,7 +215,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Description (en)</label>
+                      <label>Təsvir (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enDescription}
@@ -226,7 +224,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>SubTitle (en)</label>
+                      <label>Kiçik başlıq (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enSubTitle}
@@ -236,7 +234,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>FooterHead (en)</label>
+                      <label>Son başlıq (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enFooterHead}
@@ -246,7 +244,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>FooterDesc (en)</label>
+                      <label>Son təsvir (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enFooterDesc}
@@ -258,7 +256,7 @@ const MarketingCooperation = () => {
                   </div>
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Numbers</label>
+                      <label>Nömrələr</label>
                       <Field
                         onChange={handleChange}
                         value={values.numbers}

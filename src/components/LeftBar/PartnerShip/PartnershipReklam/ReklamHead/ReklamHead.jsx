@@ -5,10 +5,8 @@ import axios from 'axios';
 
 
 const ReklamHead = ({ initialValues }) => {
-    console.log(initialValues);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', values._id)
         dataForm.append('azTitle', values.azTitle)
@@ -30,7 +28,6 @@ const ReklamHead = ({ initialValues }) => {
         } else {
             dataForm.append('MarketingPageReklamHeadIcon2', values.images[2]?.url)
         }
-        console.log(dataForm);
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/marketing/reklam/head`, dataForm)
             if (response.status == 200) {
@@ -68,14 +65,14 @@ const ReklamHead = ({ initialValues }) => {
                             <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (az)</label>
+                                        <label>Başlıq (az)</label>
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
 
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (ru)</label>
+                                        <label>Başlıq (ru)</label>
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
 
@@ -83,13 +80,13 @@ const ReklamHead = ({ initialValues }) => {
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (en)</label>
+                                        <label>Başlıq (en)</label>
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
 
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Image</label>
+                                    <label>Şəkil</label>
                                     <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
@@ -102,7 +99,7 @@ const ReklamHead = ({ initialValues }) => {
                                 </div>
 
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save</button>
+                                    <button type='submit'>Yadda saxla</button>
                                 </div>
                             </Form>
                         )}

@@ -5,10 +5,8 @@ import axios from 'axios';
 
 
 const AnswerHead = ({ initialValues }) => {
-    console.log(initialValues);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = {}
         dataForm.id=values._id
         dataForm.azTitle=values.azTitle
@@ -32,7 +30,7 @@ const AnswerHead = ({ initialValues }) => {
                 <div className='middle-main-comp-p'>
                 </div>
                 <div className='middle-main-comp-bottom'>
-                    <p>/ Answers</p>
+                    <p>/ Suallar</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>
@@ -51,14 +49,14 @@ const AnswerHead = ({ initialValues }) => {
                             <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (az)</label>
+                                        <label>Başlıq (az)</label>
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
 
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (ru)</label>
+                                        <label>Başlıq (ru)</label>
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
 
@@ -66,14 +64,14 @@ const AnswerHead = ({ initialValues }) => {
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (en)</label>
+                                        <label>Başlıq (en)</label>
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
 
                                 </div>
 
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save</button>
+                                    <button type='submit'>Yadda saxla</button>
                                 </div>
                             </Form>
                         )}

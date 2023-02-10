@@ -14,7 +14,6 @@ const FaqMain = () => {
     const fetchData = () => {
         axios.get((`${process.env.REACT_APP_URL}/admin/faq/main`))
             .then(res => {
-                console.log(res)
                 setInitialValues(res.data[0])
                 setInitialValues1(res.data[0]?.categories[0])
                 setInitialValues2(res.data[0]?.categories[1])
@@ -22,7 +21,7 @@ const FaqMain = () => {
 
                 setId(res.data[0]?._id)
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -30,7 +29,6 @@ const FaqMain = () => {
     }, []);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = {};
         dataForm.azTitle = values.azTitle;
         dataForm.ruTitle = values.ruTitle;
@@ -51,7 +49,7 @@ const FaqMain = () => {
              <div className='middle-main-comp'>
                 
                 <div className='middle-main-comp-bottom'>
-                    <p>/ Main</p>
+                    <p>/ əsas</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>
@@ -70,14 +68,14 @@ const FaqMain = () => {
                             <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (az)</label>
+                                        <label>Başlıq (az)</label>
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
 
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (ru)</label>
+                                        <label>Başlıq (ru)</label>
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
 
@@ -85,7 +83,7 @@ const FaqMain = () => {
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Title (en)</label>
+                                        <label>Başlıq (en)</label>
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
 
@@ -93,7 +91,7 @@ const FaqMain = () => {
 
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save</button>
+                                    <button type='submit'>Yadda saxla</button>
                                 </div>
                             </Form>
                         )}
