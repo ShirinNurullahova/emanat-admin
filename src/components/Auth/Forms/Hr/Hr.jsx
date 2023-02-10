@@ -11,7 +11,6 @@ const Hr = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/admin/hrPage`)
       .then((res) => {
-        console.log(res.data);
         initialValuesRaw.azTitle = res.data[0]?.azTitle;
         initialValuesRaw.azDescription = res.data[0]?.azDescription;
         initialValuesRaw.ruTitle = res.data[0]?.ruTitle;
@@ -22,7 +21,7 @@ const Hr = () => {
         setInitialValues(initialValuesRaw);
         setId(res.data[0]?._id);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {});
   };
 
   useEffect(() => {
@@ -30,7 +29,6 @@ const Hr = () => {
   }, []);
 
   const onSubmitHandler = async (values) => {
-    console.log(values);
     const dataForm = new FormData();
     dataForm.append("id", id);
     dataForm.append("azTitle", values.azTitle);
@@ -44,7 +42,7 @@ const Hr = () => {
     } else {
       dataForm.append("HrFormPageImage", values.HrFormPageImage);
     }
-    console.log(dataForm);
+   
     try {
       const response = await axios.patch(
         `${process.env.REACT_APP_URL}/admin/hrPage`,
@@ -66,7 +64,7 @@ const Hr = () => {
             <p>Hr</p>
           </div>
           <div className="middle-main-comp-bottom">
-            <p>/ Hr</p>
+            <p>/ əsas</p>
           </div>
         </div>
         <div className="middle-main-bottom">
@@ -84,7 +82,7 @@ const Hr = () => {
                 >
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Title (az)</label>
+                      <label>Başlıq (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azTitle}
@@ -93,7 +91,7 @@ const Hr = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Description (az)</label>
+                      <label>Təsvir (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azDescription}
@@ -105,7 +103,7 @@ const Hr = () => {
                   </div>
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Title (ru)</label>
+                      <label>Başlıq (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruTitle}
@@ -114,7 +112,7 @@ const Hr = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Description (ru)</label>
+                      <label>Təsvir (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruDescription}
@@ -126,7 +124,7 @@ const Hr = () => {
 
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Title (en)</label>
+                      <label>Başlıq (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enTitle}
@@ -135,7 +133,7 @@ const Hr = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Description (en)</label>
+                      <label>Təsvir (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enDescription}
@@ -146,7 +144,7 @@ const Hr = () => {
                   </div>
                   <div className="middle-main-bottom-form-div">
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Image</label>
+                      <label>Şəkil</label>
                       <Field
                         value={values.filename}
                         onChange={(e) =>
@@ -158,7 +156,7 @@ const Hr = () => {
                     </div>
                   </div>
                   <div className="middle-main-bottom-form-btn">
-                    <button type="submit">Save</button>
+                    <button type="submit">Yadda saxla</button>
                   </div>
                 </Form>
               )}

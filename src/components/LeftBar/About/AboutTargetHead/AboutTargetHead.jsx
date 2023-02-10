@@ -19,7 +19,6 @@ const AboutTargetHead = () => {
             
         axios.get((`${process.env.REACT_APP_URL}/admin/about/target/head`))
             .then(res => {
-                console.log(res)
                 initialValuesRaw.azTitle = res.data.message.dtoHead[0]?.azTitle;
                 initialValuesRaw.ruTitle = res.data.message.dtoHead[0]?.ruTitle;
                 initialValuesRaw.enTitle = res.data.message.dtoHead[0]?.enTitle;
@@ -30,7 +29,7 @@ const AboutTargetHead = () => {
                 setInitialValues2(res.data.message.dtoHead[0]?.sections[1])
                 setInitialValues3(res.data.message.dtoHead[0]?.sections[2])
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {});
     }
 
     useEffect(() => {
@@ -38,7 +37,6 @@ const AboutTargetHead = () => {
     }, []);
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
         const dataForm = new FormData()
         dataForm.append('id', id)
         dataForm.append('azTitle', values.azTitle)
@@ -49,7 +47,7 @@ const AboutTargetHead = () => {
         } else {
             dataForm.append('AboutPageTargetsImage', values.AboutPageTargetsImage)
         }
-        console.log(dataForm);
+      
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/about/target/head`, dataForm)
             if (response.status == 200) {
@@ -69,7 +67,7 @@ const AboutTargetHead = () => {
                    
                 </div>
                 <div className='middle-main-comp-bottom'>
-                    <p>/ Target Head</p>
+                    <p>/hədəf başlığı</p>
                 </div>
             </div>
             <div className='middle-main-bottom'>

@@ -10,7 +10,7 @@ const Vakansiya = () => {
                 <div className='news-main-comp'>
                     <div className='news-main-comp-p'>
                         <p>
-                            Vakansiya / Header
+                            Vakansiya / Başlıq
                         </p>
                     </div>
                 </div>

@@ -61,12 +61,12 @@ const ModalAdd = ({setOpen}) => {
                                         <Field onChange={handleChange} value={values.ruHashtag} type="text" placeholder='' name="ruHashtag" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Page</label>
+                                        <label>Səhifə</label>
                                         <Field onChange={handleChange} value={values.page} type="text" placeholder='' name="page" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
-                                    <button type='submit'>Save New</button>
+                                    <button type='submit'>Yenisini yadda saxla</button>
                                 </div>
                             </Form>
                         )}

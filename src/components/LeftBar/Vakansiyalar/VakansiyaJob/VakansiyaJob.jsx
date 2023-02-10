@@ -8,7 +8,7 @@ const VakansiyaJob = () => {
     const [id, setId] = useState(null)
     const [btn, setBtn] = useState(null)
 
-   
+
 
 
 
@@ -16,12 +16,18 @@ const VakansiyaJob = () => {
 
     return (
         <>
-            <p className='text'>
-                Vacation Job
-            </p>
+            <div className='news-main'>
+                <div className='news-main-comp'>
+                    <div className='news-main-comp-bottom'>
+                        <p>
+                            / Sənət
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-            <VakansiyaCard setId={setId} setBtn={setBtn} btn={btn}/>
-           </>
+            <VakansiyaCard setId={setId} setBtn={setBtn} btn={btn} />
+        </>
 
     )
 }

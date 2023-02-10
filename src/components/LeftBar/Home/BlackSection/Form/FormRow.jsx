@@ -39,37 +39,37 @@ const FormRow = ({ initialValues }) => {
                         <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Title (az)</label>
+                                    <label>Başlıq (az)</label>
                                     <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Description (az)</label>
+                                    <label>Təsvir (az)</label>
                                     <Field onChange={handleChange} value={values.azDescription} type="text" name="azDescription" />
                                 </div>
                             </div>
 
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Title (ru)</label>
+                                    <label>Başlıq  (ru)</label>
                                     <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Description (ru)</label>
+                                    <label>Təsvir (ru)</label>
                                     <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                 </div>
                             </div>
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Title (en)</label>
+                                    <label>Başlıq  (en)</label>
                                     <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Description (en)</label>
+                                    <label>Təsvir (en)</label>
                                     <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                 </div>
                             </div>
                             <div className='middle-main-bottom-form-btn'>
-                                <button type='submit'>Save</button>
+                                <button type='submit'>Yadda saxla</button>
                             </div>
                         </Form>
                     )}

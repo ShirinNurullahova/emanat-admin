@@ -13,7 +13,6 @@ const Element = ({ e }) => {
         "page": '',
         "id": ''
     }
-    console.log(e);
 
     useEffect(() => {
         initialValuesRaw.page = e.page
@@ -94,12 +93,12 @@ const Element = ({ e }) => {
                                     <Field onChange={handleChange} value={values.ruHashtag} type="text" placeholder='' name="ruHashtag" />
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
-                                    <label>Page</label>
+                                    <label>Səhifə</label>
                                     <Field onChange={handleChange} value={values.page} type="text" placeholder='' name="page" />
                                 </div>
                             </div>
                             <div className='middle-main-bottom-form-btn'>
-                                <button type='submit'>Save</button>
+                                <button type='submit'>Yadda saxla</button>
                             </div>
                         </Form>
                     )}
