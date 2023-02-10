@@ -23,7 +23,7 @@ const TerminalUsage = () => {
                 setInitialValues(initialValuesRaw)
                 setId(res.data[0]?._id)
             })
-            .catch((err) =>{});
+            .catch((err) => { });
     }
 
     useEffect(() => {
@@ -33,20 +33,52 @@ const TerminalUsage = () => {
 
 
     const onSubmitHandler = async (values) => {
-        const dataForm = new FormData()
-        dataForm.append('id', id)
-        dataForm.append('azTitle', values.azTitle)
-        dataForm.append('enTitle', values.enTitle)
-        dataForm.append('ruTitle', values.ruTitle)
-        dataForm.append('azDescription', values.azDescription)
-        dataForm.append('enDescription', values.enDescription)
-        dataForm.append('ruDescription', values.ruDescription)
+        const dataForm = new FormData();
+        dataForm.append("id", id);
+        dataForm.append("azTitle", values.azTitle);
+        dataForm.append("enTitle", values.enTitle);
+        dataForm.append("ruTitle", values.ruTitle);
+
+        dataForm.append("azDescription", values.azDescription);
+        dataForm.append("enDescription", values.enDescription);
+        dataForm.append("ruDescription", values.ruDescription);
+
+        // if (typeof values.azDescription === "string") {
+        //     values.azDescription.split(";").map(item => {
+        //         dataForm.append("azDescription", item);
+        //     })
+        // } else {
+        //     values.azDescription.map(item => {
+        //         dataForm.append("azDescription", item);
+        //     })
+        // }
+
+        // if (typeof values.enDescription === "string") {
+        //     values.enDescription.split(";").map(item => {
+        //         dataForm.append("enDescription", item);
+        //     })
+        // } else {
+        //     values.enDescription.map(item => {
+        //         dataForm.append("enDescription", item);
+        //     })
+        // }
+
+        // if (typeof values.ruDescription === "string") {
+        //     values.ruDescription.split(";").map(item => {
+        //         dataForm.append("ruDescription", item);
+        //     })
+        // } else {
+        //     values.ruDescription.map(item => {
+        //         dataForm.append("ruDescription", item);
+        //     })
+        // }
+
         if (values.image) {
             dataForm.append('UseTerminalRulesImage', values.image)
         } else {
             dataForm.append('UseTerminalRulesImage', values.UseTerminalRulesImage)
         }
-      
+
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/useTerminal`, dataForm)
             if (response.status == 200) {
@@ -65,7 +97,7 @@ const TerminalUsage = () => {
                 <div className='middle-main-comp'>
                     <div className='middle-main-comp-p'>
                         <p>
-                            Terminal istifadə 
+                            Terminal istifadə
                         </p>
                     </div>
                     <div className='middle-main-comp-bottom'>
@@ -94,7 +126,7 @@ const TerminalUsage = () => {
                                         </div>
                                         <div className='middle-main-bottom-form-div-el'>
                                             <label>Təsvir (az)</label>
-                                            <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
+                                            <Field onChange={handleChange} value={values.azDescription} rows='15' component="textarea" placeholder='' name="azDescription" />
                                         </div>
                                     </div>
                                     <div className='middle-main-bottom-form-div'>
@@ -104,7 +136,7 @@ const TerminalUsage = () => {
                                         </div>
                                         <div className='middle-main-bottom-form-div-el'>
                                             <label>Təsvir (ru)</label>
-                                            <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
+                                            <Field onChange={handleChange} value={values.ruDescription} rows='15' component="textarea" name="ruDescription" />
                                         </div>
                                     </div>
 
@@ -115,7 +147,7 @@ const TerminalUsage = () => {
                                         </div>
                                         <div className='middle-main-bottom-form-div-el'>
                                             <label>Təsvir (en)</label>
-                                            <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
+                                            <Field onChange={handleChange} value={values.enDescription} rows='15' component="textarea" name="enDescription" />
                                         </div>
 
                                         <div className='middle-main-bottom-form-div-el'>

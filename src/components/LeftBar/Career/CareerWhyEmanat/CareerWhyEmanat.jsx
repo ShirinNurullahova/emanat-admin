@@ -22,7 +22,7 @@ const CareerWhyEmanat = () => {
         setInitialValues(initialValuesRaw);
         setId(res.data[0]?._id);
       })
-      .catch((err) => {});
+      .catch((err) => { });
   };
 
   useEffect(() => {
@@ -35,23 +35,37 @@ const CareerWhyEmanat = () => {
     dataForm.append("azTitle", values.azTitle);
     dataForm.append("enTitle", values.enTitle);
     dataForm.append("ruTitle", values.ruTitle);
-    if (typeof values.ruDescription === "string") {
-      dataForm.append("ruDescription", values.ruDescription.split(","));
+
+    if (typeof values.azDescription === "string") {
+      values.azDescription.split(",").map(item => {
+        dataForm.append("azDescription", item);
+      })
     } else {
-      dataForm.append("ruDescription", values.ruDescription);
+      values.azDescription.map(item => {
+        dataForm.append("azDescription", item);
+      })
     }
 
     if (typeof values.enDescription === "string") {
-      dataForm.append("enDescription", values.enDescription.split(","));
+      values.enDescription.split(",").map(item => {
+        dataForm.append("enDescription", item);
+      })
     } else {
-      dataForm.append("enDescription", values.enDescription);
+      values.enDescription.map(item => {
+        dataForm.append("enDescription", item);
+      })
     }
 
-    if (typeof values.azDescription === "string") {
-      dataForm.append("azDescription", values.azDescription.split(","));
+    if (typeof values.ruDescription === "string") {
+      values.ruDescription.split(",").map(item => {
+        dataForm.append("ruDescription", item);
+      })
     } else {
-      dataForm.append("azDescription", values.azDescription);
+      values.ruDescription.map(item => {
+        dataForm.append("ruDescription", item);
+      })
     }
+
     if (values.image) {
       dataForm.append("CareerPageEmanatImage", values.image);
     } else {
@@ -62,18 +76,13 @@ const CareerWhyEmanat = () => {
     } else {
       dataForm.append("CareerPageHeaderIcon", values.CareerPageHeaderIcon);
     }
-  
+
     try {
       const response = await axios.patch(
         `${process.env.REACT_APP_URL}/admin/career/eManat`,
         dataForm
       );
-      if (response.status == 200) {
-        fetchData();
-      }
-    } catch (error) {
-      alert("error");
-    }
+    } catch (error) { }
   };
 
   return (
