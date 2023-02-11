@@ -39,39 +39,35 @@ const TerminalUsage = () => {
         dataForm.append("enTitle", values.enTitle);
         dataForm.append("ruTitle", values.ruTitle);
 
-        dataForm.append("azDescription", values.azDescription);
-        dataForm.append("enDescription", values.enDescription);
-        dataForm.append("ruDescription", values.ruDescription);
+        if (typeof values.azDescription === "string") {
+            values.azDescription.split(";").map(item => {
+                dataForm.append("azDescription", item);
+            })
+        } else {
+            values.azDescription.map(item => {
+                dataForm.append("azDescription", item);
+            })
+        }
 
-        // if (typeof values.azDescription === "string") {
-        //     values.azDescription.split(";").map(item => {
-        //         dataForm.append("azDescription", item);
-        //     })
-        // } else {
-        //     values.azDescription.map(item => {
-        //         dataForm.append("azDescription", item);
-        //     })
-        // }
+        if (typeof values.enDescription === "string") {
+            values.enDescription.split(";").map(item => {
+                dataForm.append("enDescription", item);
+            })
+        } else {
+            values.enDescription.map(item => {
+                dataForm.append("enDescription", item);
+            })
+        }
 
-        // if (typeof values.enDescription === "string") {
-        //     values.enDescription.split(";").map(item => {
-        //         dataForm.append("enDescription", item);
-        //     })
-        // } else {
-        //     values.enDescription.map(item => {
-        //         dataForm.append("enDescription", item);
-        //     })
-        // }
-
-        // if (typeof values.ruDescription === "string") {
-        //     values.ruDescription.split(";").map(item => {
-        //         dataForm.append("ruDescription", item);
-        //     })
-        // } else {
-        //     values.ruDescription.map(item => {
-        //         dataForm.append("ruDescription", item);
-        //     })
-        // }
+        if (typeof values.ruDescription === "string") {
+            values.ruDescription.split(";").map(item => {
+                dataForm.append("ruDescription", item);
+            })
+        } else {
+            values.ruDescription.map(item => {
+                dataForm.append("ruDescription", item);
+            })
+        }
 
         if (values.image) {
             dataForm.append('UseTerminalRulesImage', values.image)
