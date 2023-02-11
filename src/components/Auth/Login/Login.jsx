@@ -36,17 +36,17 @@ const Login = () => {
                     <form className="login-div-el-form" action="/"  onSubmit={handleSubmitLogin}>
                         <div className="login-div-el-form-group">
                             <label htmlFor="signin-email" className="control-label"></label>
-                            <input onChange={handleChangeLogin} type="email" className="form-control round" name='email' id="signin-email" defaultValue="user@domain.com" placeholder="Email" />
+                            <input onChange={handleChangeLogin} type="email" className="form-control round" name='email' id="signin-email" placeholder="admin@gmail.com" />
                         </div>
                         <div className="login-div-el-form-group">
                             <label htmlFor="signin-password" className="control-label"></label>
-                            <input onChange={handleChangeLogin} type="password" className="form-control round" name='password' id="signin-password" defaultValue="thisisthepassword" placeholder="Parol" />
+                            <input onChange={handleChangeLogin} type="password" className="form-control round" name='password' id="signin-password"  placeholder="parol" />
                         </div>
                         {/* <div className="login-div-el-form-group">
                             <label >
                                 <input type="checkbox" />
                                 <span>Remember me</span>
-                            </label>
+                            </label>    
                         </div> */}
                         <button type="submit" className='loginBtn'>Giriş</button>
                         <div className='login-div-el-form-end'>
