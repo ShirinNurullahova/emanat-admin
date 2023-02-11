@@ -33,7 +33,7 @@ const Verify = () => {
         <p className="verify-div-p">Hesabı doğrula</p>
         <form className="verify-div-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <input onChange={handleChange} placeholder="Verify Acc" type="text" name='verifyToken' className="form-control round" />
+            <input onChange={handleChange} placeholder="tokeni yaz" type="text" name='verifyToken' className="form-control round" />
           </div>
           <button type="submit" className="verify-btn">Hesabı doğrula</button>
         </form>

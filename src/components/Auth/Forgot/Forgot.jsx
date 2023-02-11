@@ -36,7 +36,7 @@ const Forgot = () => {
                 <p>Email yaz</p>
                 <form action="" onSubmit={handleSubmitUpdate}>
                     <div className="form-group">
-                        <input onChange={handleChangeUpdate} name="email" type="email" className="form-control round" id="signup-password" placeholder="email" />
+                        <input onChange={handleChangeUpdate} name="email" type="email" className="form-control round" id="signup-password" placeholder="admin@gmail.com" />
                     </div>
                     <button type="submit" className='forgot-btn'>Göndər</button>
 
