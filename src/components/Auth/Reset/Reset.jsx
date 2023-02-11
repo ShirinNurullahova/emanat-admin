@@ -34,7 +34,6 @@ const Reset = () => {
                     <p className="reset-div-p">Parolu yeniləmək</p>
                     <form className="reset-div-form" action="/" onSubmit={handleSubmitUpdate}>
                         <div className="form-group">
-                             defaultValue="resetToken"
                             <input onChange={handleChangeUpdate}  type="text" name='resetToken' className="form-control round" id="signin-email" placeholder="tokeni yaz" />
                         </div>
                         <div className="form-group">
