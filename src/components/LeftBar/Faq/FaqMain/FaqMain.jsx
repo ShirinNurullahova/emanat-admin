@@ -8,9 +8,6 @@ const FaqMain = () => {
     const [id, setId] = useState("");
     const [data, setData] = useState(null)
     const [initialValues, setInitialValues] = useState(null)
-    const [initialValues1, setInitialValues1] = useState(null)
-    const [initialValues2, setInitialValues2] = useState(null)
-    const [initialValues3, setInitialValues3] = useState(null)
 
     const fetchData = () => {
         axios.get((`${process.env.REACT_APP_URL}/admin/faq/main`))
@@ -106,11 +103,10 @@ const FaqMain = () => {
                     </div>
                 </div>
                 {
-                    data && data.map((e) => {
-                        return (
-                            <FaqKategoria initialValues={e} />
-                        )
-                    })
+                    data &&
+                            <FaqKategoria data={data} />
+                        
+                    
                 }
 
             </div>

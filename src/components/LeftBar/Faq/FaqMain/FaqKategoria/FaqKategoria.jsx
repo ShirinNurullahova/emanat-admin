@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
-const FaqKategoria = ({ initialValues }) => {
-   console.log(initialValues)
+const FaqKategoria = ({ data }) => {
+    console.log(data)
 
 
     const onSubmitHandler = async (values) => {
@@ -26,7 +26,7 @@ const FaqKategoria = ({ initialValues }) => {
     }
     return (
         <div className='middle-main'>
-           
+
             {/* {initialValues &&
                 <Formik
                     initialValues={initialValues}
@@ -71,15 +71,21 @@ const FaqKategoria = ({ initialValues }) => {
             } */}
 
             {
-                initialValues &&
-                <table>
-                    <tr>
-                        <td>{initialValues.azTitle}</td>
-                        {/* <th>Contact</th>
-                        <th>Country</th> */}
-                    </tr>
+                data &&
+                data.map((e) => {
+                    return(
+                        <table style={{ border: '1px solid gray' }}>
+                        <tr>
+                            <th>{e.azTitle}</th>
+                        </tr>
+
+                    </table>
+                    )
                    
-                </table>
+
+
+                })
+
             }
         </div>
     )
