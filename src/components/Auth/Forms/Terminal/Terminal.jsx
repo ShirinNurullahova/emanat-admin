@@ -105,7 +105,7 @@ const Terminal = () => {
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (az)</label>
+                                        <label>Mətn (az)</label>
                                         <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
@@ -113,7 +113,7 @@ const Terminal = () => {
                                         <Field onChange={handleChange} value={values.azFooterHead} type="text" placeholder='' name="azFooterHead" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Son təsvir (az)</label>
+                                        <label>Son Mətn (az)</label>
                                         <Field onChange={handleChange} value={values.azFooterDesc} type="text" placeholder='' name="azFooterDesc" />
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@ const Terminal = () => {
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (ru)</label>
+                                        <label>Mətn (ru)</label>
                                         <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
@@ -131,7 +131,7 @@ const Terminal = () => {
                                         <Field onChange={handleChange} value={values.ruFooterHead} type="text" placeholder='' name="ruFooterHead" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Son təsvir (ru)</label>
+                                        <label>Son Mətn (ru)</label>
                                         <Field onChange={handleChange} value={values.ruFooterDesc} type="text" placeholder='' name="ruFooterDesc" />
                                     </div>
                                 </div>
@@ -142,7 +142,7 @@ const Terminal = () => {
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (en)</label>
+                                        <label>Mətn (en)</label>
                                         <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
@@ -150,7 +150,7 @@ const Terminal = () => {
                                         <Field onChange={handleChange} value={values.enFooterHead} type="text" placeholder='' name="enFooterHead" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Son təsvir (en)</label>
+                                        <label>Son Mətn (en)</label>
                                         <Field onChange={handleChange} value={values.enFooterDesc} type="text" placeholder='' name="enFooterDesc" />
                                     </div>
                                 </div>

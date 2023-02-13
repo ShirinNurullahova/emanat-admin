@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
-const FaqKategoria = ({ initialValues, id }) => {
-
+const FaqKategoria = ({ initialValues }) => {
+   console.log(initialValues)
 
 
     const onSubmitHandler = async (values) => {
-       
+
         const dataForm = {}
-         dataForm.azTitle= values.azTitle
-         dataForm.enTitle= values.enTitle
-         dataForm.ruTitle= values.ruTitle
-         dataForm.id= id
+        dataForm.azTitle = values.azTitle
+        dataForm.enTitle = values.enTitle
+        dataForm.ruTitle = values.ruTitle
+        dataForm.id = values._id
 
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/faq/main/categories`, dataForm)
@@ -26,13 +26,8 @@ const FaqKategoria = ({ initialValues, id }) => {
     }
     return (
         <div className='middle-main'>
-             <div className='middle-main-comp'>
-                
-                <div className='middle-main-comp-bottom'>
-                    <p>/ Kategoriya</p>
-                </div>
-            </div>
-            {initialValues &&
+           
+            {/* {initialValues &&
                 <Formik
                     initialValues={initialValues}
                     onSubmit={(values) => {
@@ -73,6 +68,18 @@ const FaqKategoria = ({ initialValues, id }) => {
                         </Form>
                     )}
                 </Formik>
+            } */}
+
+            {
+                initialValues &&
+                <table>
+                    <tr>
+                        <td>{initialValues.azTitle}</td>
+                        {/* <th>Contact</th>
+                        <th>Country</th> */}
+                    </tr>
+                   
+                </table>
             }
         </div>
     )

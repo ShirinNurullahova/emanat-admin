@@ -15,6 +15,7 @@ const [initialValuesSection6 , setInitialValuesSection6]= useState(null)
         
         axios.get((`${process.env.REACT_APP_URL}/admin/marketing/reklam/head`))
             .then(res => {
+                console.log(res)
                 setInitialValuesSection1(res.data.message.dtoHead[0].sections[0])
                 setInitialValuesSection2(res.data.message.dtoHead[0].sections[1])
                 setInitialValuesSection3(res.data.message.dtoHead[0].sections[2])

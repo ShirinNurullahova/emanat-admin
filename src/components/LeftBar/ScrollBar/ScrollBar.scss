@@ -1,10 +1,11 @@
 .two{
     position: relative;
-
+ 
     &-components{
-        // position: fixed;
+        position: fixed;
         // left: 0;
-      width: 15%;
+       
+      width: 200px;
       padding: 20px;
       background-color: rgba(34, 37, 42, 0.95);
 

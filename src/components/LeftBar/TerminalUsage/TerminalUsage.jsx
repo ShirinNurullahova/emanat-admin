@@ -121,7 +121,7 @@ const TerminalUsage = () => {
                                             <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                         </div>
                                         <div className='middle-main-bottom-form-div-el'>
-                                            <label>Təsvir (az)</label>
+                                            <label>Mətn (az)</label>
                                             <Field onChange={handleChange} value={values.azDescription} rows='15' component="textarea" placeholder='' name="azDescription" />
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@ const TerminalUsage = () => {
                                             <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                         </div>
                                         <div className='middle-main-bottom-form-div-el'>
-                                            <label>Təsvir (ru)</label>
+                                            <label>Mətn (ru)</label>
                                             <Field onChange={handleChange} value={values.ruDescription} rows='15' component="textarea" name="ruDescription" />
                                         </div>
                                     </div>
@@ -142,7 +142,7 @@ const TerminalUsage = () => {
                                             <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                         </div>
                                         <div className='middle-main-bottom-form-div-el'>
-                                            <label>Təsvir (en)</label>
+                                            <label>Mətn (en)</label>
                                             <Field onChange={handleChange} value={values.enDescription} rows='15' component="textarea" name="enDescription" />
                                         </div>
 

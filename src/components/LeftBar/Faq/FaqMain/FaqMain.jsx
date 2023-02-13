@@ -6,22 +6,21 @@ import FaqKategoria from './FaqKategoria/FaqKategoria';
 const FaqMain = () => {
 
     const [id, setId] = useState("");
+    const [data, setData] = useState(null)
     const [initialValues, setInitialValues] = useState(null)
-    const [initialValues1 , setInitialValues1] = useState(null)
-    const [initialValues2 , setInitialValues2] = useState(null)
-    const [initialValues3 , setInitialValues3] = useState(null)
+    const [initialValues1, setInitialValues1] = useState(null)
+    const [initialValues2, setInitialValues2] = useState(null)
+    const [initialValues3, setInitialValues3] = useState(null)
 
     const fetchData = () => {
         axios.get((`${process.env.REACT_APP_URL}/admin/faq/main`))
             .then(res => {
+                console.log(res.data[0]);
+                setData(res.data[0]?.categories)
                 setInitialValues(res.data[0])
-                setInitialValues1(res.data[0]?.categories[0])
-                setInitialValues2(res.data[0]?.categories[1])
-                setInitialValues3(res.data[0]?.categories[2])
-
                 setId(res.data[0]?._id)
             })
-            .catch((err) => {});
+            .catch((err) => { });
     }
 
     useEffect(() => {
@@ -46,8 +45,8 @@ const FaqMain = () => {
     }
     return (
         <div className='middle-main'>
-             <div className='middle-main-comp'>
-                
+            <div className='middle-main-comp'>
+
                 <div className='middle-main-comp-bottom'>
                     <p>/ əsas</p>
                 </div>
@@ -97,18 +96,25 @@ const FaqMain = () => {
                         )}
                     </Formik>
                 }
-
             </div>
+
             <div className='middle-main-bottom'>
-              
-           
+                <div className='middle-main-comp'>
 
-                <FaqKategoria initialValues={initialValues1} id={id}/>
-                <FaqKategoria initialValues={initialValues2} id={id}/>
-                <FaqKategoria initialValues={initialValues3} id={id}/>
+                    <div className='middle-main-comp-bottom'>
+                        <p>/ Kategoriya</p>
+                    </div>
+                </div>
+                {
+                    data && data.map((e) => {
+                        return (
+                            <FaqKategoria initialValues={e} />
+                        )
+                    })
+                }
 
-              
             </div>
+
         </div>
     )
 }

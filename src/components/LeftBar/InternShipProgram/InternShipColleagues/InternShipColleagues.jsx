@@ -3,7 +3,7 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
 const InternShipColleagues = () => {
-  const [id, setId] = useState("63e77c037d3393a43630cab3");
+  const [id, setId] = useState("63e9e95c2b310d7a136d0a6c");
   const [initialValues, setInitialValues] = useState(null)
   const initialValuesRaw = {}
 
@@ -11,7 +11,6 @@ const InternShipColleagues = () => {
 
     axios.get((`${process.env.REACT_APP_URL}/admin/internship/about`))
       .then(res => {
-        console.log(res.data)
         initialValuesRaw.azTitle = res.data[0]?.azTitle;
         initialValuesRaw.azDescription = res.data[0]?.azDescription;
         initialValuesRaw.ruTitle = res.data[0]?.ruTitle;
@@ -26,12 +25,17 @@ const InternShipColleagues = () => {
   }
 
   useEffect(() => {
+    axios.get((`${process.env.REACT_APP_URL}/admin/internship/colleagues/`))
+      .then(res => {
+      })
+      .catch((err) => { });
     fetchData();
   }, []);
 
   const onSubmitHandler = async (values) => {
     const dataForm = new FormData()
-    const dataNew = [
+
+    const data1 = [
       {
         "azKey": "Ad, Soyad:",
         "azValue": "Ayxan Səfərli",
@@ -57,30 +61,21 @@ const InternShipColleagues = () => {
         "ruValue": "Маленький iOS-программист."
       },
     ]
-    console.log(id)
     dataForm.append('id', id)
-    dataNew.map(item => {
-      console.log(item)
-      dataForm.append('data', item)
-    })
+    dataForm.append('data', data1)
 
-    if (values.image) {
-      dataForm.append('InternshipProgramColleagueImage', values.image)
-    } 
-    // else {
-    //   dataForm.append('InternshipProgramColleagueImage', values.icon)
+    // if (values.image) {
+    //   dataForm.append('InternshipProgramColleagueImage', values.image)
     // }
+    console.log(data1);
 
     try {
-      const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/internship/colleagues/`, dataForm)
-      // if (response.status == 200) {
-      //   fetchData()
-      // }
-      console.log(response)
+      const response = await axios.post(`${process.env.REACT_APP_URL}/admin/internship/colleagues/`, dataForm)
+      if (response.status == 201) {
+       alert("kaayyyy")
+      }
 
-    } catch (error) {
-      alert("error")
-    }
+    } catch (error) {}
   }
 
   return (
@@ -112,7 +107,7 @@ const InternShipColleagues = () => {
                     <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                   </div>
                   <div className='middle-main-bottom-form-div-el'>
-                    <label>Təsvir (az)</label>
+                    <label>Mətn (az)</label>
                     <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                   </div>
                 </div>
@@ -122,7 +117,7 @@ const InternShipColleagues = () => {
                     <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                   </div>
                   <div className='middle-main-bottom-form-div-el'>
-                    <label>Təsvir (ru)</label>
+                    <label>Mətn (ru)</label>
                     <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                   </div>
                 </div>
@@ -133,7 +128,7 @@ const InternShipColleagues = () => {
                     <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                   </div>
                   <div className='middle-main-bottom-form-div-el'>
-                    <label>Təsvir (en)</label>
+                    <label>Mətn (en)</label>
                     <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                   </div>
 

@@ -8,7 +8,7 @@ const InternShipProgram = () => {
     <div className='intern'>
         <InternShipHeader/>
         <InternShipAbout/>
-        {/* <InternShipColleagues/> */}
+        <InternShipColleagues/>
     </div>
   )
 }

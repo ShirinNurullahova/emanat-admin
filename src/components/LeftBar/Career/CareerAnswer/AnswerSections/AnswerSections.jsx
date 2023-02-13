@@ -42,7 +42,7 @@ const AnswerSections = ({initialValues}) => {
                             <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (az)</label>
+                                        <label>Mətn (az)</label>
                                         <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
@@ -52,7 +52,7 @@ const AnswerSections = ({initialValues}) => {
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (ru)</label>
+                                        <label>Mətn (ru)</label>
                                         <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
@@ -63,7 +63,7 @@ const AnswerSections = ({initialValues}) => {
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (en)</label>
+                                        <label>Mətn (en)</label>
                                         <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>

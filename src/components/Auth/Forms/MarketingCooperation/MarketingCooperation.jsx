@@ -113,7 +113,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Təsvir (az)</label>
+                      <label>Mətn (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azDescription}
@@ -143,7 +143,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Son təsvir (az)</label>
+                      <label>Son Mətn (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azFooterDesc}
@@ -164,7 +164,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Təsvir (ru)</label>
+                      <label>Mətn (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruDescription}
@@ -193,7 +193,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Son təsvir(ru)</label>
+                      <label>Son Mətn(ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruFooterDesc}
@@ -215,7 +215,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Təsvir (en)</label>
+                      <label>Mətn (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enDescription}
@@ -244,7 +244,7 @@ const MarketingCooperation = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Son təsvir (en)</label>
+                      <label>Son Mətn (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enFooterDesc}
