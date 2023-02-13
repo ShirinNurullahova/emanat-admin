@@ -3,7 +3,7 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
 const InternShipColleagues = () => {
-  const [id, setId] = useState("63e9e95c2b310d7a136d0a6c");
+  const [id, setId] = useState("63ea01e9a7ec529a1d288b3f");
   const [initialValues, setInitialValues] = useState(null)
   const initialValuesRaw = {}
 
@@ -61,21 +61,40 @@ const InternShipColleagues = () => {
         "ruValue": "Маленький iOS-программист."
       },
     ]
-    dataForm.append('id', id)
-    dataForm.append('data', data1)
 
-    // if (values.image) {
-    //   dataForm.append('InternshipProgramColleagueImage', values.image)
+
+    // dataForm.append('id', id)
+    dataForm.append('data', JSON.stringify(data1))
+    if (values.image) {
+      dataForm.append('InternshipProgramColleagueImage', values.image)
+    }
+
+//     var jsonData = Ext.util.JSON.decode(myMessage); 
+// for (var counter in jsonData.counters) {
+//      console.log(counter.counter_name);
+//  }
+
+    // const dataNew = {
+    //   id: id,
+    //   data: data1
     // }
-    console.log(data1);
 
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_URL}/admin/internship/colleagues/`, dataForm)
-      if (response.status == 201) {
-       alert("kaayyyy")
-      }
+    // console.log(dataForm.entries());
+    for (let [key, value] of dataForm) {
+      // console.log(pair[0]+ ' - ' + pair[1]); 
+      // console.log(pair, dataForm[pair]);
+      // console.log(JSON.parse(pair[1])); 
+      console.log(value);
+      var jsonData = Ext.util.JSON.decode(value);
+      console.log(jsonData);
+  }
+    // try {
+    //   const response = await axios.post(`${process.env.REACT_APP_URL}/admin/internship/colleagues/`, dataForm)
+    //   if (response.status == 201) {
+    //    alert("kaayyyy")
+    //   }
 
-    } catch (error) {}
+    // } catch (error) {}
   }
 
   return (

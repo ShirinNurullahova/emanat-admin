@@ -8,4 +8,11 @@
             color: rgba(255, 255, 255, 0.5);
         
     }
+    table, td, th {
+        border: 1px solid;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
 }
