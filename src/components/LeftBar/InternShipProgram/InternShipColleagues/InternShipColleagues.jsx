@@ -84,9 +84,9 @@ const InternShipColleagues = () => {
       // console.log(pair[0]+ ' - ' + pair[1]); 
       // console.log(pair, dataForm[pair]);
       // console.log(JSON.parse(pair[1])); 
-      console.log(value);
-      var jsonData = Ext.util.JSON.decode(value);
-      console.log(jsonData);
+      // console.log(value);
+      // var jsonData = Ext.util.JSON.decode(value);
+      // console.log(jsonData);
   }
     // try {
     //   const response = await axios.post(`${process.env.REACT_APP_URL}/admin/internship/colleagues/`, dataForm)
