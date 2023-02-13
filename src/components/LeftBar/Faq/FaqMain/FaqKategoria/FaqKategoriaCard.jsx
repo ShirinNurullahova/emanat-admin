@@ -1,0 +1,121 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Formik, Field, Form } from "formik";
+const FaqKategoriaCard = ({ data, id, setButton, button }) => {
+  const [initialValues, setInitialValues] = useState({ data });
+console.log(data);
+    const onSubmitHandler = async (values) => {
+        console.log(values.data);
+      const dataForm = {};
+      dataForm.id = id;
+    //   dataForm.data = values;
+    //   dataForm.page = "Career";
+    //      if (button) {
+    //           try {
+    //               const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/faq/main`, dataForm)
+    //               if (response.status == 200) {
+
+    //               }
+
+    //           } catch (error) {
+    //               alert("error")
+    //           }
+    //       }
+
+    //       setButton(false)
+    };
+
+  const handleChange = (e, vl) => {
+    let name = e.target.name;
+    vl[[name]] = e.target.value;
+    console.log(vl);
+  };
+
+  return (
+    <>
+      {initialValues && (
+        <Formik
+          initialValues={initialValues}
+            onSubmit={(values) => {
+              onSubmitHandler(values);
+            }}
+        >
+          {({
+            values,
+            // handleChange,
+            handleSubmit,
+          }) => (
+            <Form className="modal-form1">
+              <div className="modal-form-div">
+                {values?.data?.items?.map((vl) => (
+                    <div className="modal-form-div-el">
+                      <label>Question (az)</label>
+                      <Field
+                        onChange={(e) => handleChange(e, vl)}
+                        defaultValue={vl.azQuestion}
+                        type="text"
+                        name="azQuestion"
+                      />
+                      <label>Answer (az)</label>
+                      <Field
+                        onChange={(e) => handleChange(e, vl)}
+                        defaultValue={vl.azAnswer}
+                        type="text"
+                        name="azAnswer"
+                      />
+                      <label>Question (ru)</label>
+                      <Field
+                        onChange={(e) => handleChange(e, vl)}
+                        defaultValue={vl.ruQuestion}
+                        type="text"
+                        name="ruQuestion"
+                      />
+
+                      <label>Answer (ru)</label>
+                      <Field
+                        onChange={(e) => handleChange(e, vl)}
+                        defaultValue={vl.ruAnswer}
+                        type="text"
+                        name="ruAnswer"
+                      />
+                      <label>Question (en)</label>
+                      <Field
+                        onChange={(e) => handleChange(e, vl)}
+                        defaultValue={vl.enQuestion}
+                        type="text"
+                        name="enQuestion"
+                      />
+
+                      <label>Answer (en)</label>
+                      <Field
+                        onChange={(e) => handleChange(e, vl)}
+                        defaultValue={vl.enAnswer}
+                        type="text"
+                        name="enAnswer"
+                      />
+                      {/* <label>Şəkil</label>
+                      <Field
+                        value={values.filename}
+                        // onChange={(e) =>
+                        //   setFieldValue("image", e.currentTarget.files[0])
+                        // }
+                        type="file"
+                        name="filename"
+                      /> */}
+                    </div>
+                  ))
+                }
+              </div>
+
+              <div className="modal-form-btn">
+                <button type="submit">Edit</button>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      )}
+    </>
+  );
+};
+
+export default FaqKategoriaCard;

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
+import FaqKategoriaCard from './FaqKategoriaCard';
 
 const FaqKategoria = ({ data }) => {
     console.log(data)
 
-
+    const [button, setButton] = useState(false);
+    const [id, setId] = useState('');
     const onSubmitHandler = async (values) => {
 
         const dataForm = {}
@@ -24,53 +26,49 @@ const FaqKategoria = ({ data }) => {
             alert("error")
         }
     }
+    const handleDelete = (id) => {
+
+    }
     return (
-        <div className='middle-main'>
+        <div className='card-main'>
+            <div className="table-main">
+                <table className="table-main-bottom">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    {
 
-            {/* {initialValues &&
-                <Formik
-                    initialValues={initialValues}
-                    onSubmit={(values) => {
-                        onSubmitHandler(values);
-                    }}
-                >
-                    {({
-                        values,
-                        handleChange,
-                        handleSubmit
-                    }) => (
-                        <Form className='middle-main-bottom-form' onSubmit={handleSubmit}>
-                            <div className='middle-main-bottom-form-div'>
-                                <div className='middle-main-bottom-form-div-el'>
-                                    <label>Başlıq (az)</label>
-                                    <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
-                                </div>
+                        data?.map((e) => (
+                            <tbody>
+                                <tr>
+                                    <td>{e && e?.azTitle}</td>
+                                    <td onClick={() => {
+                                        setButton(true)
+                                        setId(e?._id)
+                                    }}>Edit</td>
+                                    <td onClick={() => handleDelete(e?.id)}>Delete</td>
 
-                            </div>
-                            <div className='middle-main-bottom-form-div'>
-                                <div className='middle-main-bottom-form-div-el'>
-                                    <label>Başlıq (ru)</label>
-                                    <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
-                                </div>
+                                </tr>
+                            </tbody>
+                        ))
 
-                            </div>
-
-                            <div className='middle-main-bottom-form-div'>
-                                <div className='middle-main-bottom-form-div-el'>
-                                    <label>Başlıq (en)</label>
-                                    <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
-                                </div>
-
-                            </div>
-                            <div className='middle-main-bottom-form-btn'>
-                                <button type='submit'>Yadda saxla</button>
-                            </div>
-                        </Form>
-                    )}
-                </Formik>
-            } */}
-
+                    }
+                </table>
+               
+            </div>
             {
+                data?.map((e)=>(
+                (e._id===id)?<FaqKategoriaCard data={e} id={id} setButton={setButton} button={button} />:''
+                ))
+                }
+
+
+
+            {/* {
                 data &&
                 data.map((e) => {
                     return(
@@ -86,7 +84,7 @@ const FaqKategoria = ({ data }) => {
 
                 })
 
-            }
+            } */}
         </div>
     )
 }
