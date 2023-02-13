@@ -1,18 +1,56 @@
-.main-vakansiya{
-    background-color: rgba(34, 37, 42, 0.95);
+.main-vakansiya {
+    // background-color: rgba(34, 37, 42, 0.95);
     // width: 85%;
     padding-right: 20px;
-    .text{
+
+    .text {
         padding-left: 20px;
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.5);
-        
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.5);
+
     }
-    table, td, th {
-        border: 1px solid;
+
+    table,
+    
+    th {
+        text-align: left;
+        border-bottom: 1px solid;
     }
-    table{
+
+    table {
         width: 100%;
         border-collapse: collapse;
+    }
+    tr{
+        margin-bottom: 5%;
+    }
+    .card-main{
+        position: relative;
+    }
+    .table-main {
+        margin-left: 20px;
+        border-radius: 3px;
+        font-weight: 400;
+        color: #a5a8ad;
+        background: #282b2f;
+        padding: 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.09);
+    }
+    
+    td{
+        background: rgba(255,255,255,0.01);
+    }
+    tbody {
+        // background: rgba(255, 255, 255, 0.01);
+        padding: 35px;
+        width: 100%;
+        position: relative;
+        margin: 5px 0;
+   
+    }
+    
+    td{
+        padding: 20px 20px 20px 0;
+        width: calc(100% - 70px);
     }
 }

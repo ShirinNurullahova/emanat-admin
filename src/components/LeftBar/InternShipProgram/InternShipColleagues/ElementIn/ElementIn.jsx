@@ -3,68 +3,81 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
 const ElementIn = ({ initialValues }) => {
+
+
     console.log(initialValues)
-  
+
+    const onSubmitHandler = async (values) => {
+        const dataForm = new FormData()
+       
+       
+      };
+    
+    const handleChange = (e, item ) => {
+        let name = e.target.name
+        item[name] = e.target.value;
+    };
+
     return (
         <div>
             <div className='middle-main'>
-                <div className='middle-main-comp'>
 
-                    <div className='middle-main-comp-bottom'>
-                        <p>/ Əməkdaşlarımız</p>
-                    </div>
-                </div>
                 <div className='middle-main-bottom'>
                     {initialValues &&
                         <Formik
                             initialValues={initialValues}
-                            // onSubmit={(values) => {
-                            //     onSubmitHandler(values);
-                            // }}
+                        onSubmit={(values) => {
+                            onSubmitHandler(values);
+                        }}
                         >
                             {({
                                 values,
-                                handleChange,
+                                // handleChange,
                                 handleSubmit,
                                 setFieldValue
                             }) => (
                                 <Form className='middle-main-bottom-form'>
-                                    <div className='middle-main-bottom-form-div'>
-                                        <div className='middle-main-bottom-form-div-el'>
-                                            <label>Başlıq (az)</label>
-                                            <Field onChange={handleChange} value={values.azKey} type="text" name="azKey" />
-                                        </div>
-                                        <div className='middle-main-bottom-form-div-el'>
-                                            <label>Mətn (az)</label>
-                                            <Field onChange={handleChange} value={values.azValue} type="text" placeholder='' name="azValue" />
-                                        </div>
-                                    </div>
-                                    <div className='middle-main-bottom-form-div'>
-                                        <div className='middle-main-bottom-form-div-el'>
-                                            <label>Başlıq (ru)</label>
-                                            <Field onChange={handleChange} value={values.ruKey} type="text" name="ruKey" />
-                                        </div>
-                                        <div className='middle-main-bottom-form-div-el'>
-                                            <label>Mətn (ru)</label>
-                                            <Field onChange={handleChange} value={values.ruValue} type="text" name="ruValue" />
-                                        </div>
+                                    {initialValues.data.map((item, index) => {
+                                        return (
+
+                                            <div className='middle-main-bottom-form-div'>
+                                                <div className='middle-main-bottom-form-div-el'>
+                                                    <label>Başlıq (az)</label>
+                                                    <Field onChange={(e) => handleChange(e, item)} id={index} defaultValue={item.azKey} type="text" name="azKey" />
+                                                </div>
+                                                <div className='middle-main-bottom-form-div-el'>
+                                                    <label>Mətn (az)</label>
+                                                    <Field onChange={(e) => handleChange(e, item)} id={index} defaultValue={item.azValue} type="text" placeholder='' name="azValue" />
+                                                </div>
+                                                <div className='middle-main-bottom-form-div-el'>
+                                                    <label>Başlıq (ru)</label>
+                                                    <Field onChange={(e) => handleChange(e, item)} id={index} defaultValue={item.ruKey} type="text" name="ruKey" />
+                                                </div>
+                                                <div className='middle-main-bottom-form-div-el'>
+                                                    <label>Mətn (ru)</label>
+                                                    <Field onChange={(e) => handleChange(e, item)} id={index} defaultValue={item.ruValue} type="text" name="ruValue" />
+                                                </div>
+                                                <div className='middle-main-bottom-form-div-el'>
+                                                    <label>Başlıq (en)</label>
+                                                    <Field onChange={(e) => handleChange(e, item)} id={index} defaultValue={item.enKey} type="text" name="enKey" />
+                                                </div>
+                                                <div className='middle-main-bottom-form-div-el'>
+                                                    <label>Mətn (en)</label>
+                                                    <Field onChange={(e) => handleChange(e, item)} id={index} defaultValue={item.enValue} type="text" name="enValue" />
+                                                </div>
+                                            </div>
+
+                                        )
+                                    })}
+
+
+
+
+                                    <div className='middle-main-bottom-form-div-el'>
+                                        <label>Şəkil</label>
+                                        <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
                                     </div>
 
-                                    <div className='middle-main-bottom-form-div'>
-                                        <div className='middle-main-bottom-form-div-el'>
-                                            <label>Başlıq (en)</label>
-                                            <Field onChange={handleChange} value={values.enKey} type="text" name="enKey" />
-                                        </div>
-                                        <div className='middle-main-bottom-form-div-el'>
-                                            <label>Mətn (en)</label>
-                                            <Field onChange={handleChange} value={values.enValue} type="text" name="enValue" />
-                                        </div>
-
-                                        <div className='middle-main-bottom-form-div-el'>
-                                            <label>Şəkil</label>
-                                            <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
-                                        </div>
-                                    </div>
                                     <div className='middle-main-bottom-form-btn'>
                                         <button type='submit'>Yadda saxla</button>
                                     </div>

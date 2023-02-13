@@ -1,0 +1,20 @@
+.modal-form1{
+    position: absolute;
+    z-index: 999;
+    background-color: #6c757d;
+  float: left;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -40%);
+    border-radius: 3px;
+    width: 360px;
+    height: 360px;
+    overflow-y: scroll;
+    padding: 20px;
+    font-weight: 400;
+    color: #a5a8ad;
+    background-color: #282b2f;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    text-align: center;
+}
