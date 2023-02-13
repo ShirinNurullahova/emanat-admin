@@ -2,6 +2,7 @@ import "./ElementCard.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Formik, Field, Form } from "formik";
+import '../ElementCard/ElementCard.scss'
 const ElementCard = ({ id, setButton, button }) => {
   const [initialValues, setInitialValues] = useState(null);
   const fetchData = () => {
@@ -19,12 +20,10 @@ const ElementCard = ({ id, setButton, button }) => {
   }, []);
 
   const onSubmitHandler = async (values) => {
-    console.log(values);
     const dataForm = {};
     dataForm.id = id;
     dataForm.data = values;
     dataForm.page = "Career";
-    // console.log(dataForm);
        if (button) {
             try {
                 const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/vacation/job`, dataForm)
@@ -63,7 +62,7 @@ const ElementCard = ({ id, setButton, button }) => {
             // handleChange,
             handleSubmit,
           }) => (
-            <Form className="modal-form">
+            <Form className="modal-form1">
               <div className="modal-form-div">
                 {values.map((vl, index) => (
                   <div className="modal-form-div-el">

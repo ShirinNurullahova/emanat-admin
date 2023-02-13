@@ -1,6 +1,22 @@
 .intern{
-    background-color: rgba(34, 37, 42, 0.95);
+    // background-color: rgba(34, 37, 42, 0.95);
     // width: 85%;
     padding-right: 20px;
-   
+    .middle-main-btn{
+       text-align: right;
+            button {
+                padding: 10px;
+                font-size: 15px;
+                border-radius: 50px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                color: #fff;
+                cursor: pointer;
+                background-color: #007bff;
+                border: none;
+                outline: none;
+            }
+
+        }
+    
 }

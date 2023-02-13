@@ -5,8 +5,8 @@ import ElementCard from './ElementCard/ElementCard';
 const VakansiyaCard = ({ btn, setBtn }) => {
 
     const [data, setData] = useState(null);
-    const [button,setButton]=useState(false);
-    const [id,setId]=useState('');
+    const [button, setButton] = useState(false);
+    const [id, setId] = useState('');
 
 
     const fetchData = () => {
@@ -16,10 +16,10 @@ const VakansiyaCard = ({ btn, setBtn }) => {
             }
         })
             .then(res => {
-               console.log(res.data)
+                console.log(res.data)
                 setData(res.data);
             })
-            .catch((err) => {});
+            .catch((err) => { });
     }
 
     // refresh evezine 
@@ -29,42 +29,46 @@ const VakansiyaCard = ({ btn, setBtn }) => {
             fetchData();
         }
     }, [btn]);
-    const handleDelete=(id)=>{
+    const handleDelete = (id) => {
 
     }
     return (
-        <>
-                 <div className="middle-main">
-                    <table className="middle-main-bottom">
-                        <thead>
-                            <tr>
+        <div className='card-main'>
+            <div className="table-main">
+                <table className="table-main-bottom">
+                    <thead>
+                        <tr>
                             <th>{data && data[0]?.sections[0]?.title}</th>
                             <th>{data && data[0]?.sections[1]?.title}</th>
-                            </tr>
-                        </thead>
-            {
-                
-                data?.map((e) => (
-                        <tbody>
-                            <tr>
-                                <td>{e && e?.sections[0]?.items}</td>
-                                <td>{e && e?.sections[1]?.items}</td>
-                                <td onClick={()=>{
-                                    setButton(true)
-                                    setId(e?.id)}}>Edit</td>
-                                <td onClick={()=>handleDelete(e?.id)}>Delete</td>
-                              
-                            </tr>
-                        </tbody>
-                ))
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    {
 
-            }
-               </table>
-                {
-                button && <ElementCard id={id} setButton={setButton} button={button}/>
-            }
-             </div>
-        </>
+                        data?.map((e) => (
+                            <tbody>
+                                <tr>
+                                    <td>{e && e?.sections[0]?.items}</td>
+                                    <td>{e && e?.sections[1]?.items}</td>
+                                    <td onClick={() => {
+                                        setButton(true)
+                                        setId(e?.id)
+                                    }}>Edit</td>
+                                    <td onClick={() => handleDelete(e?.id)}>Delete</td>
+
+                                </tr>
+                            </tbody>
+                        ))
+
+                    }
+                </table>
+               
+            </div>
+            {
+                    button && <ElementCard id={id} setButton={setButton} button={button} />
+                }
+        </div>
 
     )
 }

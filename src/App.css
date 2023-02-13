@@ -13,6 +13,8 @@
 .two-right{
    width: calc(100% - 240px);
    margin-left: auto;
+   
+   background-color: rgba(34, 37, 42, 0.95);
 }
 /* .rem {
   di
