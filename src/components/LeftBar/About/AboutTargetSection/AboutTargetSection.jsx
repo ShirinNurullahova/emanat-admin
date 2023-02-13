@@ -55,7 +55,7 @@ const AboutTargetSection = ({ initialValues }) => {
                         <Form className='modal-form' >
                             <div className='modal-form-div'>
                                 <div className='modal-form-div-el'>
-                                    <label>Təsvir (az)</label>
+                                    <label>Mətn (az)</label>
                                     <Field onChange={handleChange} value={values.azDescription} type="text" name="azDescription" />
                                 </div>
                                 <div className='modal-form-div-el'>
@@ -63,7 +63,7 @@ const AboutTargetSection = ({ initialValues }) => {
                                     <Field onChange={handleChange} value={values.azSubTitle} type="text" name="azSubTitle" />
                                 </div>
                                 <div className='modal-form-div-el'>
-                                    <label>Təsvir (ru)</label>
+                                    <label>Mətn (ru)</label>
                                     <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                 </div>
                                 <div className='modal-form-div-el'>
@@ -71,7 +71,7 @@ const AboutTargetSection = ({ initialValues }) => {
                                     <Field onChange={handleChange} value={values.ruSubTitle} type="text" name="ruSubTitle" />
                                 </div>
                                 <div className='modal-form-div-el'>
-                                    <label>Təsvir (en)</label>
+                                    <label>Mətn (en)</label>
                                     <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                 </div>
                                 <div className='modal-form-div-el'>

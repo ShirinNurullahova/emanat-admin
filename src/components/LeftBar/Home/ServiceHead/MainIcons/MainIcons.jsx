@@ -54,7 +54,7 @@ const MainIcons = ({initialValues}) => {
                                         <Field onChange={handleChange} value={values.azSubtitle} type="text" name="azSubtitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (az)</label>
+                                        <label>Mətn (az)</label>
                                         <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@ const MainIcons = ({initialValues}) => {
                                         <Field onChange={handleChange} value={values.ruSubtitle} type="text" name="ruSubtitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (ru)</label>
+                                        <label>Mətn (ru)</label>
                                         <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@ const MainIcons = ({initialValues}) => {
                                         <Field onChange={handleChange} value={values.enSubtitle} type="text" name="enSubtitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (en)</label>
+                                        <label>Mətn (en)</label>
                                         <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                     </div>
 

@@ -97,7 +97,7 @@ const Modal = ({ id, setBtn, btn }) => {
                   <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Təsvir (az)</label>
+                  <label>Mətn (az)</label>
                   <Field value={values.azDescription} type="text" placeholder='' name="azDescription" />
                 </div>
                 <div className='modal-form-div-el'>
@@ -105,7 +105,7 @@ const Modal = ({ id, setBtn, btn }) => {
                   <Field value={values.ruTitle} type="text" name="ruTitle" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Təsvir (ru)</label>
+                  <label>Mətn (ru)</label>
                   <Field value={values.ruDescription} type="text" placeholder='' name="ruDescription" />
                 </div>
                 <div className='modal-form-div-el'>
@@ -113,7 +113,7 @@ const Modal = ({ id, setBtn, btn }) => {
                   <Field value={values.enTitle} type="text" name="enTitle" />
                 </div>
                 <div className='modal-form-div-el'>
-                  <label>Təsvir (en)</label>
+                  <label>Mətn (en)</label>
                   <Field value={values.enDescription} type="text" placeholder='' name="enDescription" />
                 </div>
                 <div className='modal-form-div-el'>

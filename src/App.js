@@ -78,6 +78,7 @@ function App() {
         <div className='two-components'>
           <ScrollBar />
         </div>
+        <div className="two-right">
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/terminalusage" element={<TerminalUsage />} />
@@ -108,6 +109,8 @@ function App() {
           <Route path="/marketing-cooperation" element={<MarketingCooperation/>}/>
           <Route path="/terminal" element={<Terminals/>}/>
         </Routes>
+        </div>
+     
       </div>
     </div>
   );

@@ -97,7 +97,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Təsvir (az)</label>
+                      <label>Mətn (az)</label>
                       <Field
                         onChange={handleChange}
                         value={values.azDescription}
@@ -128,7 +128,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Təsvir (ru)</label>
+                      <label>Mətn (ru)</label>
                       <Field
                         onChange={handleChange}
                         value={values.ruDescription}
@@ -159,7 +159,7 @@ const Contact = () => {
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
-                      <label>Təsvir (en)</label>
+                      <label>Mətn (en)</label>
                       <Field
                         onChange={handleChange}
                         value={values.enDescription}

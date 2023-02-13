@@ -48,7 +48,7 @@ const ReklamSections = ({initialValues}) => {
                                         <Field onChange={handleChange} value={values.azSubTitle} type="text" name="azSubTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (az)</label>
+                                        <label>Mətn (az)</label>
                                         <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@ const ReklamSections = ({initialValues}) => {
                                         <Field onChange={handleChange} value={values.ruSubTitle} type="text" name="ruSubTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (ru)</label>
+                                        <label>Mətn (ru)</label>
                                         <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@ const ReklamSections = ({initialValues}) => {
                                         <Field onChange={handleChange} value={values.enSubTitle} type="text" name="enSubTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (en)</label>
+                                        <label>Mətn (en)</label>
                                         <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                     </div>
                                 </div>

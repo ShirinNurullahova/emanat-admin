@@ -90,7 +90,7 @@ const Banner = () => {
                                         <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (az)</label>
+                                        <label>Mətn (az)</label>
                                         <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@ const Banner = () => {
                                         <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (ru)</label>
+                                        <label>Mətn (ru)</label>
                                         <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@ const Banner = () => {
                                         <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Təsvir (en)</label>
+                                        <label>Mətn (en)</label>
                                         <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                     </div>
 
