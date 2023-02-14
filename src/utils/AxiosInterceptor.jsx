@@ -14,6 +14,7 @@ let endPoints = [
 export const axiosInterceptorHandle = (history) => {
     axios.interceptors.response.use(
         (res) => {
+            console.log(res)
             if (res.url !== `${process.env.REACT_APP_URL}/auth/logout` && res.headers['emanat-refresh'] !== undefined) {
                 let headerAuth = res.headers['emanat-access'];
                 let headerRefresh = res.headers['emanat-refresh'];

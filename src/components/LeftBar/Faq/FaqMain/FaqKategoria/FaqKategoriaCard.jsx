@@ -55,6 +55,7 @@ console.log(data);
                         defaultValue={vl.azQuestion}
                         type="text"
                         name="azQuestion"
+                        required
                       />
                       <label>Answer (az)</label>
                       <Field
@@ -62,6 +63,7 @@ console.log(data);
                         defaultValue={vl.azAnswer}
                         type="text"
                         name="azAnswer"
+                        required
                       />
                       <label>Question (ru)</label>
                       <Field
@@ -69,6 +71,7 @@ console.log(data);
                         defaultValue={vl.ruQuestion}
                         type="text"
                         name="ruQuestion"
+                        required
                       />
 
                       <label>Answer (ru)</label>
@@ -77,6 +80,7 @@ console.log(data);
                         defaultValue={vl.ruAnswer}
                         type="text"
                         name="ruAnswer"
+                        required
                       />
                       <label>Question (en)</label>
                       <Field
@@ -84,6 +88,7 @@ console.log(data);
                         defaultValue={vl.enQuestion}
                         type="text"
                         name="enQuestion"
+                        required
                       />
 
                       <label>Answer (en)</label>
@@ -92,6 +97,7 @@ console.log(data);
                         defaultValue={vl.enAnswer}
                         type="text"
                         name="enAnswer"
+                        required
                       />
                       {/* <label>Şəkil</label>
                       <Field

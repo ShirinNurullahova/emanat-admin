@@ -56,32 +56,32 @@ const UniSection = ({ initialValues, }) => {
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Başlıq (az)</label>
-                                    <Field onChange={handleChange} value={values.azSubtitle} type="text" name="azSubtitle" />
+                                    <Field onChange={handleChange} value={values.azSubtitle} type="text" name="azSubtitle"   required/>
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Mətn (az)</label>
-                                    <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
+                                    <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription"   required/>
                                 </div>
                             </div>
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Başlıq (ru)</label>
-                                    <Field onChange={handleChange} value={values.ruSubtitle} type="text" name="ruSubtitle" />
+                                    <Field onChange={handleChange} value={values.ruSubtitle} type="text" name="ruSubtitle"   required/>
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Mətn (ru)</label>
-                                    <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
+                                    <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription"   required/>
                                 </div>
                             </div>
 
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Başlıq (en)</label>
-                                    <Field onChange={handleChange} value={values.enSubtitle} type="text" name="enSubtitle" />
+                                    <Field onChange={handleChange} value={values.enSubtitle} type="text" name="enSubtitle"   required/>
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Mətn (en)</label>
-                                    <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
+                                    <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription"   required/>
                                 </div>
 
                                 <div className='middle-main-bottom-form-div-el'>

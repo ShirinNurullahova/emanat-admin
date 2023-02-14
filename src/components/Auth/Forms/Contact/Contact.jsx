@@ -94,6 +94,7 @@ const Contact = () => {
                         value={values.azTitle}
                         type="text"
                         name="azTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -104,6 +105,7 @@ const Contact = () => {
                         type="text"
                         placeholder=""
                         name="azDescription"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -114,6 +116,7 @@ const Contact = () => {
                         type="text"
                         placeholder=""
                         name="azSubTitle"
+                        required
                       />
                     </div>
                   </div>
@@ -125,6 +128,7 @@ const Contact = () => {
                         value={values.ruTitle}
                         type="text"
                         name="ruTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -134,6 +138,7 @@ const Contact = () => {
                         value={values.ruDescription}
                         type="text"
                         name="ruDescription"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -144,6 +149,7 @@ const Contact = () => {
                         type="text"
                         placeholder=""
                         name="ruSubTitle"
+                        required
                       />
                     </div>
                   </div>
@@ -156,6 +162,7 @@ const Contact = () => {
                         value={values.enTitle}
                         type="text"
                         name="enTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -165,6 +172,7 @@ const Contact = () => {
                         value={values.enDescription}
                         type="text"
                         name="enDescription"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -175,6 +183,7 @@ const Contact = () => {
                         type="text"
                         placeholder=""
                         name="enSubTitle"
+                        required
                       />
                     </div>
                   </div>

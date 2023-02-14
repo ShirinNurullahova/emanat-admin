@@ -73,6 +73,7 @@ const ElementCard = ({ id, setButton, button }) => {
                       defaultValue={vl.azTitle}
                       type="text"
                       name="azTitle"
+                      required
                     />
                     <label>Items (az)</label>
                     {
@@ -82,6 +83,7 @@ const ElementCard = ({ id, setButton, button }) => {
                       defaultValue={vl.azItems}
                       type="text"
                       name="azItems"
+                      required
                     /> : vl.azItems.map((itm, index1)=>(
                         <Field
                         onChange={(e) => itemHandleChange(e, vl)}
@@ -89,6 +91,7 @@ const ElementCard = ({ id, setButton, button }) => {
                         defaultValue={itm}
                         type="text"
                         name="azItems"
+                        required
                       /> 
                     ))
                     }
@@ -99,6 +102,7 @@ const ElementCard = ({ id, setButton, button }) => {
                       defaultValue={vl.ruTitle}
                       type="text"
                       name="ruTitle"
+                      required
                     />
 
                     <label>Items (ru)</label>
@@ -110,6 +114,7 @@ const ElementCard = ({ id, setButton, button }) => {
                             defaultValue={itm}
                             type="text"
                             name="ruItems"
+                            required
                           /> 
                         ))
                     }
@@ -120,6 +125,7 @@ const ElementCard = ({ id, setButton, button }) => {
                       defaultValue={vl.enTitle}
                       type="text"
                       name="enTitle"
+                      required
                     />
 
                     <label>Items (en)</label>
@@ -131,6 +137,7 @@ const ElementCard = ({ id, setButton, button }) => {
                             defaultValue={itm}
                             type="text"
                             name="enItems"
+                            required
                           /> 
                         ))
                     }

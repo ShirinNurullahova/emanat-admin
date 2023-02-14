@@ -5,7 +5,7 @@ import '../Modal/Modal.scss'
 import axios from 'axios';
 
 const Modal = ({ id, setBtn, btn }) => {
-
+   
   const [initialValues, setInitialValues] = useState(null)
   const initialValuesAdd = {
     azDescription: '',
@@ -79,7 +79,7 @@ const Modal = ({ id, setBtn, btn }) => {
     <div className='modal' >
       {(btn === "Əlavə et" || initialValues) && 
         <Formik
-          initialValues={btn === "Redaktə et" ? initialValuesAdd : initialValues}
+          initialValues={ btn === "Redaktə et" ? initialValues : initialValuesAdd}
           onSubmit={(values) => {
             onSubmitHandler(values);
           }}
@@ -94,31 +94,31 @@ const Modal = ({ id, setBtn, btn }) => {
               <div className='modal-form-div'>
                 <div className='modal-form-div-el'>
                   <label>Başlıq (az)</label>
-                  <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
+                  <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle"   required/>
                 </div>
                 <div className='modal-form-div-el'>
                   <label>Mətn (az)</label>
-                  <Field value={values.azDescription} type="text" placeholder='' name="azDescription" />
+                  <Field value={values.azDescription} type="text" placeholder='' name="azDescription"   required/>
                 </div>
                 <div className='modal-form-div-el'>
                   <label>Başlıq (ru)</label>
-                  <Field value={values.ruTitle} type="text" name="ruTitle" />
+                  <Field value={values.ruTitle} type="text" name="ruTitle"   required/>
                 </div>
                 <div className='modal-form-div-el'>
                   <label>Mətn (ru)</label>
-                  <Field value={values.ruDescription} type="text" placeholder='' name="ruDescription" />
+                  <Field value={values.ruDescription} type="text" placeholder='' name="ruDescription"   required/>
                 </div>
                 <div className='modal-form-div-el'>
                   <label>Başlıq (en)</label>
-                  <Field value={values.enTitle} type="text" name="enTitle" />
+                  <Field value={values.enTitle} type="text" name="enTitle"   required/>
                 </div>
                 <div className='modal-form-div-el'>
                   <label>Mətn (en)</label>
-                  <Field value={values.enDescription} type="text" placeholder='' name="enDescription" />
+                  <Field value={values.enDescription} type="text" placeholder='' name="enDescription"   required/>
                 </div>
                 <div className='modal-form-div-el'>
                   <label>Səhifə</label>
-                  <Field value={values.page} type="text" placeholder='' name="page" />
+                  <Field value={values.page} type="text" placeholder='' name="page"   required/>
                 </div>
                 <div className='modal-form-div-el'>
                   <label>Şəkil</label>

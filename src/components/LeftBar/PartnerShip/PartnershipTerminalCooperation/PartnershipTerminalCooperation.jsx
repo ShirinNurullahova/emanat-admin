@@ -87,28 +87,28 @@ const PartnershipTerminalCooperation = () => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (az)</label>
-                                        <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
+                                        <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Description (az)</label>
-                                        <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
+                                        <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
+                                        <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Description (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
+                                        <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription"   required/>
                                     </div>
                                 </div>
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (en)</label>
-                                        <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
+                                        <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Description (en)</label>

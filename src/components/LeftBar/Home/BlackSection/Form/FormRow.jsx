@@ -40,32 +40,32 @@ const FormRow = ({ initialValues }) => {
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Başlıq (az)</label>
-                                    <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
+                                    <Field   required onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Mətn (az)</label>
-                                    <Field onChange={handleChange} value={values.azDescription} type="text" name="azDescription" />
+                                    <Field   required onChange={handleChange} value={values.azDescription} type="text" name="azDescription" />
                                 </div>
                             </div>
 
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Başlıq  (ru)</label>
-                                    <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
+                                    <Field   required onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Mətn (ru)</label>
-                                    <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
+                                    <Field   required onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
                                 </div>
                             </div>
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Başlıq  (en)</label>
-                                    <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
+                                    <Field   required onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
                                 </div>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Mətn (en)</label>
-                                    <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
+                                    <Field   required onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
                                 </div>
                             </div>
                             <div className='middle-main-bottom-form-btn'>

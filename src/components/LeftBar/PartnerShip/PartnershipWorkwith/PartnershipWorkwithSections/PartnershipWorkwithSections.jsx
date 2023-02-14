@@ -47,20 +47,20 @@ const WorkWithSections = ({initialValues}) => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Description (az)</label>
-                                        <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
+                                        <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Description (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
+                                        <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription"   required/>
                                     </div>
                                 </div>
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Description (en)</label>
-                                        <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
+                                        <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>

@@ -98,6 +98,7 @@ const CareerExperience = () => {
                       value={values.azTitle}
                       type="text"
                       name="azTitle"
+                      required
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
@@ -108,6 +109,7 @@ const CareerExperience = () => {
                       type="text"
                       placeholder=""
                       name="azDescription"
+                      required
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
@@ -118,6 +120,7 @@ const CareerExperience = () => {
                       type="text"
                       placeholder=""
                       name="azSections"
+                      required
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
@@ -128,6 +131,7 @@ const CareerExperience = () => {
                       type="text"
                       placeholder=""
                       name="azSubTitle"
+                      required
                     />
                   </div>
                 </div>
@@ -139,6 +143,7 @@ const CareerExperience = () => {
                       value={values.ruTitle}
                       type="text"
                       name="ruTitle"
+                      required
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
@@ -148,6 +153,7 @@ const CareerExperience = () => {
                       value={values.ruDescription}
                       type="text"
                       name="ruDescription"
+                      required
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
@@ -158,6 +164,7 @@ const CareerExperience = () => {
                       type="text"
                       placeholder=""
                       name="ruSections"
+                      required
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
@@ -168,6 +175,7 @@ const CareerExperience = () => {
                       type="text"
                       placeholder=""
                       name="ruSubTitle"
+                      required
                     />
                   </div>
                 </div>
@@ -180,6 +188,7 @@ const CareerExperience = () => {
                       value={values.enTitle}
                       type="text"
                       name="enTitle"
+                      required
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
@@ -189,6 +198,7 @@ const CareerExperience = () => {
                       value={values.enDescription}
                       type="text"
                       name="enDescription"
+                      required
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
@@ -199,6 +209,7 @@ const CareerExperience = () => {
                       type="text"
                       placeholder=""
                       name="enSections"
+                      required
                     />
                   </div>
                   <div className="middle-main-bottom-form-div-el">
@@ -209,6 +220,7 @@ const CareerExperience = () => {
                       type="text"
                       placeholder=""
                       name="enSubTitle"
+                      required
                     />
                   </div>
                 </div>

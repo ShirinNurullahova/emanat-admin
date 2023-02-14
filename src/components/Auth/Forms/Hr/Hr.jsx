@@ -88,6 +88,7 @@ const Hr = () => {
                         value={values.azTitle}
                         type="text"
                         name="azTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -98,6 +99,7 @@ const Hr = () => {
                         type="text"
                         placeholder=""
                         name="azDescription"
+                        required
                       />
                     </div>
                   </div>
@@ -109,6 +111,7 @@ const Hr = () => {
                         value={values.ruTitle}
                         type="text"
                         name="ruTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -118,6 +121,7 @@ const Hr = () => {
                         value={values.ruDescription}
                         type="text"
                         name="ruDescription"
+                        required
                       />
                     </div>
                   </div>
@@ -130,6 +134,7 @@ const Hr = () => {
                         value={values.enTitle}
                         type="text"
                         name="enTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -139,6 +144,7 @@ const Hr = () => {
                         value={values.enDescription}
                         type="text"
                         name="enDescription"
+                        required
                       />
                     </div>
                   </div>
