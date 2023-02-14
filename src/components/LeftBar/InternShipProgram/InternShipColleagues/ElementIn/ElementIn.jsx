@@ -3,10 +3,6 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
 const ElementIn = ({ initialValues }) => {
-
-
-    console.log(initialValues)
-
     const onSubmitHandler = async (values) => {
         const dataForm = new FormData()
        
