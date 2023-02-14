@@ -15,7 +15,6 @@ const Vakansiya = () => {
                     </div>
                 </div>
             </div>
-
           <VakansiyaHeader/>
           <VakansiyaTeam/>
           <VakansiyaJob/>

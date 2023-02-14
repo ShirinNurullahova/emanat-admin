@@ -3,18 +3,27 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
 const EditModalCategories = ({ setButton, button, data }) => {
-    const [initialValues, setInitialValues] = useState({ data });
-    const [vlData, setVlData] = useState(null)
+    console.log(data);
+    const [initialValues, setInitialValues] = useState(data);
 
-    const onSubmitHandler = async () => {
-        console.log(vlData);
-        const dataForm = {}
-        dataForm.azTitle = vlData.azTitle
-        dataForm.enTitle = vlData.enTitle
-        dataForm.ruTitle = vlData.ruTitle
-        dataForm.id = vlData._id
+
+    const onSubmitHandler = async (values) => {
+        console.log(values);
+           const dataForm = new FormData()
+           dataForm.append('id', values._id)
+           dataForm.append('azAnswer', values.azAnswer)
+           dataForm.append('azQuestion', values.azQuestion)
+           dataForm.append('enQuestion', values.enQuestion)
+           dataForm.append('enAnswer', values.enAnswer)
+           dataForm.append('ruQuestion', values.ruQuestion)
+           dataForm.append('ruAnswer', values.ruAnswer)
+           if (values.images) {
+               dataForm.append('FaqMainCategoriesItemImage', values.images)
+           } else {
+               dataForm.append('FaqMainCategoriesItemImage', values.image.url)
+           }
         try {
-            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/faq/main/categories`, dataForm)
+            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/faq/main/categories/item`, dataForm)
             if (response.status == 200) {
 
             }
@@ -26,10 +35,10 @@ const EditModalCategories = ({ setButton, button, data }) => {
       setButton(false)
 
     };
-    const handleChange = (e, vl) => {
-        let name = e.target.name;
-        vl[[name]] = e.target.value;
-      };
+    // const handleChange = (e, vl) => {
+    //     let name = e.target.name;
+    //     vl[[name]] = e.target.value;
+    //   };
 
     return (
         <div>
@@ -37,55 +46,75 @@ const EditModalCategories = ({ setButton, button, data }) => {
             {initialValues && (
                 <Formik
                     initialValues={initialValues}
-                    onSubmit={() => {
-                        onSubmitHandler();
+                    onSubmit={(values) => {
+                        onSubmitHandler(values);
                     }}
                 >
                     {({
                         values,
-                        // handleChange,
+                        setFieldValue,
+                        handleChange,
                         handleSubmit
                     }) => (
                         <Form className="modal-form1" >
-                            {console.log(values)}
                             <div className="modal-form-div">
-                                {values?.data?.map((vl) => (
-                                    <div className="modal-form-div-el">
-                                        <label>Title(az)</label>
-                                        <Field
-                                            onChange={(e) => handleChange(e, vl)}
-                                            defaultValue={vl.azTitle}
-                                            id={vl._id}
-                                            type="text"
-                                            name="azTitle"
-                                            required
-                                        />
-                                        <label>Title (en)</label>
-                                        <Field
-                                            onChange={(e) => handleChange(e, vl)}
-                                            defaultValue={vl.enTitle}
-                                            id={vl._id}
-                                            type="text"
-                                            name="enTitle"
-                                            required
-                                        />
-                                        <label>Title (ru)</label>
-                                        <Field
-                                            onChange={(e) => handleChange(e, vl)}
-                                            defaultValue={vl.ruTitle}
-                                            id={vl._id}
-                                            type="text"
-                                            name="ruTitle"
-                                            required
-                                        />
-                                        <div className="modal-form-btn">
-                                            <button onClick={() => setVlData(vl)} type="submit">Edit</button>
-                                        </div>
+                                <div className="modal-form-div-el">
+                                    <label>Sual (az)</label>
+                                    <Field
+                                        onChange={handleChange}
+                                        defaultValue={values.azQuestion}
+                                        type="text"
+                                        name="azQuestion"
+                                        required
+                                    />
+                                    <label>Cavab (en)</label>
+                                    <Field
+                                        onChange={handleChange}
+                                        defaultValue={values.azAnswer}
+                                        type="text"
+                                        name="azAnswer"
+                                        required
+                                    />
+                                    <label>Sual (ru)</label>
+                                    <Field
+                                        onChange={handleChange}
+                                        defaultValue={values.ruQuestion}
+                                        type="text"
+                                        name="ruQuestion"
+                                        required
+                                    />
+                                    <label>Cavab (ru)</label>
+                                    <Field
+                                        onChange={handleChange}
+                                        defaultValue={values.ruAnswer}
+                                        type="text"
+                                        name="ruAnswer"
+                                        required
+                                    />
+                                    <label>Sual (en)</label>
+                                    <Field
+                                       onChange={handleChange}
+                                        defaultValue={values.enQuestion}
+                                        type="text"
+                                        name="enQuestion"
+                                        required
+                                    />
+                                     <label>Cavab (en)</label>
+                                    <Field
+                                        onChange={handleChange}
+                                        defaultValue={values.enAnswer}
+                                        type="text"
+                                        name="enAnswer"
+                                        required
+                                    />
+                                 
+                                        <label>Şəkil</label>
+                                        <Field value={values.filename} onChange={e => setFieldValue("images", e.currentTarget.files[0])} type="file" name="filename" />
+                                
+                                    <div className="modal-form-btn">
+                                        <button type="submit">Edit</button>
                                     </div>
-
-                                ))
-
-                                }
+                                </div>
                             </div>
 
 
