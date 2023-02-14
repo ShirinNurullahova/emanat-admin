@@ -16,14 +16,12 @@ const VakansiyaCard = () => {
             }
         })
             .then(res => {
-                console.log(res.data)
                 setData(res.data);
             })
             .catch((err) => { });
     }
 
     useEffect(() => {
-        console.log(button)
         if (!btnAdd || !button) {
             fetchData();
         }

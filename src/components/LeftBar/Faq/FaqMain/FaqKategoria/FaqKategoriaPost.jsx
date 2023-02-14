@@ -13,7 +13,6 @@ const FaqKategoriaPost = ({id , button , setButton}) => {
         FaqMainCategoriesItemImage:''
     }
     const onSubmitHandler = async (values) => {
-        console.log(values);
 
       const dataForm = new FormData()
         dataForm.append('id', id)
@@ -126,7 +125,7 @@ const FaqKategoriaPost = ({id , button , setButton}) => {
               </div>
 
               <div className="modal-form-btn">
-                <button type="submit">Add</button>
+                <button type="submit">Əlavə et</button>
               </div>
             </Form>
           )}

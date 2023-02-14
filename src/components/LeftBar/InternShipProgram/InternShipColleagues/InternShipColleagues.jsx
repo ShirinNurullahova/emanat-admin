@@ -14,7 +14,6 @@ const InternShipColleagues = () => {
 
     axios.get((`${process.env.REACT_APP_URL}/admin/internship/colleagues/`))
       .then(res => {
-        console.log(res)
         setData(res.data[0]?.sections)
         setId(res.data[0]?._id)
       })
@@ -35,7 +34,7 @@ const InternShipColleagues = () => {
       </div>
       <div className='internAdd'>
         <div className='middle-main-btn' onClick={() => setOpen(!open)}>
-          <button>Add</button>
+          <button>Əlavə et</button>
         </div>
         {
           open &&

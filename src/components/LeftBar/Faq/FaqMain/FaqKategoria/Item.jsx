@@ -8,7 +8,6 @@ const Item = ({ e }) => {
     const [buttonPost, setButtonPost] = useState(false);
     const [editButton, setEditButton] = useState(false)
     const [idItem,setIdItem]=useState(null)
-    console.log(e);
     const handleDelete = async (id) => {
         try {
             const response = await axios.delete(`${process.env.REACT_APP_URL}/admin/faq/main/categories/item/${id}`)
@@ -47,7 +46,7 @@ const Item = ({ e }) => {
                                     <td onClick={()=> {
                                         setEditButton(true)
                                         setIdItem(itm._id)
-                                        }}>Edit</td>
+                                        }}>Redaktə et</td>
                                     <td onClick={() => handleDelete(itm._id)}>Delete</td>
                                 </tr>
                             ))

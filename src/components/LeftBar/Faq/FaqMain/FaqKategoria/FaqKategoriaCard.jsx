@@ -3,7 +3,6 @@ import axios from "axios";
 import { Formik, Field, Form } from "formik";
 const FaqKategoriaCard = ({ data, setButton, button }) => {
   const [initialValues, setInitialValues] = useState({ data });
-  console.log(data);
   const onSubmitHandler = async (values) => {
     const dataForm = {};
     dataForm.azTitle = values.data.azTitle
@@ -46,7 +45,6 @@ const FaqKategoriaCard = ({ data, setButton, button }) => {
             // handleChange
           }) => (
             <Form className="modal-form1">
-              {console.log(values)}
               <div className="modal-form-div">
                 <div className="modal-form-div-el">
                   <label>Title (az)</label>
@@ -77,7 +75,7 @@ const FaqKategoriaCard = ({ data, setButton, button }) => {
               </div>
 
               <div className="modal-form-btn">
-                <button type="submit">Edit</button>
+                <button type="submit">Redaktə et</button>
               </div>
             </Form>
           )}

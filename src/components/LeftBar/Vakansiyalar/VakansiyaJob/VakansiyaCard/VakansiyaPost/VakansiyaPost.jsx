@@ -25,7 +25,6 @@ const VakansiyaPost = ({ setBtnAdd }) => {
 
   const handleChangeText = (e, id) => {
     let name = e.target.name;
-    console.log(e.target.value.split(";"))
     vacancyValues[id][name] = e.target.value.split(";");
   }
 

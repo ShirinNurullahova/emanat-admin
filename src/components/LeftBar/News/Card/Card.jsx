@@ -15,7 +15,6 @@ export const Card = ({ setId, setBtn, btn }) => {
             }
         })
             .then(res => {
-                console.log(res)
                 setData(res.data.message);
             })
             .catch((err) => {});

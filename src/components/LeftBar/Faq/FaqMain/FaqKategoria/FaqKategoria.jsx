@@ -9,8 +9,6 @@ import Item from './Item';
 
 
 const FaqKategoria = ({ data, idC }) => {
-    console.log(data)
-
     const [addButton, setAddButton] = useState(null)
     const [editButton, setEditButton] = useState(null)
     const [button, setButton] = useState(false);

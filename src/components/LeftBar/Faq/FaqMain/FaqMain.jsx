@@ -12,7 +12,6 @@ const FaqMain = () => {
     const fetchData = () => {
         axios.get((`${process.env.REACT_APP_URL}/admin/faq/main`))
             .then(res => {
-                console.log(res.data[0]);
                 setData(res.data[0]?.categories)
                 setInitialValues(res.data[0])
                 setIdC(res.data[0]?._id)

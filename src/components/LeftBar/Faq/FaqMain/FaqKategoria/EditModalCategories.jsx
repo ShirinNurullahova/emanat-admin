@@ -3,12 +3,10 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
 const EditModalCategories = ({ setButton, button, data }) => {
-    console.log(data);
     const [initialValues, setInitialValues] = useState(data);
 
 
     const onSubmitHandler = async (values) => {
-        console.log(values);
            const dataForm = new FormData()
            dataForm.append('id', values._id)
            dataForm.append('azAnswer', values.azAnswer)

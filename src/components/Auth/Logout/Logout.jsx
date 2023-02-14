@@ -1,21 +1,21 @@
-import React , {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import '../Logout/Logout.scss';
 import { useNavigate } from 'react-router';
 
 const Logout = () => {
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const handleSubmitLogout = async e => {
         e.preventDefault();
-      
+
         try {
             const response = await axios.post(`${process.env.REACT_APP_URL}/auth/logout`, {})
-            if(response.status === 200 || response.status === 201) {
+            if (response.status === 200 || response.status === 201) {
                 navigate("/login");
                 localStorage.removeItem(process.env.REACT_APP_ACCESS_KEYWORD);
                 localStorage.removeItem(process.env.REACT_APP_REFRESH_KEYWORD);
             }
-        } catch (error) {}
+        } catch (error) { }
     }
     return (
         <div className='logout'>

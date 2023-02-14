@@ -106,7 +106,7 @@ const ModalIntern = ({ setOpen, id }) => {
                                 </div>
                             </div>
                             <div className='modal-form-btn'>
-                                <button type='submit'>Add</button>
+                                <button type='submit'>Əlavə et</button>
                             </div>
                         </Form>
                     )}
