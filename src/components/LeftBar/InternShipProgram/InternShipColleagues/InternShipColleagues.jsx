@@ -4,7 +4,7 @@ import axios from 'axios';
 import ElementIn from './ElementIn/ElementIn';
 import ModalIntern from './ModalIntern/ModalIntern';
 const InternShipColleagues = () => {
-  const [id, setId] = useState("");
+  const [id, setId] = useState("63ea01e9a7ec529a1d288b3f");
   const [data, setData] = useState('')
   const [open, setOpen] = useState(null)
   const [initialValues, setInitialValues] = useState(null)

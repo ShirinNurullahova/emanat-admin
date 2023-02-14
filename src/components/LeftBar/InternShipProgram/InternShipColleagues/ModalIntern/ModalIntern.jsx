@@ -2,21 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 
-const ModalIntern = ({ setOpen }) => {
-
-    const [initialValues, setInitialValues] = useState({
-        "azKey": "",
+const ModalIntern = ({ setOpen, id }) => {
+    // const [initialValues, setInitialValues] = useState([{
+    //     "azKey": "",
+    //     "azValue": "",
+    //     "enKey": "",
+    //     "enValue": "",
+    //     "ruKey": "",
+    //     "ruValue": ""
+    // }]);
+    const initialValues = {
+        "azKey": "hd",
         "azValue": "",
         "enKey": "",
         "enValue": "",
         "ruKey": "",
         "ruValue": ""
-      },
-    );
-    const [idValue, setIdValue] = useState(0)
+    }
+    const addedData = [initialValues]
+    const [stepValue, setStepValue] = useState([0])
 
 
     const onSubmitHandler = async (values) => {
+        console.log(addedData);
         console.log(values);
         const dataForm = {};
 
@@ -34,52 +42,62 @@ const ModalIntern = ({ setOpen }) => {
     }
 
 
+    const addContentHandler= (e) => {
+        setStepValue([...stepValue, stepValue[stepValue.length - 1] + 1])
+    }
 
+    const handleChange = (e, item) => {
+        // item[e.target.name] = e.target.value
+        console.log(item[e.target.name]);
+    }
 
 
     return (
         <div className='modal' >
             <Formik
-              initialValues={ initialValues }
-              onSubmit={(values) => {
-                onSubmitHandler(values);
-              }}
+                initialValues={initialValues}
+                onSubmit={(values) => {
+                    onSubmitHandler(values);
+                }}
             >
                 {({
                     values,
-                    handleChange,
+                    // handleChange,
                     handleSubmit,
                     setFieldValue
                 }) => (
                     <Form className='modal-form' onSubmit={handleSubmit}>
-                        <div className='modal-form-div'>
-                            <div>
+                        {stepValue && addedData.map((item, index) => (
+                            <div key={index} className='modal-form-div'>
+                                <p style={{fontSize: '16px', fontWeight: 'bold', marginTop: '40px'}}>Əməkdaşımız haqqında məlumat {item + 1}</p>
                                 <div className='modal-form-div-el'>
                                     <label>Başlıq (az)</label>
-                                    <Field onChange={handleChange} id={idValue} value={values.azKey} type="text" name="azKey" />
+                                    <Field onChange={(e) => handleChange(e, item)} id={item} defaultValue={item.azKey} type="text" name="azKey" />
                                 </div>
                                 <div className='modal-form-div-el'>
                                     <label>Mətn (az)</label>
-                                    <Field value={values.azValue} id={idValue} type="text" placeholder='' name="azValue" />
+                                    <Field onChange={(e) => handleChange(e, item)} id={item} defaultValue={item.azValue} type="text" name="azValue" />
                                 </div>
                                 <div className='modal-form-div-el'>
                                     <label>Başlıq (en)</label>
-                                    <Field onChange={handleChange} id={idValue} value={values.enKey} type="text" name="enKey" />
+                                    <Field onChange={(e) => handleChange(e, item)} id={item} defaultValue={item.enKey} type="text" name="enKey" />
                                 </div>
                                 <div className='modal-form-div-el'>
                                     <label>Mətn (en)</label>
-                                    <Field value={values.enValue} id={idValue} type="text" placeholder='' name="enValue" />
+                                    <Field onChange={(e) => handleChange(e, item)} id={item} defaultValue={item.enValue}  type="text" name="enValue" />
                                 </div>
                                 <div className='modal-form-div-el'>
                                     <label>Başlıq (ru)</label>
-                                    <Field onChange={handleChange} id={idValue} value={values.ruKey} type="text" name="ruKey" />
+                                    <Field onChange={(e) => handleChange(e, item)} id={item} defaultValue={item.ruKey} type="text" name="ruKey" />
                                 </div>
-                                <div className='modal-form-div-el'> 
+                                <div className='modal-form-div-el'>
                                     <label>Mətn (ru)</label>
-                                    <Field value={values.ruValue} id={idValue} type="text" placeholder='' name="ruValue" />
+                                    <Field onChange={(e) => handleChange(e, item)} id={item} defaultValue={item.ruValue}  type="text" name="ruValue" />
                                 </div>
                             </div>
-                            <p>+</p>
+                        ))}
+                        <div style={{textAlign: 'center', marginTop: '30px'}}>
+                            <p onClick={e => addContentHandler(e)} style={{fontSize: '30px', cursor: 'pointer', fontWeight: 'bold', padding: '5px', display: 'inline'}}>+</p>
                         </div>
                         <div className='modal-form-div'>
                             <div className='modal-form-div-el'>
