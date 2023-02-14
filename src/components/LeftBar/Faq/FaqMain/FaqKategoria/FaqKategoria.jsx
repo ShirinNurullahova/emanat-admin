@@ -9,6 +9,7 @@ import EditModalCategories from './EditModalCategories';
 
 const FaqKategoria = ({ data , idC}) => {
     console.log(data)
+
     const [addButton , setAddButton]= useState(null)
     const [editButton , setEditButton]= useState(null)
     const [button, setButton] = useState(false);
@@ -57,7 +58,7 @@ const FaqKategoria = ({ data , idC}) => {
                             <th></th>
                             <th className='redaktə'  onClick={()=>{
                                         setEditButton(true)
-                                    }}>Redaktə et</th>
+                                    }}>Kategoriya redaktə et</th>
                             <th onClick={()=>{
                                         setAddButton(true)
                                     }}>Kategoriya əlavə et</th>
@@ -104,7 +105,7 @@ const FaqKategoria = ({ data , idC}) => {
           }
        {
             editButton&& 
-              <EditModalCategories button={addButton} setButton={setEditButton}/>
+              <EditModalCategories button={addButton} setButton={setEditButton} data={data}/>
 
           }
         </div>
