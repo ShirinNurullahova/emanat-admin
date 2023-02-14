@@ -46,12 +46,16 @@ const FaqKategoria = ({ data }) => {
                             <tbody>
                                 <tr>
                                     <td>{e && e?.azTitle}</td>
+                                    <td onClick={()=>{
+                                        setButton(true)
+                                        setId(e?._id)
+                                    }}>Add</td>
                                     <td onClick={() => {
                                         setButton(true)
                                         setId(e?._id)
                                     }}>Edit</td>
                                     <td onClick={() => handleDelete(e?.id)}>Delete</td>
-
+     
                                 </tr>
                             </tbody>
                         ))
@@ -65,7 +69,10 @@ const FaqKategoria = ({ data }) => {
                 (e._id===id)?<FaqKategoriaCard data={e} id={id} setButton={setButton} button={button} />:''
                 ))
                 }
-
+            
+            {
+                // button && 
+            }
 
 
             {/* {
