@@ -44,6 +44,7 @@ console.log(data);
             values,
             // handleChange,
             handleSubmit,
+            setFieldValue
           }) => (
             <Form className="modal-form1">
               <div className="modal-form-div">
@@ -99,15 +100,15 @@ console.log(data);
                         name="enAnswer"
                         required
                       />
-                      {/* <label>Şəkil</label>
+                      <label>Şəkil</label>
                       <Field
                         value={values.filename}
-                        // onChange={(e) =>
-                        //   setFieldValue("image", e.currentTarget.files[0])
-                        // }
+                        onChange={(e) =>
+                          setFieldValue("image", e.currentTarget.files[0])
+                        }
                         type="file"
                         name="filename"
-                      /> */}
+                      />
                     </div>
                   ))
                 }

@@ -2,12 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 import FaqKategoriaCard from './FaqKategoriaCard';
+import FaqKategoriaPost from './FaqKategoriaPost';
+import AddModalCategories from './AddModalCategories';
+import EditModalCategories from './EditModalCategories';
 
-const FaqKategoria = ({ data }) => {
+
+const FaqKategoria = ({ data , idC}) => {
     console.log(data)
-
+    const [addButton , setAddButton]= useState(null)
+    const [editButton , setEditButton]= useState(null)
     const [button, setButton] = useState(false);
+    const [buttonPost, setButtonPost] = useState(false);
     const [id, setId] = useState('');
+    const [idPost, setIdPost] = useState('');
+
     const onSubmitHandler = async (values) => {
 
         const dataForm = {}
@@ -26,18 +34,33 @@ const FaqKategoria = ({ data }) => {
             alert("error")
         }
     }
-    const handleDelete = (id) => {
+    const handleDelete =  async (id) => {
+        try {
+            const response = await axios.delete(`${process.env.REACT_APP_URL}/admin/faq/main/categories/${id}`)
+            if (response.status == 200) {
 
+            }
+
+        } catch (error) {
+            alert("error")
+        }
     }
     return (
         <div className='card-main'>
+           
+
             <div className="table-main">
                 <table className="table-main-bottom">
                     <thead>
                         <tr>
-                            <th>Title</th>
+                            <th>Başlıq</th>
                             <th></th>
-                            <th></th>
+                            <th className='redaktə'  onClick={()=>{
+                                        setEditButton(true)
+                                    }}>Redaktə et</th>
+                            <th onClick={()=>{
+                                        setAddButton(true)
+                                    }}>Kategoriya əlavə et</th>
                         </tr>
                     </thead>
                     {
@@ -47,14 +70,14 @@ const FaqKategoria = ({ data }) => {
                                 <tr>
                                     <td>{e && e?.azTitle}</td>
                                     <td onClick={()=>{
-                                        setButton(true)
-                                        setId(e?._id)
-                                    }}>Add</td>
+                                        setButtonPost(true)
+                                        setIdPost(e?._id)
+                                    }}>Əlavə et</td>
                                     <td onClick={() => {
                                         setButton(true)
                                         setId(e?._id)
-                                    }}>Edit</td>
-                                    <td onClick={() => handleDelete(e?.id)}>Delete</td>
+                                    }}>Redaktə et</td>
+                                    <td onClick={() => handleDelete(e?._id)}>Sil</td>
      
                                 </tr>
                             </tbody>
@@ -71,27 +94,19 @@ const FaqKategoria = ({ data }) => {
                 }
             
             {
-                // button && 
+                buttonPost && <FaqKategoriaPost id={idPost} button={buttonPost} setButton={setButtonPost}/>
             }
 
+          {
+            addButton && 
+            <AddModalCategories button={addButton} idC={idC} setButton={setAddButton}/>
 
-            {/* {
-                data &&
-                data.map((e) => {
-                    return(
-                        <table style={{ border: '1px solid gray' }}>
-                        <tr>
-                            <th>{e.azTitle}</th>
-                        </tr>
+          }
+       {
+            editButton&& 
+              <EditModalCategories button={addButton} setButton={setEditButton}/>
 
-                    </table>
-                    )
-                   
-
-
-                })
-
-            } */}
+          }
         </div>
     )
 }

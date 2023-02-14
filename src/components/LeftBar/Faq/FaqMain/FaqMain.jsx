@@ -5,7 +5,7 @@ import FaqKategoria from './FaqKategoria/FaqKategoria';
 
 const FaqMain = () => {
 
-    const [id, setId] = useState("");
+    const [idC, setIdC] = useState("");
     const [data, setData] = useState(null)
     const [initialValues, setInitialValues] = useState(null)
 
@@ -15,7 +15,7 @@ const FaqMain = () => {
                 console.log(res.data[0]);
                 setData(res.data[0]?.categories)
                 setInitialValues(res.data[0])
-                setId(res.data[0]?._id)
+                setIdC(res.data[0]?._id)
             })
             .catch((err) => { });
     }
@@ -104,7 +104,7 @@ const FaqMain = () => {
                 </div>
                 {
                     data &&
-                            <FaqKategoria data={data} />
+                            <FaqKategoria data={data} idC={idC}/>
                         
                     
                 }
