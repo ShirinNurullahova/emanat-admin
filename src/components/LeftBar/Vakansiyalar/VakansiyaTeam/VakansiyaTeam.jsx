@@ -43,7 +43,7 @@ const VakansiyaTeam = () => {
                 <div className='news-main-comp'>
                     <div className='news-main-comp-p'>
                         <p>
-                            / komanda
+                            / Komanda
                         </p>
                     </div>
                 </div>

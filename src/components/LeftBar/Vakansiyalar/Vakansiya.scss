@@ -11,7 +11,7 @@
     }
 
     table,
-    
+
     th {
         text-align: left;
         border-bottom: 1px solid;
@@ -21,12 +21,15 @@
         width: 100%;
         border-collapse: collapse;
     }
-    tr{
+
+    tr {
         margin-bottom: 5%;
     }
-    .card-main{
+
+    .card-main {
         position: relative;
     }
+
     .table-main {
         margin-left: 20px;
         border-radius: 3px;
@@ -36,21 +39,47 @@
         padding: 22px;
         border-top: 1px solid rgba(255, 255, 255, 0.09);
     }
-    
-    td{
-        background: rgba(255,255,255,0.01);
+
+    td {
+        background: rgba(255, 255, 255, 0.01);
     }
+
     tbody {
         // background: rgba(255, 255, 255, 0.01);
         padding: 35px;
         width: 100%;
         position: relative;
         margin: 5px 0;
-   
+
     }
-    
-    td{
+
+    td {
         padding: 20px 20px 20px 0;
         width: calc(100% - 70px);
+    }
+
+    textarea {
+        font-weight: 400;
+        line-height: 1.5;
+        background-color: transparent;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        box-shadow: none;
+        border-color: #393d42;
+        font-size: 14px;
+        color: #77797c;
+        padding: 10px;
+        outline: none;
+    }
+
+
+    .modal {
+        position: absolute;
+        z-index: 999;
+        background-color: #6c757d;
+        top: 0;
+        max-height: 90vh;
+        overflow-y: scroll;
     }
 }
