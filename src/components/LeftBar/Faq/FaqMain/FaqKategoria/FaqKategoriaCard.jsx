@@ -1,34 +1,35 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Formik, Field, Form } from "formik";
-const FaqKategoriaCard = ({ data, id, setButton, button }) => {
+const FaqKategoriaCard = ({ data, setButton, button }) => {
   const [initialValues, setInitialValues] = useState({ data });
-console.log(data);
-    const onSubmitHandler = async (values) => {
-        console.log(values.data);
-      const dataForm = {};
-      dataForm.id = id;
-    //   dataForm.data = values;
-    //   dataForm.page = "Career";
-    //      if (button) {
-    //           try {
-    //               const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/faq/main`, dataForm)
-    //               if (response.status == 200) {
+  console.log(data);
+  const onSubmitHandler = async (values) => {
+    const dataForm = {};
+    dataForm.azTitle = values.data.azTitle
+    dataForm.enTitle = values.data.enTitle
+    dataForm.ruTitle = values.data.ruTitle
+    dataForm.id = values.data._id
 
-    //               }
 
-    //           } catch (error) {
-    //               alert("error")
-    //           }
-    //       }
+    if (button) {
+      try {
+        const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/faq/main/categories`, dataForm)
+        if (response.status == 200) {
 
-    //       setButton(false)
-    };
+        }
+
+      } catch (error) {
+        alert("error")
+      }
+    }
+
+    setButton(false)
+  };
 
   const handleChange = (e, vl) => {
     let name = e.target.name;
     vl[[name]] = e.target.value;
-    console.log(vl);
   };
 
   return (
@@ -36,82 +37,43 @@ console.log(data);
       {initialValues && (
         <Formik
           initialValues={initialValues}
-            onSubmit={(values) => {
-              onSubmitHandler(values);
-            }}
+          onSubmit={(values) => {
+            onSubmitHandler(values);
+          }}
         >
           {({
             values,
-            // handleChange,
-            handleSubmit,
-            setFieldValue
+            // handleChange
           }) => (
             <Form className="modal-form1">
+              {console.log(values)}
               <div className="modal-form-div">
-                {values?.data?.items?.map((vl) => (
-                    <div className="modal-form-div-el">
-                      <label>Question (az)</label>
-                      <Field
-                        onChange={(e) => handleChange(e, vl)}
-                        defaultValue={vl.azQuestion}
-                        type="text"
-                        name="azQuestion"
-                        required
-                      />
-                      <label>Answer (az)</label>
-                      <Field
-                        onChange={(e) => handleChange(e, vl)}
-                        defaultValue={vl.azAnswer}
-                        type="text"
-                        name="azAnswer"
-                        required
-                      />
-                      <label>Question (ru)</label>
-                      <Field
-                        onChange={(e) => handleChange(e, vl)}
-                        defaultValue={vl.ruQuestion}
-                        type="text"
-                        name="ruQuestion"
-                        required
-                      />
-
-                      <label>Answer (ru)</label>
-                      <Field
-                        onChange={(e) => handleChange(e, vl)}
-                        defaultValue={vl.ruAnswer}
-                        type="text"
-                        name="ruAnswer"
-                        required
-                      />
-                      <label>Question (en)</label>
-                      <Field
-                        onChange={(e) => handleChange(e, vl)}
-                        defaultValue={vl.enQuestion}
-                        type="text"
-                        name="enQuestion"
-                        required
-                      />
-
-                      <label>Answer (en)</label>
-                      <Field
-                        onChange={(e) => handleChange(e, vl)}
-                        defaultValue={vl.enAnswer}
-                        type="text"
-                        name="enAnswer"
-                        required
-                      />
-                      <label>Şəkil</label>
-                      <Field
-                        value={values.filename}
-                        onChange={(e) =>
-                          setFieldValue("image", e.currentTarget.files[0])
-                        }
-                        type="file"
-                        name="filename"
-                      />
-                    </div>
-                  ))
-                }
+                <div className="modal-form-div-el">
+                  <label>Title (az)</label>
+                  <Field
+                    onChange={(e) => handleChange(e, values.data)}
+                    defaultValue={values.data.azTitle}
+                    type="text"
+                    name="azTitle"
+                    required
+                  />
+                  <label>Title (ru)</label>
+                  <Field
+                    onChange={(e) => handleChange(e, values.data)}
+                    defaultValue={values.data.ruTitle}
+                    type="text"
+                    name="ruTitle"
+                    required
+                  />
+                  <label>Title (en)</label>
+                  <Field
+                    onChange={(e) => handleChange(e, values.data)}
+                    defaultValue={values.data.enTitle}
+                    type="text"
+                    name="enTitle"
+                    required
+                  />
+                </div>
               </div>
 
               <div className="modal-form-btn">

@@ -17,7 +17,7 @@ const FaqKategoriaPost = ({id , button , setButton}) => {
 
       const dataForm = new FormData()
         dataForm.append('id', id)
-        dataForm.append(' azQuestion', values. azQuestion)
+        dataForm.append('azQuestion', values. azQuestion)
         dataForm.append('azAnswer', values.azAnswer)
         dataForm.append('enQuestion', values.enQuestion)
         dataForm.append('enAnswer', values.enAnswer)

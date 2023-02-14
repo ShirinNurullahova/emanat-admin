@@ -33,9 +33,17 @@ const InternShipColleagues = () => {
           <p>/ Əməkdaşlarımız</p>
         </div>
       </div>
-      <div className='middle-main-btn' onClick={() => setOpen(!open)}>
-        <button>Add</button>
+      <div className='internAdd'>
+        <div className='middle-main-btn' onClick={() => setOpen(!open)}>
+          <button>Add</button>
+        </div>
+        {
+          open &&
+          <ModalIntern setOpen={setOpen} id={id} />
+
+        }
       </div>
+
       {
         data && data.map((e) => {
           return (
@@ -43,11 +51,7 @@ const InternShipColleagues = () => {
           )
         })
       }
-      {
-        open &&
-        <ModalIntern setOpen={setOpen} id={id}/>
 
-      }
     </div>
   )
 }

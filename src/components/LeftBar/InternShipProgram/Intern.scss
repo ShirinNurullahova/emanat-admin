@@ -2,6 +2,32 @@
     // background-color: rgba(34, 37, 42, 0.95);
     // width: 85%;
     padding-right: 20px;
+    .internAdd{
+       position: relative;
+    }
+    .modal-2{
+        position: absolute;
+    z-index: 999;
+    background-color: #6c757d;
+    float: left;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -10%) ;
+    height: 600px;
+    min-height: 400px;
+    overflow-y: scroll;
+    }
+    .modal-form-2{
+        border-radius: 3px;
+        width: 360px;
+        padding: 20px;
+        font-weight: 400;
+        color: #a5a8ad;
+        background-color: #282b2f;
+        margin: 0 auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.09);
+        text-align: center;
+    }
     .middle-main-btn{
        text-align: right;
             button {

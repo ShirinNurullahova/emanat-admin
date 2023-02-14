@@ -55,7 +55,7 @@ const ModalIntern = ({ setOpen, id }) => {
     }, [])
 
     return (
-        <div className='modal' >
+        <div className='modal-2' >
             {initialValues && 
                 <Formik
                     initialValues={initialValues}
@@ -68,7 +68,7 @@ const ModalIntern = ({ setOpen, id }) => {
                         handleSubmit,
                         setFieldValue
                     }) => (
-                        <Form className='modal-form' onSubmit={handleSubmit}>
+                        <Form className='modal-form-2' onSubmit={handleSubmit}>
                             {initialValues?.map((item, index) => (
                                 <div key={index} className='modal-form-div'>
                                     <p style={{fontSize: '16px', fontWeight: 'bold', marginTop: '40px'}}>Əməkdaşımız haqqında məlumat {index + 1}</p>
