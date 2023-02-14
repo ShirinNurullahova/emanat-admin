@@ -1,58 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
+let dataValues = [];
 
 const ModalIntern = ({ setOpen, id }) => {
-    const initialValuesRaw = {
-        "azKey": "",
-        "azValue": "",
-        "enKey": "",
-        "enValue": "",
-        "ruKey": "",
-        "ruValue": ""
-    }
-    const [initialValues, setInitialValues] = useState([initialValuesRaw])
-    let dataValues = [];  
-    dataValues.push(initialValuesRaw);
-    const [stepValue, setStepValue] = useState([0])
+    const [initialValues, setInitialValues] = useState(null)
+    // const initial = {
+    //     "azKey": '',
+    //     "azValue": '',
+    //     "enKey": '',
+    //     "enValue": '',
+    //     "ruKey": '',
+    //     "ruValue": ''
+    // }
+    // const [stepValue, setStepValue] = useState([0])
+    // setStepValue([...stepValue, stepValue[stepValue.length - 1] + 1])
 
     const onSubmitHandler = async (values) => {
-        console.log(initialValues);
-        const dataForm = {};
+        console.log(dataValues);
+        console.log(JSON.stringify(dataValues));
+        const dataForm = new FormData()
+        dataForm.append('id', id);
+        dataForm.append('data', JSON.stringify(dataValues));
+        dataForm.append('InternshipProgramColleagueImage', values.image);
 
-        // try {
-        //     const response = await axios.post(`${process.env.REACT_APP_URL}/tag/hashTag`, dataForm)
-        //     if (response.status == 200) {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_URL}/admin/internship/colleagues/`, dataForm)
+            if (response.status == 201) {
+                alert("okayyyy")
+            }
+        } catch (error) {
+            alert("error")
+        }
 
-        //     }
-
-        // } catch (error) {
-        //     alert("error")
-        // }
-
-        // setOpen(false)
+        setOpen(false)
     }
 
 
     const addContentHandler= () => {
+        const initialValuesRaw = new Object();
         dataValues.push(initialValuesRaw)
-        console.log(dataValues);
         setInitialValues([...initialValues, initialValuesRaw])
-        // setStepValue([...stepValue, stepValue[stepValue.length - 1] + 1])
     }
 
-    const handleChange = (e, id, item) => {
-        // item[e.target.name] = e.target.value
+    const handleChange = (e, id) => {
         let name = e.target.name;
-        console.log(id);
-        console.log(dataValues);
-        console.log(dataValues[id]);
-        // setInitialValues([...initialValues, [initialValues[id].name] = e.target.value])
+        dataValues[id][name] = e.target.value;
     }
 
     useEffect(() => {
-        // console.log(initialValues);
-    }, [initialValues])
+        const initialValuesRaw = new Object();
+        dataValues.push(initialValuesRaw);
+        setInitialValues([initialValuesRaw]);
+    }, [])
 
     return (
         <div className='modal' >
@@ -69,32 +69,32 @@ const ModalIntern = ({ setOpen, id }) => {
                         setFieldValue
                     }) => (
                         <Form className='modal-form' onSubmit={handleSubmit}>
-                            {initialValues.map((item, index) => (
+                            {initialValues?.map((item, index) => (
                                 <div key={index} className='modal-form-div'>
                                     <p style={{fontSize: '16px', fontWeight: 'bold', marginTop: '40px'}}>Əməkdaşımız haqqında məlumat {index + 1}</p>
                                     <div className='modal-form-div-el'>
                                         <label>Başlıq (az)</label>
-                                        <Field onChange={(e) => handleChange(e, index, item)} defaultValue={item.azKey} type="text" name="azKey" />
+                                        <Field onChange={(e) => handleChange(e, index)} type="text" name="azKey" />
                                     </div>
                                     <div className='modal-form-div-el'>
                                         <label>Mətn (az)</label>
-                                        <Field onChange={(e) => handleChange(e, index, item)} defaultValue={item.azValue} type="text" name="azValue" />
+                                        <Field onChange={(e) => handleChange(e, index)} type="text" name="azValue" />
                                     </div>
                                     <div className='modal-form-div-el'>
                                         <label>Başlıq (en)</label>
-                                        <Field onChange={(e) => handleChange(e, index, item)} defaultValue={item.enKey} type="text" name="enKey" />
+                                        <Field onChange={(e) => handleChange(e, index)} type="text" name="enKey" />
                                     </div>
                                     <div className='modal-form-div-el'>
                                         <label>Mətn (en)</label>
-                                        <Field onChange={(e) => handleChange(e, index, item)} defaultValue={item.enValue} type="text" name="enValue" />
+                                        <Field onChange={(e) => handleChange(e, index)} type="text" name="enValue" />
                                     </div>
                                     <div className='modal-form-div-el'>
                                         <label>Başlıq (ru)</label>
-                                        <Field onChange={(e) => handleChange(e, index, item)} defaultValue={item.ruKey} type="text" name="ruKey" />
+                                        <Field onChange={(e) => handleChange(e, index)} type="text" name="ruKey" />
                                     </div>
                                     <div className='modal-form-div-el'>
                                         <label>Mətn (ru)</label>
-                                        <Field onChange={(e) => handleChange(e, index, item)} defaultValue={item.ruValue} type="text" name="ruValue" />
+                                        <Field onChange={(e) => handleChange(e, index)} type="text" name="ruValue" />
                                     </div>
                                 </div>
                             ))}
