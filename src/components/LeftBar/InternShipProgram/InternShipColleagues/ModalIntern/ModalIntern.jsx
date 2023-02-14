@@ -17,8 +17,6 @@ const ModalIntern = ({ setOpen, id }) => {
     // setStepValue([...stepValue, stepValue[stepValue.length - 1] + 1])
 
     const onSubmitHandler = async (values) => {
-        console.log(dataValues);
-        console.log(JSON.stringify(dataValues));
         const dataForm = new FormData()
         dataForm.append('id', id);
         dataForm.append('data', JSON.stringify(dataValues));
