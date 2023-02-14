@@ -102,68 +102,68 @@ const Terminal = () => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Başlıq (az)</label>
-                                        <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
+                                        <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Mətn (az)</label>
-                                        <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
+                                        <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Son başlıq (az)</label>
-                                        <Field onChange={handleChange} value={values.azFooterHead} type="text" placeholder='' name="azFooterHead" />
+                                        <Field onChange={handleChange} value={values.azFooterHead} type="text" placeholder='' name="azFooterHead"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Son Mətn (az)</label>
-                                        <Field onChange={handleChange} value={values.azFooterDesc} type="text" placeholder='' name="azFooterDesc" />
+                                        <Field onChange={handleChange} value={values.azFooterDesc} type="text" placeholder='' name="azFooterDesc"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Başlıq (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
+                                        <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Mətn (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
+                                        <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Son başlıq (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruFooterHead} type="text" placeholder='' name="ruFooterHead" />
+                                        <Field onChange={handleChange} value={values.ruFooterHead} type="text" placeholder='' name="ruFooterHead"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Son Mətn (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruFooterDesc} type="text" placeholder='' name="ruFooterDesc" />
+                                        <Field onChange={handleChange} value={values.ruFooterDesc} type="text" placeholder='' name="ruFooterDesc"   required/>
                                     </div>
                                 </div>
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Başlıq (en)</label>
-                                        <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
+                                        <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Mətn (en)</label>
-                                        <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
+                                        <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Son başlıq (en)</label>
-                                        <Field onChange={handleChange} value={values.enFooterHead} type="text" placeholder='' name="enFooterHead" />
+                                        <Field onChange={handleChange} value={values.enFooterHead} type="text" placeholder='' name="enFooterHead"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Son Mətn (en)</label>
-                                        <Field onChange={handleChange} value={values.enFooterDesc} type="text" placeholder='' name="enFooterDesc" />
+                                        <Field onChange={handleChange} value={values.enFooterDesc} type="text" placeholder='' name="enFooterDesc"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                         <label>Nömrələr</label>
-                                        <Field onChange={handleChange} value={values.numbers} type="text" placeholder='' name="numbers" />
+                                        <Field onChange={handleChange} value={values.numbers} type="text" placeholder='' name="numbers"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                         <label>Email</label>
-                                        <Field onChange={handleChange} value={values.email} type="text" placeholder='' name="email" />
+                                        <Field onChange={handleChange} value={values.email} type="text" placeholder='' name="email"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>

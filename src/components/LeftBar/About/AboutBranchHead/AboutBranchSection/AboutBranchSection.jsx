@@ -52,14 +52,14 @@ const AboutBranchSection = ({ initialValues }) => {
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Mətn (az)</label>
-                                    <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
+                                    <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription"   required/>
                                 </div>
 
                             </div>
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Mətn (ru)</label>
-                                    <Field onChange={handleChange} value={values.azDescription} type="text" name="azDescription" />
+                                    <Field onChange={handleChange} value={values.azDescription} type="text" name="azDescription"   required/>
                                 </div>
 
                             </div>
@@ -67,7 +67,7 @@ const AboutBranchSection = ({ initialValues }) => {
                             <div className='middle-main-bottom-form-div'>
                                 <div className='middle-main-bottom-form-div-el'>
                                     <label>Mətn (en)</label>
-                                    <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
+                                    <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription"   required/>
                                 </div>
 
 

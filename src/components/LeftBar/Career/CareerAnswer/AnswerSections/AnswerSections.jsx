@@ -43,32 +43,32 @@ const AnswerSections = ({initialValues}) => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Mətn (az)</label>
-                                        <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription" />
+                                        <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Kiçik başlıq (az)</label>
-                                        <Field onChange={handleChange} value={values.azSubTitle} type="text" placeholder='' name="azSubTitle" />
+                                        <Field onChange={handleChange} value={values.azSubTitle} type="text" placeholder='' name="azSubTitle"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Mətn (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription" />
+                                        <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Kiçik başlıq (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruSubTitle} type="text" placeholder='' name="ruSubTitle" />
+                                        <Field onChange={handleChange} value={values.ruSubTitle} type="text" placeholder='' name="ruSubTitle"   required/>
                                     </div>
                                 </div>
 
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Mətn (en)</label>
-                                        <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription" />
+                                        <Field onChange={handleChange} value={values.enDescription} type="text" name="enDescription"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Kiçik başlıq (en)</label>
-                                        <Field onChange={handleChange} value={values.enSubTitle} type="text" placeholder='' name="enSubTitle" />
+                                        <Field onChange={handleChange} value={values.enSubTitle} type="text" placeholder='' name="enSubTitle"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>

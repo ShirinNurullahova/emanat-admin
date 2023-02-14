@@ -81,6 +81,7 @@ const TerminalMap = () => {
                         value={values.azTitle}
                         type="text"
                         name="azTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -91,6 +92,7 @@ const TerminalMap = () => {
                         type="text"
                         placeholder=""
                         name="azDescription"
+                        required
                       />
                     </div>
                   </div>
@@ -102,6 +104,7 @@ const TerminalMap = () => {
                         value={values.ruTitle}
                         type="text"
                         name="ruTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -111,6 +114,7 @@ const TerminalMap = () => {
                         value={values.ruDescription}
                         type="text"
                         name="ruDescription"
+                        required
                       />
                     </div>
                   </div>
@@ -123,6 +127,7 @@ const TerminalMap = () => {
                         value={values.enTitle}
                         type="text"
                         name="enTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -132,6 +137,7 @@ const TerminalMap = () => {
                         value={values.enDescription}
                         type="text"
                         name="enDescription"
+                        required
                       />
                     </div>
                   </div>

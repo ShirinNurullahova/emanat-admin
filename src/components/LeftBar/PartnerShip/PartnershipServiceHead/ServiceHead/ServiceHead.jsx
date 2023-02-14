@@ -56,14 +56,14 @@ const ServiceHead = ({ initialValues }) => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (az)</label>
-                                        <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" />
+                                        <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle"   required/>
                                     </div>
 
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" />
+                                        <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle"   required/>
                                     </div>
 
                                 </div>
@@ -71,7 +71,7 @@ const ServiceHead = ({ initialValues }) => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Title (en)</label>
-                                        <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" />
+                                        <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle"   required/>
                                     </div>
 
                                 </div>

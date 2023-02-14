@@ -5,8 +5,8 @@ import '../Login/Login.scss'
 const Login = () => {
     const navigate = useNavigate()
     const [cred, setCred] = useState({
-        password: '',
-        email: ""
+        email: "",
+        password: ''
     }
     )
     
@@ -25,7 +25,10 @@ const Login = () => {
             if(response.status ===200 || response.status ===201){
                    navigate('/')
             }
-        } catch (error) {}
+        } catch (error) {
+            console.log(error)
+            alert('Email və ya parol səhvdir')
+        }
     }
     return (
            <div className='login'>
@@ -36,11 +39,11 @@ const Login = () => {
                     <form className="login-div-el-form" action="/"  onSubmit={handleSubmitLogin}>
                         <div className="login-div-el-form-group">
                             <label htmlFor="signin-email" className="control-label"></label>
-                            <input onChange={handleChangeLogin} type="email" className="form-control round" name='email' id="signin-email" placeholder="admin@gmail.com" />
+                            <input onChange={handleChangeLogin} type="email" className="form-control round" required name='email' id="signin-email" placeholder="admin@gmail.com" />
                         </div>
                         <div className="login-div-el-form-group">
                             <label htmlFor="signin-password" className="control-label"></label>
-                            <input onChange={handleChangeLogin} type="password" className="form-control round" name='password' id="signin-password"  placeholder="parol" />
+                            <input onChange={handleChangeLogin} type="password" className="form-control round" required name='password' id="signin-password"  placeholder="parol" />
                         </div>
                         {/* <div className="login-div-el-form-group">
                             <label >
@@ -49,10 +52,10 @@ const Login = () => {
                             </label>    
                         </div> */}
                         <button type="submit" className='loginBtn'>Giriş</button>
-                        <div className='login-div-el-form-end'>
+                        {/* <div className='login-div-el-form-end'>
                             <span onClick={()=>navigate('/reset')}><i className="fa fa-lock"></i>Parolu unutmusan?</span>
                             <span>Hesabınız yoxdur?<span onClick={()=>navigate('/register')}>Qeydiyyatdan keç</span></span>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
             </div>

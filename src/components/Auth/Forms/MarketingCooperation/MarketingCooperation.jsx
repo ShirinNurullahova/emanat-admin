@@ -110,6 +110,7 @@ const MarketingCooperation = () => {
                         value={values.azTitle}
                         type="text"
                         name="azTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -120,6 +121,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="azDescription"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -130,6 +132,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="azSubTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -140,6 +143,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="azFooterHead"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -150,6 +154,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="azFooterDesc"
+                        required
                       />
                     </div>
                   </div>
@@ -161,6 +166,7 @@ const MarketingCooperation = () => {
                         value={values.ruTitle}
                         type="text"
                         name="ruTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -170,6 +176,7 @@ const MarketingCooperation = () => {
                         value={values.ruDescription}
                         type="text"
                         name="ruDescription"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -180,6 +187,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="ruSubTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -190,6 +198,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="ruFooterHead"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -200,6 +209,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="ruFooterDesc"
+                        required
                       />
                     </div>
                   </div>
@@ -212,6 +222,7 @@ const MarketingCooperation = () => {
                         value={values.enTitle}
                         type="text"
                         name="enTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -221,6 +232,7 @@ const MarketingCooperation = () => {
                         value={values.enDescription}
                         type="text"
                         name="enDescription"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -231,6 +243,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="enSubTitle"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -241,6 +254,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="enFooterHead"
+                        required
                       />
                     </div>
                     <div className="middle-main-bottom-form-div-el">
@@ -251,6 +265,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="enFooterDesc"
+                        required
                       />
                     </div>
                   </div>
@@ -263,6 +278,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="numbers"
+                        required
                       />
                     </div>
                   </div>
@@ -275,6 +291,7 @@ const MarketingCooperation = () => {
                         type="text"
                         placeholder=""
                         name="email"
+                        required
                       />
                     </div>
                   </div>

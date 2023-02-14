@@ -49,20 +49,20 @@ const ModalAdd = ({setOpen}) => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Hashtag (az)</label>
-                                        <Field onChange={handleChange} value={values.azHashtag} type="text" name="azHashtag" />
+                                        <Field onChange={handleChange} value={values.azHashtag} type="text" name="azHashtag"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Hashtag (en)</label>
-                                        <Field onChange={handleChange} value={values.enHashtag} type="text" placeholder='' name="enHashtag" />
+                                        <Field onChange={handleChange} value={values.enHashtag} type="text" placeholder='' name="enHashtag"   required/>
                                     </div>
 
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Hashtag(ru)</label>
-                                        <Field onChange={handleChange} value={values.ruHashtag} type="text" placeholder='' name="ruHashtag" />
+                                        <Field onChange={handleChange} value={values.ruHashtag} type="text" placeholder='' name="ruHashtag"   required/>
                                     </div>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Səhifə</label>
-                                        <Field onChange={handleChange} value={values.page} type="text" placeholder='' name="page" />
+                                        <Field onChange={handleChange} value={values.page} type="text" placeholder='' name="page"   required/>
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
