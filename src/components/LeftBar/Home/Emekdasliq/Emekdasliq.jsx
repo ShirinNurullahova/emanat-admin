@@ -26,13 +26,13 @@ const Emekdasliq = () => {
                     }
 
                 </div>
-                <div className='middle-bottom-div' onClick={() => setOpen("Əlavə et")}>
-                   
+                <div className='middle-bottom-div' onClick={() => setOpen("Əlavə et")}>   
                         <button>
                            Əlavə et
                         </button>
                   
                 </div>
+
 
             </div>
 

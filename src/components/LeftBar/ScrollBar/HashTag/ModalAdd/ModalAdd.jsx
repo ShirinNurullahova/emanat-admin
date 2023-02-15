@@ -31,8 +31,8 @@ const ModalAdd = ({setOpen}) => {
         setOpen(false)
       }
     return (
-        <div>
-            <div className='middle-main-bottom'>
+        <div className='hashtag-add'>
+            <div className='middle-main-bottom-3'>
                 {initialValues &&
                     <Formik
                         initialValues={initialValues}

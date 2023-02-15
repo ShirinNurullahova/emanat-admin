@@ -60,7 +60,7 @@ const AboutModal = ({ id, setBtn, btn }) => {
     }, [id])
 
     return (
-        <>
+        <div className='service-modal'>
             {(btn === "Əlavə et" || initialValues) &&
                 <Formik
                     initialValues={btn === "Redaktə et" ? initialValues : initialValuesAdd}
@@ -103,7 +103,7 @@ const AboutModal = ({ id, setBtn, btn }) => {
                 </Formik>
             }
 
-        </>
+        </div>
     )
 }
 

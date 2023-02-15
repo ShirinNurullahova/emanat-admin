@@ -24,7 +24,7 @@ const ModalIntern = ({ setOpen, id }) => {
 
         try {
             const response = await axios.post(`${process.env.REACT_APP_URL}/admin/internship/colleagues/`, dataForm)
-            if (response.status == 201) {
+            if (response.status === 201) {
                 alert("okayyyy")
             }
         } catch (error) {

@@ -15,7 +15,7 @@ const AboutServiceHead = () => {
                 setInitialValues(res.data.dtoHead[0])
                 setData(res.data.dtoSection)
             })
-            .catch((err) => {});
+            .catch((err) => { });
     }
 
     useEffect(() => {
@@ -46,7 +46,7 @@ const AboutServiceHead = () => {
             <div className='middle-main-comp'>
                 <div className='middle-main-comp-p'>
                     <p>
-                       Haqqımızda
+                        Haqqımızda
                     </p>
                 </div>
                 <div className='middle-main-comp-bottom'>
@@ -71,7 +71,7 @@ const AboutServiceHead = () => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Başlıq (az)</label>
-                                        <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle"   required/>
+                                        <Field onChange={handleChange} value={values.azTitle} type="text" name="azTitle" required />
                                     </div>
 
                                 </div>
@@ -79,14 +79,14 @@ const AboutServiceHead = () => {
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Başlıq (ru)</label>
-                                        <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle"   required/>
+                                        <Field onChange={handleChange} value={values.ruTitle} type="text" name="ruTitle" required />
                                     </div>
 
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Başlıq (en)</label>
-                                        <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle"   required/>
+                                        <Field onChange={handleChange} value={values.enTitle} type="text" name="enTitle" required />
                                     </div>
 
                                 </div>
@@ -97,15 +97,15 @@ const AboutServiceHead = () => {
                         )}
                     </Formik>}
             </div>
-          
+
             <div className='about-services-btn'>
-            
+
                 <button onClick={() => setBtn("Əlavə et")}>
                     Əlavə et
                 </button>
             </div>
             <div className='about-services-section'>
-              
+
                 {
                     data &&
                     data.map((e) => {
@@ -121,12 +121,13 @@ const AboutServiceHead = () => {
                         )
                     })
                 }
-            </div>
-            {
-                btn &&
+                {
+                    btn &&
 
-                <AboutModal id={id} setBtn={setBtn} btn={btn}/>
-            }
+                    <AboutModal id={id} setBtn={setBtn} btn={btn} />
+                }
+            </div>
+
 
         </div>
     )

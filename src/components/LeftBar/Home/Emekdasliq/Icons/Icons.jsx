@@ -31,7 +31,18 @@ const Icons = ({ setId, setOpen, open , setIcon }) => {
         setIcon(e)
     }
 
+   const handleIconDelete=async(id)=>{
+    try {
+        const response = await axios.delete(`${process.env.REACT_APP_URL}/admin/main/cooperation/icons/${id}`)
+        if (response.status == 200) {
 
+        }
+
+    } catch (error) {
+        alert("error")
+    }
+    setOpen(null)
+   }
     return (
 
         <>
@@ -43,7 +54,9 @@ const Icons = ({ setId, setOpen, open , setIcon }) => {
                             <div className='icons-img'>
                                 <img src={e.url} />
                             </div>
-
+                            <div>
+                                <button  onClick={() => handleIconDelete(e.id)}>Delete</button>
+                            </div>
                         </div>
                     )
                 })

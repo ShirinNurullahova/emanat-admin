@@ -1,11 +1,16 @@
 .modal{
     position: absolute;
+    // backdrop-filter: blur(10px);
+    // -webkit-backdrop-filter: blur(10px);
     z-index: 999;
     background-color: #6c757d;
   float: left;
   left: 50%;
   top: 30%;
   transform: translate(-50%, -50%);
+  overflow-y: scroll;
+  height: 400px;
+  min-height: 300px;
   &-form{
     border-radius: 3px;
     width: 360px;

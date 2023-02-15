@@ -31,6 +31,7 @@ const HashTag = () => {
                     Əlavə et
                 </button>
             </div>
+           
             {data &&
                 data.map((e) => {
                     return (
@@ -39,7 +40,7 @@ const HashTag = () => {
 
                 })
             }
-           {  open &&
+            {  open &&
            <ModalAdd setOpen={setOpen}/>
            }
         </div>

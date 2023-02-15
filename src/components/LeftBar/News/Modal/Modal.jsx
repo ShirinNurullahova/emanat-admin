@@ -22,7 +22,7 @@ const Modal = ({ id, setBtn, btn }) => {
     if (btn && id) {
       axios.get((`${process.env.REACT_APP_URL}/admin/news/${id}`))
         .then(res => {
-          setInitialValues(res.data.message);
+          setInitialValues(res.data);
         })
         .catch((err) => {});
 
