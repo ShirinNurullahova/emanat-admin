@@ -168,6 +168,11 @@ const ScrollBar = () => {
                     <p>Vakansiya</p>
                   </div>
                 </Link>
+                <Link to="/vakansiyaFilter">
+                  <div className="scroll-bar-dropdown-el-p">
+                    <p>Vakansiya Filter</p>
+                  </div>
+                </Link>
                 <Link to="/partnership">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Əməkdaşlıq</p>

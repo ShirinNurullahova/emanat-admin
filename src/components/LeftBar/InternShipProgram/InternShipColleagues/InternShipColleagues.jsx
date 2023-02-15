@@ -3,6 +3,7 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 import ElementIn from './ElementIn/ElementIn';
 import ModalIntern from './ModalIntern/ModalIntern';
+import ColleaguesTitle from './ColleaguesTitle/ColleaguesTitle';
 const InternShipColleagues = () => {
   const [id, setId] = useState("63ea01e9a7ec529a1d288b3f");
   const [data, setData] = useState('')
@@ -31,11 +32,15 @@ const InternShipColleagues = () => {
         <div className='middle-main-comp-bottom'>
           <p>/ Əməkdaşlarımız</p>
         </div>
-      </div>
-      <div className='internAdd'>
-        <div className='middle-main-btn' onClick={() => setOpen(!open)}>
+      </div> 
+      {
+        <ColleaguesTitle/>
+      }
+       <div className='middle-main-btn' onClick={() => setOpen(!open)}>
           <button>Əlavə et</button>
         </div>
+      <div className='internAdd'>
+     
         {
           open &&
           <ModalIntern setOpen={setOpen} id={id} />
@@ -50,7 +55,6 @@ const InternShipColleagues = () => {
           )
         })
       }
-
     </div>
   )
 }

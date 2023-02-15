@@ -31,6 +31,7 @@ import MetaPage from "./components/LeftBar/MetaPage/MetaPage";
 import Terminals from "./components/Auth/Terminals/Terminals";
 import TerminalUsage from "./components/LeftBar/TerminalUsage/TerminalUsage";
 import TerminalMap from "./components/Auth/Terminals/TerminalMap/TerminalMap";
+import VakansiyaFilter from "./components/LeftBar/Vakansiya-Filter/VakansiyaFilter";
 
 
 function App() {
@@ -106,6 +107,7 @@ function App() {
             <Route path="/business-cooperation" element={<BusinessCooperation />} />
             <Route path="/marketing-cooperation" element={<MarketingCooperation />} />
             <Route path="/terminal" element={<Terminals />} />
+            <Route path="/vakansiyaFilter" element={<VakansiyaFilter/>}/>
           </Routes>
         </div>
       </div>
