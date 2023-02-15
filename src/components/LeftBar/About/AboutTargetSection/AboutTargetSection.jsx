@@ -39,7 +39,7 @@ const AboutTargetSection = ({ initialValues }) => {
     }
 
     return (
-        <div >
+        <div className='target'>
             {
                 initialValues &&
                 <Formik
@@ -52,7 +52,7 @@ const AboutTargetSection = ({ initialValues }) => {
                         values,
                         handleChange
                     }) => (
-                        <Form className='modal-form' >
+                        <Form className='modal-form' id='modal'>
                             <div className='modal-form-div'>
                                 <div className='modal-form-div-el'>
                                     <label>Mətn (az)</label>
