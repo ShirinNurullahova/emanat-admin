@@ -14,7 +14,7 @@ const VakansiyaFilter = () => {
             <p>/ data</p>
           </div>
         </div>
-        <div className="modal-form-btn">
+        <div className="vakansiyafilter-btn">
             <button onClick={()=>setBtnAdd(true)}>Əlavə et</button>
         </div>
         {
