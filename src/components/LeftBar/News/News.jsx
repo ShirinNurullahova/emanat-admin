@@ -8,8 +8,17 @@ const News = () => {
     const [id, setId] = useState(null)
     const [btn, setBtn] = useState(null)
 
+    const modalContainer = document.getElementsByClassName('news-modal');
+
+    const onClickHandler = (e) => {
+       
+            if (e.target.className.includes('news-modal')) {
+                console.log('salam')
+            }
+        
+    }
     return (
-        <div className='news'>
+        <div className='news' onClick={onClickHandler}>
             <div className='news-main'>
                 <div className='news-main-comp'>
                     <div className='news-main-comp-p'>
@@ -32,7 +41,7 @@ const News = () => {
                 <Card setId={setId} setBtn={setBtn} btn={btn} />
             </div>
             {btn &&
-                <div className='news-modal'>
+                <div className='news-modal' >
 
                     <Modal id={id} setBtn={setBtn} btn={btn} />
 

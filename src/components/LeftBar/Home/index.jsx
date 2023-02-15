@@ -15,11 +15,12 @@ const Home = () => {
     <div className='middle'>
      <Banner/>
      <BlackSection/>
+     <ServiceHead/>
+     <Emekdasliq/>
      <PayPoint/>
      <JoinUs/>
      <Social/>
-     <Emekdasliq/>
-      <ServiceHead/>
+  
     </div>
 
   )
