@@ -16,7 +16,6 @@ export const Card = ({ setId, setBtn, btn }) => {
             }
         })
             .then(res => {
-                
                 setData(res.data);
             })
             .catch((err) => {});
