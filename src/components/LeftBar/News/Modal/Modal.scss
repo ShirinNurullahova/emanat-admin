@@ -1,5 +1,7 @@
 .modal{
     position: absolute;
+    // backdrop-filter: blur(10px);
+    // -webkit-backdrop-filter: blur(10px);
     z-index: 999;
     background-color: #6c757d;
   float: left;

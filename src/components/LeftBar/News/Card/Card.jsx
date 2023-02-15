@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import '../Card/Card.scss'
 import { useState } from 'react'
+import { logDOM } from '@testing-library/react'
 
 export const Card = ({ setId, setBtn, btn }) => {
     const [data, setData] = useState(null);
@@ -15,7 +16,8 @@ export const Card = ({ setId, setBtn, btn }) => {
             }
         })
             .then(res => {
-                setData(res.data.message);
+                
+                setData(res.data);
             })
             .catch((err) => {});
     }
