@@ -71,46 +71,50 @@ function App() {
 
   return (
     <div className="App" >
-      <div className='main-page-up'>
-        <Profile />
-        <Header />
-      </div>
-      <div className="two">
-        <div className='two-components'>
-          <ScrollBar />
+      
+        <div className='main-page-up' id="main-page-up">
+          <Profile />
+          <Header />
         </div>
-        <div className="two-right">
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/terminalusage" element={<TerminalUsage />} />
-            <Route path="/terminalmap" element={<TerminalMap />} />
-            <Route path="/hashtag" element={<HashTag />} />
-            <Route path="/vakansiya" element={<Vakansiya />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/faq" element={<Faq />} />
-            <Route path="/cooperative" element={<Cooperative />} />
-            <Route path="/partnership" element={<Partnership />} />
-            <Route path="/internship" element={<InternShipProgram />} />
-            <Route path="/uni" element={<Uni />} />
-            <Route path="/career" element={<Career />} />
-            <Route path="/meta" element={<MetaPage />} />
-            <Route path="/news" element={<News />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/forgot' element={<Forgot />} />
-            <Route path='/verify' element={<Verify />} />
-            <Route path='/reset' element={<Reset />} />
-            <Route path="/terminalform" element={<Terminal />} />
-            <Route path="/business-cooperation" element={<BusinessCooperation />} />
-            <Route path="/marketing-cooperation" element={<MarketingCooperation />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/hr" element={<Hr />} />
-            <Route path="/business-cooperation" element={<BusinessCooperation />} />
-            <Route path="/marketing-cooperation" element={<MarketingCooperation />} />
-            <Route path="/terminal" element={<Terminals />} />
-            <Route path="/vakansiyaFilter" element={<VakansiyaFilter/>}/>
-          </Routes>
+        <div className="two">
+          <div className='two-components' id='scrollBar'>
+            <ScrollBar />
+          </div>
+          <div className="two-right">
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="/terminalusage" element={<TerminalUsage />} />
+              <Route path="/terminalmap" element={<TerminalMap />} />
+              <Route path="/hashtag" element={<HashTag />} />
+              <Route path="/vakansiya" element={<Vakansiya />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/cooperative" element={<Cooperative />} />
+              <Route path="/partnership" element={<Partnership />} />
+              <Route path="/internship" element={<InternShipProgram />} />
+              <Route path="/uni" element={<Uni />} />
+              <Route path="/career" element={<Career />} />
+              <Route path="/meta" element={<MetaPage />} />
+              <Route path="/news" element={<News />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/forgot' element={<Forgot />} />
+              <Route path='/verify' element={<Verify />} />
+              <Route path='/reset' element={<Reset />} />
+              <Route path="/terminalform" element={<Terminal />} />
+              <Route path="/business-cooperation" element={<BusinessCooperation />} />
+              <Route path="/marketing-cooperation" element={<MarketingCooperation />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/hr" element={<Hr />} />
+              <Route path="/business-cooperation" element={<BusinessCooperation />} />
+              <Route path="/marketing-cooperation" element={<MarketingCooperation />} />
+              <Route path="/terminal" element={<Terminals />} />
+              <Route path="/vakansiyaFilter" element={<VakansiyaFilter />} />
+            </Routes>
+          </div>
         </div>
-      </div>
+   
+
+
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path='/logout' element={<Logout />} />
