@@ -132,3 +132,9 @@
         padding-left: 10px;
      }
  }
+ @media screen and (max-width: 650px) and (min-width: 300px) {
+    
+    .two-components{
+        display: none !important;
+    }
+}
