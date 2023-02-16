@@ -1,0 +1,44 @@
+.faqSchema{
+    // background-color: rgba(34, 37, 42, 0.95);
+    // width: 85%;
+    padding-right: 20px;
+    textarea {
+        font-weight: 400;
+        line-height: 1.5;
+        background-color: transparent;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        box-shadow: none;
+        border-color: #393d42;
+        font-size: 14px;
+        color: #77797c;
+        padding: 10px;
+        outline: none;
+    }
+    .card-main {
+        position: relative;
+    }
+   .vakansiyafilter-btn{
+    text-align: right;
+    button{
+        cursor: pointer;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        padding: 0.375rem 0.75rem;
+        border-radius: 0.25rem;
+    }
+   }
+    .modal {
+        position: absolute;
+        z-index: 999;
+        background-color: #6c757d;
+        top: 110%;
+        max-height: 90vh;
+        overflow-y: scroll;
+    }
+}

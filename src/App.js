@@ -32,6 +32,7 @@ import Terminals from "./components/Auth/Terminals/Terminals";
 import TerminalUsage from "./components/LeftBar/TerminalUsage/TerminalUsage";
 import TerminalMap from "./components/Auth/Terminals/TerminalMap/TerminalMap";
 import VakansiyaFilter from "./components/LeftBar/Vakansiya-Filter/VakansiyaFilter";
+import FaqSchema from "./components/LeftBar/FaqSchema/FaqSchema";
 
 
 function App() {
@@ -108,6 +109,7 @@ function App() {
             <Route path="/marketing-cooperation" element={<MarketingCooperation />} />
             <Route path="/terminal" element={<Terminals />} />
             <Route path="/vakansiyaFilter" element={<VakansiyaFilter/>}/>
+            <Route path="/faqSchema" element={<FaqSchema/>}/>
           </Routes>
         </div>
       </div>
