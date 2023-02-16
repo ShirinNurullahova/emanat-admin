@@ -8,6 +8,12 @@
     position: relative;
     transition-property: transform;
     transition-duration: 1s;
+    a:-webkit-any-link {
+        color: rgba(255, 255, 255, 0.4);
+        ;
+        cursor: pointer;
+        text-decoration: none;
+    }
 
     &-img {
         margin-right: 5%;
@@ -52,4 +58,69 @@
 @keyframes rotate {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
+}
+
+
+
+@media screen and (max-width: 650px) and (min-width: 300px) {
+    .header-content {
+        display: none;
+    }
+    .modalMenu {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        left:  0;
+        right: 0;
+        z-index: 1000;
+        transition: all 0.4s ease-in;
+        background-color: rgb(34, 37, 42);
+
+        &.active {
+            z-index: 1001;
+            background-color: rgb(34, 37, 42);
+            left: -40vw;
+              top:0;
+            transition: all 0.4s ease-in;
+
+        }
+
+        .header-content-1 {
+
+            width: 70%;
+            margin-top: 20%;
+
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                justify-content: start;
+
+                li {
+                    a {
+                        margin-top: 5%;
+                    }
+
+                    margin-bottom: 40px;
+                    font-size: 30px;
+                    list-style: none;
+                    text-decoration: none;
+                    text-decoration: none;
+                    margin-right: 40px;
+                    color: rgba(255, 255, 255, 0.4);
+                    cursor: pointer;
+                    transition: 0.2s ease;
+
+                    &:hover {
+                        color: white;
+                        transition: 0.2s ease;
+                    }
+
+                }
+
+            }
+
+        }
+    }
 }
