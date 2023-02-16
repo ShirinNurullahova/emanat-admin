@@ -252,6 +252,11 @@ const ScrollBar = () => {
                     <p>Hashtag</p>
                   </div>
                 </Link>
+                <Link to="/pageImages">
+                  <div className="scroll-bar-dropdown-el-p">
+                    <p>Page-Images</p>
+                  </div>
+                </Link>
               </div>
             </div>
           )}
