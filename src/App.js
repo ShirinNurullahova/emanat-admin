@@ -32,6 +32,7 @@ import Terminals from "./components/Auth/Terminals/Terminals";
 import TerminalUsage from "./components/LeftBar/TerminalUsage/TerminalUsage";
 import TerminalMap from "./components/Auth/Terminals/TerminalMap/TerminalMap";
 import VakansiyaFilter from "./components/LeftBar/Vakansiya-Filter/VakansiyaFilter";
+import FaqSchema from "./components/LeftBar/FaqSchema/FaqSchema";
 
 
 function App() {
@@ -71,7 +72,6 @@ function App() {
 
   return (
     <div className="App" >
-      
         <div className='main-page-up' id="main-page-up">
           <Profile />
           <Header />
@@ -112,9 +112,7 @@ function App() {
             </Routes>
           </div>
         </div>
-   
-
-
+        
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path='/logout' element={<Logout />} />
