@@ -1,26 +1,26 @@
 .two{
     position: relative;
- 
     &-components{
         position: fixed;
         // left: 0;
        
       width: 200px;
       padding: 20px;
-      background-color: rgba(34, 37, 42, 0.95);
+    //   background-color: rgba(34, 37, 42, 0.95);
 
         .scroll-bar {
-         
             text-align: left;
-        
             height: 100vh;
-           
+            min-height: 500px;
             margin-top: 30%;
+            overflow-y: scroll;
+           
             a:-webkit-any-link {
                 color: transparent !important;
                 cursor: pointer;
                 text-decoration: none !important;
             }
+           
             &-dropdown {
                 &-el {
                     &-p {
@@ -105,6 +105,30 @@
                 }
             }  
         }
+        .scroll-bar::-webkit-scrollbar {
+            display: none;
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+          }
     }
   display: flex;
 }
+
+@media screen and (max-width: 800px) and (min-width: 610px) {
+    .two-components{
+       width: 25%;
+    }
+    
+}
+@media screen and (max-width: 610px) and (min-width: 300px) {
+    .svg-icon-two{
+       display: none;
+    }
+    
+}
+@media screen and (max-width: 450px) and (min-width: 300px) {
+    
+     .two-components{
+        padding-left: 10px;
+     }
+ }
