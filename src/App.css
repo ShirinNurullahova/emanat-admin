@@ -44,7 +44,7 @@
   }
    
 }
-@media screen and (max-width: 850px) and (min-width: 300px) {
+@media screen and (max-width: 650px) and (min-width: 300px) {
   .two-right{
     width: 100%;
   }
