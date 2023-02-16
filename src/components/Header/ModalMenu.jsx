@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const ModalMenu = ({ toggle }) => {
     return (
         <div className={`modalMenu ${toggle && 'active'}`}>
-            <div>
+            <div className='divActive'>
                 <ul className='header-content-1'>
                     <div>
                         <Link to="/">
@@ -33,7 +33,7 @@ const ModalMenu = ({ toggle }) => {
                             </li>
 
                         </Link>
-
+                        
                     </div>
 
                 </ul>
