@@ -1,68 +1,194 @@
-.header{
+.header {
     // position: fixed;
     top: 0;
     left: 0;
     width: 85% !important;
     z-index: 999px;
+
     a:-webkit-any-link {
-     color: rgba(255,255,255,0.4);;
+        color: rgba(255, 255, 255, 0.4);
+        ;
         cursor: pointer;
         text-decoration: none;
     }
-    &-progress-bar{
-        background-color: #a5a8ad;  
+
+    &-progress-bar {
+        background-color: #a5a8ad;
         width: 95%;
         height: 1px;
-        color:#a5a8ad;
+        color: #a5a8ad;
         position: sticky;
-        top:0;
-        left:3%;
+        top: 0;
+        left: 3%;
         z-index: 1;
-       &-style{
-        // width: 15%;
-        height: 1px;
-        background-color:#17C2D7;
-       }
+
+        &-style {
+            // width: 15%;
+            height: 1px;
+            background-color: #17C2D7;
+        }
     }
-    background-color: rgba(34,37,42,0.95);;
+
+    background-color: rgba(34, 37, 42, 0.95);
     padding: 20px;
     width: 80%;
     // position: relative;
     overflow: hidden;
+
     .svg-icon.search-icon {
         display: inline-block;
         width: 15px;
         height: 15px;
     }
-    &-content{
-      
-        &-div{
+
+    &-content {
+
+        &-div {
             width: 100%;
-            img{
+
+            img {
                 width: 15px;
                 height: 15px;
             }
         }
+
         display: flex;
         justify-content: space-between;
-        div{
+
+        div {
             display: flex;
-             
-            li{
+
+            li {
                 list-style: none;
                 text-decoration: none;
                 margin-right: 40px;
-                color: rgba(255,255,255,0.4);
+                color: rgba(255, 255, 255, 0.4);
                 cursor: pointer;
                 transition: 0.2s ease;
-                &:hover{
-                    color:white;
+
+                &:hover {
+                    color: white;
                     transition: 0.2s ease;
                 }
             }
-            
+
         }
-        
+
     }
-   
+
+}
+
+@media screen and (max-width: 1920px) and (min-width: 650px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 850px) and (min-width: 650px) {
+    .header-content {
+        justify-content: flex-start;
+
+        div {
+            li {
+                margin-right: 20px;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 650px) and (min-width: 300px) {
+    .header-content {
+
+        display: none;
+
+    }
+
+    .profile-part-hr {
+
+        width: 100%;
+
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .menu {
+        .svg-div {
+            svg {
+                width: 6%;
+            }
+
+            text-align: right;
+        }
+
+        display: block;
+    }
+
+    .modalMenu {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        transition: all 0.4s ease-in;
+        background-color: rgb(34, 37, 42);
+
+        &.active {
+            z-index: 1001;
+            background-color: rgb(34, 37, 42);
+            right: -20vw;
+            transition: all 0.4s ease-in;
+
+        }
+
+        .header-content-1 {
+
+            width: 70%;
+            margin-top: 20%;
+
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                justify-content: start;
+
+                li {
+                    a {
+                        margin-top: 5%;
+                    }
+
+                    margin-bottom: 40px;
+                    font-size: 30px;
+                    list-style: none;
+                    text-decoration: none;
+                    text-decoration: none;
+                    margin-right: 40px;
+                    color: rgba(255, 255, 255, 0.4);
+                    cursor: pointer;
+                    transition: 0.2s ease;
+
+                    &:hover {
+                        color: white;
+                        transition: 0.2s ease;
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 350px) and (min-width: 300px) {
+    .profile-part-text p {
+        font-size: 15px;
+    }
 }

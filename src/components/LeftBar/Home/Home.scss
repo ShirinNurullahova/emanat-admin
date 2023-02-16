@@ -1,6 +1,9 @@
 .middle{
     // background-color: rgba(34, 37, 42, 0.95);
     width: 85%;
+    .main-icons{
+        padding: 20px;
+    }
     &-main {
         padding: 20px;
         
@@ -113,3 +116,23 @@
     }
 }
 
+@media screen and (max-width: 850px) and (min-width: 450px) {
+   .middle{
+    width: 100%;
+   }
+    
+}
+@media screen and (max-width: 450px) and (min-width: 300px) {
+    .middle{
+     width: 100%;
+    }
+     input{
+        font-size: 12px !important;
+     }
+     .middle-main{
+        padding-right: 0;
+     }
+     .middle-main-bottom{
+        padding-right: 10px;
+     }
+ }

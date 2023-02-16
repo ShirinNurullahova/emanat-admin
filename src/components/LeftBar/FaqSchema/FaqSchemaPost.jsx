@@ -1,0 +1,92 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Formik, Field, Form } from "formik";
+const vacancyValues = []
+const FaqSchemaPost = ({ setBtnAdd }) => {
+  const [initialValues, setInitialValues] = useState(null)
+  const onSubmitHandler = async (values) => {
+    console.log(vacancyValues);
+    const dataForm = {};
+    dataForm.data=vacancyValues;
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_URL}/admin/faqSchema`, dataForm)
+    } catch (error) { }
+ 
+    setBtnAdd(false)
+  }
+
+  const handleChange= (e, id) => {
+    let name = e.target.name;
+    vacancyValues[id][name] = e.target.value;
+  }
+
+  const addContentHandler = () => {
+    const initialValuesRaw = new Object();
+    vacancyValues.push(initialValuesRaw)
+    setInitialValues([...initialValues, initialValuesRaw])
+  }
+
+  useEffect(() => {
+    const initialValuesRaw = new Object();
+    vacancyValues.push(initialValuesRaw);
+    setInitialValues([initialValuesRaw]);
+  }, [])
+
+  return (
+    <div className='modal' >
+      {initialValues &&
+        <Formik
+          initialValues={initialValues}
+          onSubmit={(values) => {
+            onSubmitHandler(values);
+          }}
+        >
+          {({
+            values,
+            handleSubmit
+          }) => (
+            <Form className='modal-form' onSubmit={handleSubmit}>
+              {initialValues?.map((item, index) => (
+                <div key={index} className='modal-form-div'>
+                  <p style={{ fontSize: '16px', fontWeight: 'bold', marginTop: '40px' }}>Data məlumatları {index + 1}</p>
+                  <div className='modal-form-div-el'>
+                    <label>Question (az)</label>
+                    <Field onChange={(e) => handleChange(e, index)} type="text" name="azQuestion" />
+                  </div>
+                  <div className='modal-form-div-el'>
+                    <label>Answer (az)</label>
+                    <Field onChange={(e) => handleChange(e, index)} type="text" name="azAnswer" />
+                  </div>
+                  <div className='modal-form-div-el'>
+                    <label>Question (en)</label>
+                    <Field onChange={(e) => handleChange(e, index)} type="text" name="enQuestion" />
+                  </div>
+                  <div className='modal-form-div-el'>
+                    <label>Answer (en)</label>
+                    <Field onChange={(e) => handleChange(e, index)} type="text" name="enAnswer" />
+                  </div>
+                  <div className='modal-form-div-el'>
+                    <label>Question (ru)</label>
+                    <Field onChange={(e) => handleChange(e, index)} type="text" name="ruQuestion" />
+                  </div>
+                  <div className='modal-form-div-el'>
+                    <label>Answer (ru)</label>
+                    <Field onChange={(e) => handleChange(e, index)} type="text" name="ruAnswer" />
+                  </div>
+                </div>
+              ))}
+              <div style={{ textAlign: 'center', marginTop: '30px' }}>
+                <p onClick={addContentHandler} style={{ fontSize: '30px', cursor: 'pointer', fontWeight: 'bold', padding: '5px', display: 'inline' }}>+</p>
+              </div>
+              <div className='modal-form-btn'>
+                <button type='submit'>Yadda saxla</button>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      }
+    </div>
+  );
+};
+
+export default FaqSchemaPost;
