@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Header/Header.scss'
+import ModalMenu from './ModalMenu';
 import SearchBar from './SearchBar/SearchBar';
 
 
 const Header = () => {
   const [scrollTop, setScrollTop] = useState(0);
-  const [toggle, setToggle] = useState(true)
+  const [toggle, setToggle] = useState(null)
   const onScroll = () => {
     const winScroll = document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -14,9 +15,26 @@ const Header = () => {
     setScrollTop(scrolled)
   }
   useEffect(() => {
+    
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  useEffect(() => {
+    if(toggle){
+      // document.getElementsByTagName('body')[0].style.position='fixed'
+      document.getElementsByTagName('body')[0].style.overflow='hidden'
+       document.getElementById('menu').style.overflow='hidden'
+    }else{
+      document.getElementsByTagName('body')[0].style.overflow='scroll'
+      // document.getElementById('menu').style.overflow='scroll'
+    }
+  }, [toggle])
+    
+
+
+
+
 
   return (
     <div className='header'>
@@ -34,14 +52,14 @@ const Header = () => {
           </Link>
 
           <Link to='/partnership'>
-          <li>
-            Əməkdaşlıq
-          </li>
+            <li>
+              Əməkdaşlıq
+            </li>
           </Link>
           <Link to='/career'>
-          <li>
-            Karyera
-          </li>
+            <li>
+              Karyera
+            </li>
           </Link>
           <Link to='/news'>
             <li>
@@ -49,7 +67,7 @@ const Header = () => {
             </li>
 
           </Link>
-         
+
         </div>
         <div>
           {/* <li onClick={() => setToggle(!toggle)}>
@@ -67,6 +85,20 @@ const Header = () => {
           </li>
         </div>
       </ul>
+      <div className="menu" onClick={() => setToggle(!toggle)} id='menu'>
+        <div className='svg-div'>
+        <svg class="svg-icon" viewBox="0 0 20 20">
+          <path fill="white" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
+								c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
+								s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
+								c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
+        </svg>
+        </div>
+         {
+          toggle &&
+          <ModalMenu toggle={toggle}/>
+         }
+      </div>
       <div className='header-progress-bar'>
         <div className='header-progress-bar-style' style={{ width: `${scrollTop}%` }}>
         </div>

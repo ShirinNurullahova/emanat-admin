@@ -32,7 +32,7 @@ const MainIcons = ({initialValues}) => {
 
 
   return (
-    <div>
+    <div className='main-icons'>
          <div className='middle-main-bottom'>
                 {initialValues &&
                     <Formik
