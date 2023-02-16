@@ -4,12 +4,22 @@ import { Formik, Field, Form } from "formik";
 const vacancyValues = []
 const FaqSchemaPost = ({ setBtnAdd }) => {
   const [initialValues, setInitialValues] = useState(null)
+  const [previousData,setPreviousData]=useState(null)
+  const fetchData = () => {
+    axios
+      .get(`${process.env.REACT_APP_URL}/admin/faqSchema`)
+      .then((res) => {
+        setPreviousData(res.data[0]);
+      })
+      .catch((err) => {});
+  };
   const onSubmitHandler = async (values) => {
-    console.log(vacancyValues);
+    fetchData()
     const dataForm = {};
-    dataForm.data=vacancyValues;
+    dataForm.id=previousData._id;
+    dataForm.data=[...previousData.data,...vacancyValues];
     try {
-      const response = await axios.post(`${process.env.REACT_APP_URL}/admin/faqSchema`, dataForm)
+      const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/faqSchema`, dataForm)
     } catch (error) { }
  
     setBtnAdd(false)

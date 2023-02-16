@@ -49,8 +49,13 @@ const handleChangeText = (e, vl) => {
         let name = e.target.name;
         vl[name] = e.target.value.split(";");
 }
-// const handleDeleteData=(id)=>{
-// }
+const handleDeleteData=async(id)=>{
+  try {
+    const res = await axios.delete((`${process.env.REACT_APP_URL}/admin/vacation/filter/${id}`))
+    alert("Vakansiya silindi")
+    fetchData();
+} catch (error) { }
+}
   return (
     <>
       <div className="middle-main">
@@ -139,9 +144,9 @@ const handleChangeText = (e, vl) => {
                     </div>
                   </div>
                 <div style={{display:"flex",flexDirection:"row-reverse"}}>
-                 {/* <div className="middle-main-bottom-form-btn">
+                 <div className="middle-main-bottom-form-btn">
                     <button onClick={()=>handleDeleteData(vl?._id)}>Delete</button>
-                  </div> */}
+                  </div>
                   <div className="middle-main-bottom-form-btn">
                     <button type="submit" onClick={()=>setVl(vl)}>Yadda saxla</button>
                   </div>

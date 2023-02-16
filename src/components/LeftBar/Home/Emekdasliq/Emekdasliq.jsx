@@ -13,25 +13,25 @@ const Emekdasliq = () => {
     return (
         <div >
             <Head setId={setId} id={id} />
+            <div className='icon-elave' onClick={() => setOpen("Əlavə et")}>
+                <button>
+                    Əlavə et
+                </button>
 
+            </div>
             <div className='middle-bottom'>
-                
+
                 <div className='middle-bottom-el'>
                     <Icons setIcon={setIcon} setId={setId} setOpen={setOpen} open={open} />
 
 
                     {open &&
 
-                        <Modal icon={icon} open={open} setOpen={setOpen} id={id}/>
+                        <Modal icon={icon} open={open} setOpen={setOpen} id={id} />
                     }
 
                 </div>
-                <div className='middle-bottom-div' onClick={() => setOpen("Əlavə et")}>   
-                        <button>
-                           Əlavə et
-                        </button>
-                  
-                </div>
+
 
 
             </div>

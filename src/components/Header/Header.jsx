@@ -7,7 +7,6 @@ import SearchBar from './SearchBar/SearchBar';
 
 const Header = () => {
   const [scrollTop, setScrollTop] = useState(0);
-  const [toggle, setToggle] = useState(null)
   const onScroll = () => {
     const winScroll = document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -20,16 +19,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  useEffect(() => {
-    if(toggle){
-      // document.getElementsByTagName('body')[0].style.position='fixed'
-      document.getElementsByTagName('body')[0].style.overflow='hidden'
-       document.getElementById('menu').style.overflow='hidden'
-    }else{
-      document.getElementsByTagName('body')[0].style.overflow='scroll'
-      // document.getElementById('menu').style.overflow='scroll'
-    }
-  }, [toggle])
+  
     
 
 
@@ -85,7 +75,7 @@ const Header = () => {
           </li>
         </div>
       </ul>
-      <div className="menu" onClick={() => setToggle(!toggle)} id='menu'>
+      {/* <div className="menu" id='menu'>
         <div className='svg-div'>
         <svg class="svg-icon" viewBox="0 0 20 20">
           <path fill="white" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
@@ -94,11 +84,8 @@ const Header = () => {
 								c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
         </svg>
         </div>
-         {
-          toggle &&
-          <ModalMenu toggle={toggle}/>
-         }
-      </div>
+         
+      </div> */}
       <div className='header-progress-bar'>
         <div className='header-progress-bar-style' style={{ width: `${scrollTop}%` }}>
         </div>

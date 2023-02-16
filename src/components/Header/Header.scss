@@ -144,7 +144,9 @@
             background-color: rgb(34, 37, 42);
             right: -20vw;
             transition: all 0.4s ease-in;
-
+             .div-active{
+                margin-left: 40vh;
+             }
         }
 
         .header-content-1 {
