@@ -99,7 +99,6 @@ function App() {
               <Route path='/register' element={<Register />} />
               <Route path='/forgot' element={<Forgot />} />
               <Route path='/verify' element={<Verify />} />
-              <Route path='/reset' element={<Reset />} />
               <Route path="/terminalform" element={<Terminal />} />
               <Route path="/business-cooperation" element={<BusinessCooperation />} />
               <Route path="/marketing-cooperation" element={<MarketingCooperation />} />
@@ -116,6 +115,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path='/logout' element={<Logout />} />
+        <Route path='/reset' element={<Reset />} />
       </Routes>
     </div>
   );
