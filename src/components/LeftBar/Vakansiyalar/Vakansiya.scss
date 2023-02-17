@@ -14,7 +14,7 @@
 
     th {
         text-align: left;
-        border-bottom: 1px solid;
+        // border-bottom: 1px solid;
     }
 
     table {
@@ -82,4 +82,13 @@
         max-height: 90vh;
         overflow-y: scroll;
     }
+}
+
+@media screen and (max-width: 450px) and (min-width: 300px) {
+   .main-vakansiya{
+     .modal-form{
+     width: 200px !important;
+    }
+   }
+   
 }

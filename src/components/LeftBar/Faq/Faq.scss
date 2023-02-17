@@ -1,22 +1,49 @@
-.faq{
+.faq {
     // background-color: rgba(34, 37, 42, 0.95);
     // width: 85%;
     padding-right: 20px;
+
+    .middle-main-bottom {
+        padding-right: 0;
+    }
+
+    .modal-form-btn {
+
+        margin-top: 10%;
+        text-align: right;
+
+        button {
+            // width: 10%;
+            cursor: pointer;
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            border: none;
+            font-size: 14px;
+            outline: none;
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.25rem;
+        }
+
+    }
+
     table,
-    
+
     th {
         text-align: left;
         // border-bottom: 1px solid;
     }
-    
+
     table {
         width: 100%;
         border-collapse: collapse;
     }
-    tr{
+
+    tr {
         margin-bottom: 5%;
     }
-    .redaktə{
+
+    .redaktə {
         cursor: pointer;
         color: #fff;
         background-color: orange;
@@ -29,7 +56,10 @@
         padding: 0.375rem 0.75rem;
         border-radius: 0.25rem;
     }
+
     thead tr th:last-child {
+
+        text-align: center;
         cursor: pointer;
         color: #fff;
         background-color: #007bff;
@@ -41,9 +71,11 @@
         padding: 0.375rem 0.75rem;
         border-radius: 0.25rem;
     }
-    .card-main{
+
+    .card-main {
         position: relative;
     }
+
     .table-main {
         margin-left: 20px;
         border-radius: 3px;
@@ -53,21 +85,34 @@
         padding: 22px;
         border-top: 1px solid rgba(255, 255, 255, 0.09);
     }
-    
-    td{
-        background: rgba(255,255,255,0.01);
+
+    td {
+        background: rgba(255, 255, 255, 0.01);
     }
+
     tbody {
         // background: rgba(255, 255, 255, 0.01);
         padding: 35px;
         width: 100%;
         position: relative;
         margin: 5px 0;
-   
+
     }
-    
-    td{
+
+    td {
         padding: 20px 20px 20px 0;
         width: calc(100% - 70px);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .faq thead tr th:last-child {
+        width: auto;
+        padding: 0;
+
+    }
+    .faq thead tr th:nth-child(3) {
+      display: none;
+
     }
 }

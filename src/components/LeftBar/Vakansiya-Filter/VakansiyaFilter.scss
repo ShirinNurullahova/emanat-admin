@@ -42,3 +42,11 @@
         overflow-y: scroll;
     }
 }
+@media screen and (max-width: 450px) and (min-width: 300px) {
+    .vakansiyaFilter{
+      .modal-form{
+      width: 200px !important;
+     }
+    }
+    
+ }

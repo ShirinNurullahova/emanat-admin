@@ -136,11 +136,11 @@ const ScrollBar = () => {
                     <p>Meta</p>
                   </div>
                 </Link>
-                <Link to="/faqSchema">
+                {/* <Link to="/faqSchema">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>FaqSchema</p>
                   </div>
-                </Link>
+                </Link> */}
                 <Link to="/uni">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Uni</p>
