@@ -28,7 +28,7 @@ const OurvaluesSections = ({initialValues}) => {
 
 
   return (
-    <div>
+    <div className='middle-main'>
          <div className='middle-main-bottom'>
                 {initialValues &&
                     <Formik

@@ -1,36 +1,59 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import profile from '../../../Images/asdf.svg'
 import '../Profile/Profile.scss';
 import ModalMenu from '../../Header/ModalMenu';
 const Profile = () => {
-    const [toggle, setToggle] = useState(null)
+    const [toggle, setToggle] = useState(false);
+    const menuRef = useRef()
     useEffect(() => {
-        if(toggle){
-          // document.getElementsByTagName('body')[0].style.position='fixed'
-          document.getElementsByTagName('body')[0].style.overflow='hidden'
-        //    document.getElementById('menu').style.overflow='hidden'
-        }else{
-          document.getElementsByTagName('body')[0].style.overflow='scroll'
-          // document.getElementById('menu').style.overflow='scroll'
+        let handler = (e) => {
+            if (!menuRef.current.contains(e.target)){
+                
+                setToggle(false);
+            }
         }
-      }, [toggle])
- 
+        document.addEventListener('mousedown', handler);
+        return () => {
+            document.removeEventListener('mousedown', handler)
+        }
+    })
+    useEffect(() => {
+        if (toggle) {
+            document.getElementsByClassName('two-right')[0].style.filter='blur(10px)';
+            document.body.style.overflow='hidden';
+            console.log(document.getElementsByClassName('modalMenu')[0])
+        } else { 
+            document.getElementsByClassName('two-right')[0].style.filter='none'
+            document.body.style.overflow='visible'
+        }
+    }, [toggle])
+
     return (
-        <div className='profile-part' onClick={() => setToggle(!toggle)} >
-            <div className='profile-part-img'>
-                <img src={profile} />
-            </div>
-            <div className='profile-part-text'>
-                <p>
-                    eManat
-                </p>
-            </div>
-            <div className='profile-part-hr'>
+        <div className='pr' ref={menuRef}>
+            <div className='profile-part' onClick={() => setToggle(!toggle)} >
+
+                <div className='profile-part-div'>
+                    <div className='profile-part-div-img'>
+                        <img src={profile} />
+                    </div>
+                    <div className='profile-part-div-text'>
+                        <p>
+                            eManat
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div className='profile-part-hr'>
+                </div>
+
             </div>
             {
                 toggle &&
                 <ModalMenu toggle={toggle} />
             }
+
         </div>
     )
 }

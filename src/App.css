@@ -8,16 +8,17 @@
     top: 0;
     z-index: 9999;
     background: rgba(209, 209, 213, 0.95);
-
+height: 10vh;
 }
 .two{
   display: flex;
   justify-content: space-between;
+  /* height: 100vh; */
 }
 .two-right{
    width: calc(100% - 240px);
    margin-left: auto;
-   
+
    /* background-color: rgba(34, 37, 42, 0.95); */
 }
 ::-webkit-scrollbar {

@@ -55,7 +55,7 @@ const Icons = ({ setId, setOpen, open , setIcon }) => {
                                 <img src={e.url} />
                             </div>
                             <div className='delete'>
-                                <button  onClick={() => handleIconDelete(e.id)}>Delete</button>
+                                <button  onClick={() => handleIconDelete(e.id)}>Sil</button>
                             </div>
                         </div>
                     )

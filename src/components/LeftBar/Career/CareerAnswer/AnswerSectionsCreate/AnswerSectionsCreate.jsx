@@ -33,7 +33,10 @@ const AnswerSectionsCreate = ({ id,initialValues }) => {
 
     }
     return (
-        <>
+        <div className='middle-main'>
+            <div className='middle-main-bottom'>
+
+          
           {initialValues &&
                     <Formik
                         initialValues={initialValuesAdd}
@@ -91,8 +94,8 @@ const AnswerSectionsCreate = ({ id,initialValues }) => {
                         )}
                     </Formik>
                 }
-
-        </>
+  </div>
+        </div>
     )
 }
 

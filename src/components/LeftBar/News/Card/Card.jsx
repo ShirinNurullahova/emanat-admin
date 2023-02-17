@@ -56,9 +56,9 @@ export const Card = ({ setId, setBtn, btn }) => {
                                 {e.title}
                             </p>
                             </div>
-                            <p>
-                                <button onClick={()=>handleDeleteCard(e.id)}>Delete</button>
-                            </p>
+                            <div className='delete'>
+                                <button onClick={()=>handleDeleteCard(e.id)}>Sil</button>
+                            </div>
                         </div>
                     )
                 })

@@ -47,7 +47,7 @@ const Item = ({ e }) => {
                                         setEditButton(true)
                                         setIdItem(itm._id)
                                         }}>Redaktə et</td>
-                                    <td onClick={() => handleDelete(itm._id)}>Delete</td>
+                                    <td onClick={() => handleDelete(itm._id)}>Sil</td>
                                 </tr>
                             ))
                         }

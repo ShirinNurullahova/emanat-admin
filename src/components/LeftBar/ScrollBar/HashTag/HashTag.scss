@@ -24,3 +24,16 @@
         width: 50%;
     }
 }
+@media screen and (max-width: 450px) and (min-width: 300px) {
+  
+    .hashtag {
+      padding: 40px 0 0 0 !important;
+      &-btn{
+        padding-right: 20px;
+      }
+    .middle-main-bottom{
+        padding-right: 0;
+    }
+    }  
+    
+  }

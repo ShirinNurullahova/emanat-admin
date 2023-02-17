@@ -37,7 +37,8 @@ const ColleaguesTitle = () => {
 
   return (
     <div className='middle-main'>
-       {initialValues && (
+      <div className='middle-main-bottom'>
+        {initialValues && (
             <Formik
               initialValues={initialValues}
               onSubmit={(values) => {
@@ -93,6 +94,8 @@ const ColleaguesTitle = () => {
               )}
             </Formik>
           )}
+      </div>
+       
     </div>
   )
 }

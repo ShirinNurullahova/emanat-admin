@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 import Head from './Head/Head'
@@ -10,8 +10,22 @@ const Emekdasliq = () => {
     const [open, setOpen] = useState(null)
     const [icon, setIcon] = useState(null)
 
+    const menuRef = useRef()
+    useEffect(() => {
+        let handler = (e) => {
+            if (menuRef.current.contains(e.target))
+                setOpen(false)
+                console.log(open);
+        }
+        document.addEventListener('mousedown', handler);
+        return () => {
+            document.removeEventListener('mousedown', handler)
+             console.log(open);
+        }
+    })
+
     return (
-        <div >
+        <div ref={menuRef}>
             <Head setId={setId} id={id} />
             <div className='icon-elave' onClick={() => setOpen("Əlavə et")}>
                 <button>
