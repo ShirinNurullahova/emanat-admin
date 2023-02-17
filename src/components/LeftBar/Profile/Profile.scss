@@ -113,8 +113,8 @@
             z-index: 1001;
             background-color: rgb(34, 37, 42);
             left: -40vw;
-            top: 8vh;
-            margin-top: 15%;
+            top: 10vh;
+            // margin-top: 15%;
             transition: all 0.4s ease-in;
             display: block;
         }
@@ -180,4 +180,12 @@
         opacity: 0;
     }
     
+}
+@media screen and (max-width: 370px) and (min-width: 300px) {
+   
+    .modalMenu{
+        .divActive {
+    margin-left: 32vw;
+}
+    } 
 }

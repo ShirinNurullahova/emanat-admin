@@ -8,7 +8,7 @@
     top: 0;
     z-index: 9999;
     background: rgba(209, 209, 213, 0.95);
-
+height: 10vh;
 }
 .two{
   display: flex;
