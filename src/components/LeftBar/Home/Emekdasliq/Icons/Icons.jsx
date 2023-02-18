@@ -34,8 +34,17 @@ const Icons = ({ setId, setOpen, open , setIcon }) => {
    const handleIconDelete=async(id)=>{
     try {
         const response = await axios.delete(`${process.env.REACT_APP_URL}/admin/main/cooperation/icons/${id}`)
-        if (response.status == 200) {
-
+        if (response.status == 200 || response.status == 201) {
+            document.querySelector('.alertModalApi .text').innerHTML='Silindi';
+            document.querySelector('.alertModalApi').classList.add('delete')
+            document.querySelector('.alertModalApi').classList.remove('post')
+                document.querySelector('.alertModalApi').classList.remove('patch')
+            document.querySelector('.alertModalApi').classList.add('visible')
+            document.querySelector('.alertModalApi').classList.remove('hidden')
+          setTimeout(()=>{
+            document.querySelector('.alertModalApi').classList.remove('visible')
+            document.querySelector('.alertModalApi').classList.add('hidden')
+         },1000)
         }
 
     } catch (error) {

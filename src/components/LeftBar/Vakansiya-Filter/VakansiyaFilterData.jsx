@@ -32,10 +32,19 @@ const VakansiyaFilterData = () => {
         `${process.env.REACT_APP_URL}/admin/vacation/filter`,
         dataForm
       );
-      if (response.status == 200) {
-        alert("success")
-        fetchData();
-      }
+      if (response.status == 200 || response.status == 201) {
+        document.querySelector('.alertModalApi .text').innerHTML='Redaktə edildi';
+        document.querySelector('.alertModalApi').classList.add('patch')
+        document.querySelector('.alertModalApi').classList.remove('post')
+        document.querySelector('.alertModalApi').classList.remove('delete')
+        document.querySelector('.alertModalApi').classList.add('visible')
+        document.querySelector('.alertModalApi').classList.remove('hidden')
+      setTimeout(()=>{
+        document.querySelector('.alertModalApi').classList.remove('visible')
+        document.querySelector('.alertModalApi').classList.add('hidden')
+     },1000)
+        fetchData()
+    }
     } catch (error) {
       alert("error");
     }
@@ -52,7 +61,18 @@ const handleChangeText = (e, vl) => {
 const handleDeleteData=async(id)=>{
   try {
     const res = await axios.delete((`${process.env.REACT_APP_URL}/admin/vacation/filter/${id}`))
-    alert("Vakansiya silindi")
+    if (res.status == 200 || res.status == 201) {
+      document.querySelector('.alertModalApi .text').innerHTML='Silindi';
+      document.querySelector('.alertModalApi').classList.add('delete')
+      document.querySelector('.alertModalApi').classList.remove('post')
+      document.querySelector('.alertModalApi').classList.remove('patch')
+      document.querySelector('.alertModalApi').classList.add('visible')
+      document.querySelector('.alertModalApi').classList.remove('hidden')
+    setTimeout(()=>{
+      document.querySelector('.alertModalApi').classList.remove('visible')
+      document.querySelector('.alertModalApi').classList.add('hidden')
+   },1000)
+  }
     fetchData();
 } catch (error) { }
 }

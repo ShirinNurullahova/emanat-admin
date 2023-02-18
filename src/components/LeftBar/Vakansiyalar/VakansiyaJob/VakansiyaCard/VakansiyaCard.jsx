@@ -30,8 +30,19 @@ const VakansiyaCard = () => {
     const deleteHandler = async (id) => {
         try {
             const res = await axios.delete((`${process.env.REACT_APP_URL}/admin/vacation/job/${id}`))
-            alert("Vakansiya silindi")
-            fetchData();
+            if (res.status == 200 || res.status == 201) {
+                document.querySelector('.alertModalApi .text').innerHTML='Silindi';
+                document.querySelector('.alertModalApi').classList.add('delete')
+                document.querySelector('.alertModalApi').classList.remove('post')
+                document.querySelector('.alertModalApi').classList.remove('patch')
+                document.querySelector('.alertModalApi').classList.add('visible')
+                document.querySelector('.alertModalApi').classList.remove('hidden')
+              setTimeout(()=>{
+                document.querySelector('.alertModalApi').classList.remove('visible')
+                document.querySelector('.alertModalApi').classList.add('hidden')
+             },1000)
+                fetchData()
+            }
         } catch (error) { }
     }
 

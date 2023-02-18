@@ -26,8 +26,17 @@ const Modal = ({ id, open, setOpen, icon }) => {
         if (open === "Əlavə et") {
             try {
                 const response = await axios.post(`${process.env.REACT_APP_URL}/admin/main/cooperation/icons`, dataForm)
-                if (response.status == 200) {
-
+                if (response.status == 200 || response.status == 201) {
+                    document.querySelector('.alertModalApi .text').innerHTML='Əlavə edildi';
+                    document.querySelector('.alertModalApi').classList.add('post')
+                    document.querySelector('.alertModalApi').classList.remove('patch')
+                    document.querySelector('.alertModalApi').classList.remove('delete')
+                    document.querySelector('.alertModalApi').classList.add('visible')
+                    document.querySelector('.alertModalApi').classList.remove('hidden')
+                  setTimeout(()=>{
+                    document.querySelector('.alertModalApi').classList.remove('visible')
+                    document.querySelector('.alertModalApi').classList.add('hidden')
+                 },1000)
                 }
 
             } catch (error) {
@@ -37,8 +46,17 @@ const Modal = ({ id, open, setOpen, icon }) => {
         } else if (open === "Redaktə et") {
             try {
                 const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/main/cooperation/icons`, dataForm)
-                if (response.status == 200) {
-
+                if (response.status == 200 || response.status == 201) {
+                    document.querySelector('.alertModalApi .text').innerHTML='Redaktə edildi';
+                    document.querySelector('.alertModalApi').classList.add('patch')
+                    document.querySelector('.alertModalApi').classList.remove('post')
+                    document.querySelector('.alertModalApi').classList.remove('delete')
+                    document.querySelector('.alertModalApi').classList.add('visible')
+                    document.querySelector('.alertModalApi').classList.remove('hidden')
+                  setTimeout(()=>{
+                    document.querySelector('.alertModalApi').classList.remove('visible')
+                    document.querySelector('.alertModalApi').classList.add('hidden')
+                 },1000)
                 }
 
             } catch (error) {

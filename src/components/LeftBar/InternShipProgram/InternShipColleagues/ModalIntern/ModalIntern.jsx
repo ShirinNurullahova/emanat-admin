@@ -24,8 +24,17 @@ const ModalIntern = ({ setOpen, id }) => {
 
         try {
             const response = await axios.post(`${process.env.REACT_APP_URL}/admin/internship/colleagues/`, dataForm)
-            if (response.status === 201) {
-                alert("okayyyy")
+            if (response.status == 200 || response.status == 201) {
+                document.querySelector('.alertModalApi .text').innerHTML='Əlavə Edildi';
+                document.querySelector('.alertModalApi').classList.add('post')
+                document.querySelector('.alertModalApi').classList.remove('patch')
+                document.querySelector('.alertModalApi').classList.remove('delete')
+                document.querySelector('.alertModalApi').classList.add('visible')
+                document.querySelector('.alertModalApi').classList.remove('hidden')
+              setTimeout(()=>{
+                document.querySelector('.alertModalApi').classList.remove('visible')
+                document.querySelector('.alertModalApi').classList.add('hidden')
+             },1000)
             }
         } catch (error) {
             alert("error")
