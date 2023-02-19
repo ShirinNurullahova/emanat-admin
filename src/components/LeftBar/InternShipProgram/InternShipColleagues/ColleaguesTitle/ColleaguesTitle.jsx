@@ -27,9 +27,19 @@ const ColleaguesTitle = () => {
         `${process.env.REACT_APP_URL}/admin/internship/colleagues/title`,
         dataForm
       );
-      if (response.status == 200) {
-        fetchData();
-      }
+      if (response.status == 200 || response.status == 201) {
+        document.querySelector('.alertModalApi .text').innerHTML='Redaktə Edildi';
+        document.querySelector('.alertModalApi').classList.add('patch')
+        document.querySelector('.alertModalApi').classList.remove('post')
+        document.querySelector('.alertModalApi').classList.remove('delete')
+        document.querySelector('.alertModalApi').classList.add('visible')
+        document.querySelector('.alertModalApi').classList.remove('hidden')
+      setTimeout(()=>{
+        document.querySelector('.alertModalApi').classList.remove('visible')
+        document.querySelector('.alertModalApi').classList.add('hidden')
+     },1000)
+        fetchData()
+    }
     } catch (error) {
       alert("error");
     }
@@ -101,54 +111,3 @@ const ColleaguesTitle = () => {
 }
 
 export default ColleaguesTitle
-
-
-
-//   const onSubmitHandler = async (values) => {
-//     const dataForm = new FormData();
-//     dataForm.append("id", id);
-//     dataForm.append("azTitle", values.azTitle);
-//     dataForm.append("enTitle", values.enTitle);
-//     dataForm.append("ruTitle", values.ruTitle);
-//     dataForm.append("azDescription", values.azDescription);
-//     dataForm.append("enDescription", values.enDescription);
-//     dataForm.append("ruDescription", values.ruDescription);
-//     if (values.image) {
-//       dataForm.append("HrFormPageImage", values.image);
-//     } else {
-//       dataForm.append("HrFormPageImage", values.HrFormPageImage);
-//     }
-   
-//     try {
-//       const response = await axios.patch(
-//         `${process.env.REACT_APP_URL}/admin/hrPage`,
-//         dataForm
-//       );
-//       if (response.status == 200) {
-//         fetchData();
-//       }
-//     } catch (error) {
-//       alert("error");
-//     }
-//   };
-
-//   return (
-//     <div className="form">
-//       <div className="middle-main">
-//         <div className="middle-main-comp">
-//           <div className="middle-main-comp-p">
-//             <p>Hr</p>
-//           </div>
-//           <div className="middle-main-comp-bottom">
-//             <p>/ əsas</p>
-//           </div>
-//         </div>
-//         <div className="middle-main-bottom">
-//          
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Hr;

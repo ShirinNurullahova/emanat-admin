@@ -7,7 +7,7 @@ const VakansiyaJob = () => {
                 <div className='news-main-comp'>
                     <div className='news-main-comp-bottom'>
                         <p>
-                            / Vakansiayalar
+                            / Vakansiyalar
                         </p>
                     </div>
                 </div>

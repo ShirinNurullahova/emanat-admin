@@ -82,6 +82,18 @@ const CareerWhyEmanat = () => {
         `${process.env.REACT_APP_URL}/admin/career/eManat`,
         dataForm
       );
+      if (response.status == 200 || response.status == 201) {
+        document.querySelector('.alertModalApi .text').innerHTML='Redaktə edildi';
+        document.querySelector('.alertModalApi').classList.add('patch')
+        document.querySelector('.alertModalApi').classList.remove('post')
+        document.querySelector('.alertModalApi').classList.remove('delete')
+        document.querySelector('.alertModalApi').classList.add('visible')
+        document.querySelector('.alertModalApi').classList.remove('hidden')
+      setTimeout(()=>{
+        document.querySelector('.alertModalApi').classList.remove('visible')
+        document.querySelector('.alertModalApi').classList.add('hidden')
+     },1000)
+    }
     } catch (error) { }
   };
 

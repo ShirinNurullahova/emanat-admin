@@ -34,6 +34,7 @@ import TerminalMap from "./components/Auth/Terminals/TerminalMap/TerminalMap";
 import VakansiyaFilter from "./components/LeftBar/Vakansiya-Filter/VakansiyaFilter";
 import FaqSchema from "./components/LeftBar/FaqSchema/FaqSchema";
 import PageImages from "./components/LeftBar/PageImages/PageImages";
+import AlertModalApi from "./components/LeftBar/AlertModalApi/AlertModalApi";
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
 
   return (
     <div className="App" >
+      <AlertModalApi/>
         <div className='main-page-up' id="main-page-up">
           <Profile />
           <Header />
@@ -105,8 +107,6 @@ function App() {
               <Route path="/marketing-cooperation" element={<MarketingCooperation />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/hr" element={<Hr />} />
-              <Route path="/business-cooperation" element={<BusinessCooperation />} />
-              <Route path="/marketing-cooperation" element={<MarketingCooperation />} />
               <Route path="/terminal" element={<Terminals />} />
               <Route path="/vakansiyaFilter" element={<VakansiyaFilter />} />
               <Route path="/faqSchema" element={<FaqSchema/>}/>
