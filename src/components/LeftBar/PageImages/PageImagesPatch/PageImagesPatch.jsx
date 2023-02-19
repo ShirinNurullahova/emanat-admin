@@ -34,9 +34,6 @@ const PageImagesPatch = ({ id, setBtn, btn }) => {
       } else {
         dataForm.append('FooterImage', values.footerImage)
       }
-      console.log(dataForm);
-      console.log(dataForm.get('HeaderImage'));
-      console.log(dataForm.get('FooterImage'));
       try {
         const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/page-images`, dataForm)
         if (response.status == 200 || response.status == 201) {

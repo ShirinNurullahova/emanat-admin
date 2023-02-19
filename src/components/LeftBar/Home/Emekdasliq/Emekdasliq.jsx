@@ -15,12 +15,10 @@ const Emekdasliq = () => {
         let handler = (e) => {
             if (menuRef.current.contains(e.target))
                 setOpen(false)
-                console.log(open);
         }
         document.addEventListener('mousedown', handler);
         return () => {
             document.removeEventListener('mousedown', handler)
-             console.log(open);
         }
     })
 

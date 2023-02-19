@@ -7,7 +7,6 @@ const FaqSchemaData = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/admin/faqSchema`)
       .then((res) => {
-        console.log(res.data[0]);
         setInitialValues(res.data[0]);
       })
       .catch((err) => {});

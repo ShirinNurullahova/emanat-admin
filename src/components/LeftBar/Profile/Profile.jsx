@@ -21,7 +21,6 @@ const Profile = () => {
         if (toggle) {
             document.getElementsByClassName('two-right')[0].style.filter='blur(10px)';
             document.body.style.overflow='hidden';
-            console.log(document.getElementsByClassName('modalMenu')[0])
         } else { 
             document.getElementsByClassName('two-right')[0].style.filter='none'
             document.body.style.overflow='visible'
