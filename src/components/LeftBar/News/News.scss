@@ -88,3 +88,11 @@
         padding-inline-start: 40px;
     }
 }
+@media screen and (max-width: 450px) and (min-width: 300px) {
+   .xeber{
+    .modal-form{
+        width: auto;
+    }
+   }
+  
+}
