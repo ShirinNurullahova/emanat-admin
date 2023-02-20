@@ -94,7 +94,7 @@ const Modal = ({ id, setBtn, btn }) => {
 
   return (
 
-    <div className='modal' >
+    <>
       {(btn === "Əlavə et" || initialValues) && 
         <Formik
           initialValues={ btn === "Redaktə et" ? initialValues : initialValuesAdd}
@@ -151,7 +151,7 @@ const Modal = ({ id, setBtn, btn }) => {
           )}
         </Formik>
       }
-    </div>
+    </>
   )
 }
 

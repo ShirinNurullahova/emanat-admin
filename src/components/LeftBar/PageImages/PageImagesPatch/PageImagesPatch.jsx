@@ -57,7 +57,7 @@ const PageImagesPatch = ({ id, setBtn, btn }) => {
 
   return (
 
-    <div className='modal' >
+    <div className='modal-pi' >
       {initialValues && 
         <Formik
           initialValues={initialValues}
@@ -83,7 +83,7 @@ const PageImagesPatch = ({ id, setBtn, btn }) => {
               </div>
 
               <div className='modal-form-btn'>
-                <button type='submit'>Redakte et</button>
+                <button type='submit'>Redaktə et</button>
               </div>
             </Form>
           )}

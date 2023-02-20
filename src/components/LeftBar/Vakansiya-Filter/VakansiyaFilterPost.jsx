@@ -58,9 +58,9 @@ const VakansiyaFilterPost = ({ setBtnAdd }) => {
     vacancyValues.push(initialValuesRaw);
     setInitialValues([initialValuesRaw]);
   }, [])
-
+  
   return (
-    <div className='modal' >
+    <div className='modal-f' >
       {initialValues &&
         <Formik
           initialValues={initialValues}

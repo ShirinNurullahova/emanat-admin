@@ -2,7 +2,38 @@
     // background-color: rgba(34, 37, 42, 0.95);
     // width: 85%;
     padding-right: 20px;
-
+    height: 100vh;
+    .pg-button{
+        text-align: right;
+        padding-right: 40px;
+        button{
+            cursor: pointer;
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            border: none;
+            font-size: 14px;
+            outline: none;
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.25rem;
+        }
+    }
+    .modal-pi{
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: 0.5s;
+        transition: all 0.3s linear;
+        backdrop-filter: blur(5px);
+        form{
+          margin-top: 10%;
+           height: 600px;
+      min-height: 400px;
+    }}
     &-main {
         &-comp {
             padding-inline-start: 40px;

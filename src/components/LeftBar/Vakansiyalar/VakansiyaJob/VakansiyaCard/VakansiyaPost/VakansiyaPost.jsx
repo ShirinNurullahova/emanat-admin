@@ -53,7 +53,7 @@ const VakansiyaPost = ({ setBtnAdd }) => {
   }, [])
 
   return (
-    <div className='modal' >
+    <div className='modal-v' >
       {initialValues &&
         <Formik
           initialValues={initialValues}

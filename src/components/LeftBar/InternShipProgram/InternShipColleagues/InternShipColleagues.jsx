@@ -24,7 +24,14 @@ const InternShipColleagues = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  var body = document.getElementsByTagName('body')[0];
 
+  if (open) {
+      body.style.overflow = 'hidden'
+  } else {
+      body.style.overflow = 'visible'
+
+  }
   return (
     <div className='middle-main'>
       <div className='middle-main-comp'>
@@ -39,14 +46,13 @@ const InternShipColleagues = () => {
        <div className='middle-main-btn' onClick={() => setOpen(!open)}>
           <button>Əlavə et</button>
         </div>
-      <div className='internAdd'>
+     
      
         {
           open &&
           <ModalIntern setOpen={setOpen} id={id} />
 
         }
-      </div>
 
       {
         data && data.map((e) => {

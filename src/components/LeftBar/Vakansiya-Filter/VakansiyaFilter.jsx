@@ -4,6 +4,14 @@ import VakansiyaFilterData from './VakansiyaFilterData';
 import VakansiyaFilterPost from './VakansiyaFilterPost';
 const VakansiyaFilter = () => {
     const [btnAdd, setBtnAdd] = useState(false);
+    var body = document.getElementsByTagName('body')[0];
+
+  if (btnAdd) {
+      body.style.overflow = 'hidden'
+  } else {
+      body.style.overflow = 'visible'
+
+  }
     return ( 
         <div className='vakansiyaFilter'>
         <div className="middle-main-comp">

@@ -23,12 +23,12 @@ const PageImages = () => {
                 <div className='pageImages-card'>
                     <PageImagesData/>
                 </div>
-               <div>
-                <button onClick={()=>setBtn(true)}>Redakte Et</button>
+               <div className='pg-button'>
+                <button onClick={()=>setBtn(true)}>Redaktə Et</button>
                </div>
             </div>
             {btn &&
-                <div className='pageImages-modal'  >
+                <div>
 
                     <PageImagesPatch id={id} setBtn={setBtn} btn={btn} />
 

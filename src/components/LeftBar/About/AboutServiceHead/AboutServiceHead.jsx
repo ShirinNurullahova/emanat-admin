@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Formik, Field, Form } from 'formik';
 import AboutModal from '../AboutModal/AboutModal'
 import axios from 'axios';
 
 
 const AboutServiceHead = () => {
+
+
+
     const [btn, setBtn] = useState(null)
     const [id, setId] = useState(null)
     const [initialValues, setInitialValues] = useState(null)
@@ -32,16 +35,16 @@ const AboutServiceHead = () => {
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/about/services/head`, updatedVelus)
             if (response.status == 200 || response.status == 201) {
-                document.querySelector('.alertModalApi .text').innerHTML='Redaktə Edildi';
+                document.querySelector('.alertModalApi .text').innerHTML = 'Redaktə Edildi';
                 document.querySelector('.alertModalApi').classList.add('patch')
                 document.querySelector('.alertModalApi').classList.remove('post')
                 document.querySelector('.alertModalApi').classList.remove('delete')
                 document.querySelector('.alertModalApi').classList.add('visible')
                 document.querySelector('.alertModalApi').classList.remove('hidden')
-              setTimeout(()=>{
-                document.querySelector('.alertModalApi').classList.remove('visible')
-                document.querySelector('.alertModalApi').classList.add('hidden')
-             },1000)
+                setTimeout(() => {
+                    document.querySelector('.alertModalApi').classList.remove('visible')
+                    document.querySelector('.alertModalApi').classList.add('hidden')
+                }, 1000)
             }
         } catch (error) {
             alert("error")
@@ -52,9 +55,29 @@ const AboutServiceHead = () => {
         setBtn("Redaktə et")
         setId(e)
     }
+    var body = document.getElementsByTagName('body')[0];
 
+    if (btn) {
+        body.style.overflow = 'hidden'
+    } else {
+        body.style.overflow = 'visible'
+
+    }
+    // const menuRef = useRef()
+    // useEffect(() => {
+    //     let handler = (e) => {
+    //         if (menuRef.current.contains(e.target)) {
+
+    //             setBtn(false);
+    //         }
+    //     }
+    //     document.addEventListener('mousedown', handler);
+    //     return () => {
+    //         document.removeEventListener('mousedown', handler)
+    //     }
+    // })
     return (
-        <div className='middle-main'>
+        <div className='middle-main' >
             <div className='middle-main-comp'>
                 <div className='middle-main-comp-p'>
                     <p>

@@ -33,13 +33,31 @@
         border-radius: 0.25rem;
     }
    }
-    .modal {
-        position: absolute;
-        z-index: 999;
-        background-color: #6c757d;
-        top: 5%;
-        max-height: 90vh;
-        overflow-y: scroll;
+    .modal-f {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: 0.5s;
+        overflow: auto;
+        transition: all 0.3s linear;
+        backdrop-filter: blur(5px);
+      
+        form{
+          margin-top: 10%;
+          overflow-y: scroll;
+          height: 400px;
+          min-height: 300px;
+        }
+    }
+    #delete{
+        .delete{
+             background-color: orangered !important; 
+        }
+      
     }
 }
 @media screen and (max-width: 450px) and (min-width: 300px) {
