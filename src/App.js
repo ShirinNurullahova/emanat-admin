@@ -99,8 +99,16 @@ function App() {
     } else if (localDataAuth && localDataRefresh && windowLocation === "/login") {
       navigate("/");
     }
-  }, [windowLocation])
 
+    if(windowLocation === "/login" ||  windowLocation === "/logout" ||  windowLocation === "/reset"){
+        document.getElementsByClassName('two')[0].style.display='none'
+    }else{
+      document.getElementsByClassName('two')[0].style.display='flex'
+    }
+
+
+  }, [windowLocation])
+    
   return (
     <div className="App" >
       <AlertModalApi/>
