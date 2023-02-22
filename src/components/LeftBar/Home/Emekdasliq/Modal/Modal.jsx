@@ -76,7 +76,7 @@ const Modal = ({ id, open, setOpen, icon }) => {
 
 
     return (
-        <div>
+        <div className='home-modal'>
             {(open === "Əlavə et" || initialValues) &&
                 <Formik
                     initialValues={open === "Əlavə et" ? initialValuesAdd : initialValues}

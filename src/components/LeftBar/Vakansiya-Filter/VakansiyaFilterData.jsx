@@ -164,8 +164,8 @@ const handleDeleteData=async(id)=>{
                     </div>
                   </div>
                 <div style={{display:"flex",flexDirection:"row-reverse"}}>
-                 <div className="middle-main-bottom-form-btn">
-                    <button onClick={()=>handleDeleteData(vl?._id)}>Delete</button>
+                 <div className="middle-main-bottom-form-btn" id="delete">
+                    <button onClick={()=>handleDeleteData(vl?._id)} className='delete'>Delete</button>
                   </div>
                   <div className="middle-main-bottom-form-btn">
                     <button type="submit" onClick={()=>setVl(vl)}>Yadda saxla</button>

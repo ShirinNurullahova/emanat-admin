@@ -56,7 +56,7 @@ const ElementCard = ({ id, setButton }) => {
   }
 
   return (
-    <div className='modal'>
+    <div className='modal-v'>
       {initialValues && (
         <Formik
           initialValues={initialValues}

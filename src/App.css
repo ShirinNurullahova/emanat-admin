@@ -13,7 +13,7 @@ height: 10vh;
 .two{
   display: flex;
   justify-content: space-between;
-  /* height: 100vh; */
+  min-height: 100vh;
 }
 .two-right{
    width: calc(100% - 240px);
