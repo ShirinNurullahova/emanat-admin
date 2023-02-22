@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Login from "./components/Auth/Login/Login";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { axiosInterceptorHandle } from './utils/AxiosInterceptor'
@@ -37,7 +37,36 @@ import PageImages from "./components/LeftBar/PageImages/PageImages";
 import AlertModalApi from "./components/LeftBar/AlertModalApi/AlertModalApi";
 
 
+function debounce(fn, ms) {
+  let timer
+  return _ => {
+    clearTimeout(timer)
+    timer = setTimeout(_ => {
+      timer = null
+      fn.apply(this, arguments)
+    }, ms)
+  };
+}
 function App() {
+  const [dimensions, setDimensions] = useState({ 
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
+  useEffect(() => {
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+    }, 1000)
+
+    window.addEventListener('resize', debouncedHandleResize)
+
+    return _ => {
+      window.removeEventListener('resize', debouncedHandleResize)
+    
+}
+  })
   const header = document.getElementsByClassName("main-page-up")
   const two_components = document.getElementsByClassName("two-components")
 
@@ -70,13 +99,21 @@ function App() {
     } else if (localDataAuth && localDataRefresh && windowLocation === "/login") {
       navigate("/");
     }
-  }, [windowLocation])
 
+    if(windowLocation === "/login" ||  windowLocation === "/logout" ||  windowLocation === "/reset"){
+        document.getElementsByClassName('two')[0].style.display='none'
+    }else{
+      document.getElementsByClassName('two')[0].style.display='flex'
+    }
+
+
+  }, [windowLocation])
+    
   return (
     <div className="App" >
       <AlertModalApi/>
         <div className='main-page-up' id="main-page-up">
-          <Profile />
+          <Profile dimensions={dimensions}/>
           <Header />
         </div>
         <div className="two">

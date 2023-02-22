@@ -10,22 +10,27 @@ const Emekdasliq = () => {
     const [open, setOpen] = useState(null)
     const [icon, setIcon] = useState(null)
 
-    const menuRef = useRef()
-    useEffect(() => {
-        let handler = (e) => {
-            if (menuRef.current.contains(e.target))
-                setOpen(false)
-                console.log(open);
-        }
-        document.addEventListener('mousedown', handler);
-        return () => {
-            document.removeEventListener('mousedown', handler)
-             console.log(open);
-        }
-    })
+    // const menuRef = useRef()
+    // useEffect(() => {
+    //     let handler = (e) => {
+    //         if (menuRef.current.contains(e.target))
+    //             setOpen(false)
+    //     }
+    //     document.addEventListener('mousedown', handler);
+    //     return () => {
+    //         document.removeEventListener('mousedown', handler)
+    //     }
+    // })
+    var body = document.getElementsByTagName('body')[0];
 
+    if (open) {
+        body.style.overflow = 'hidden'
+    } else {
+        body.style.overflow = 'visible'
+
+    }
     return (
-        <div ref={menuRef}>
+        <div >
             <Head setId={setId} id={id} />
             <div className='icon-elave' onClick={() => setOpen("Əlavə et")}>
                 <button>

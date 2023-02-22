@@ -34,9 +34,6 @@ const PageImagesPatch = ({ id, setBtn, btn }) => {
       } else {
         dataForm.append('FooterImage', values.footerImage)
       }
-      console.log(dataForm);
-      console.log(dataForm.get('HeaderImage'));
-      console.log(dataForm.get('FooterImage'));
       try {
         const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/page-images`, dataForm)
         if (response.status == 200 || response.status == 201) {
@@ -60,7 +57,7 @@ const PageImagesPatch = ({ id, setBtn, btn }) => {
 
   return (
 
-    <div className='modal' >
+    <div className='modal-pi' >
       {initialValues && 
         <Formik
           initialValues={initialValues}
@@ -86,7 +83,7 @@ const PageImagesPatch = ({ id, setBtn, btn }) => {
               </div>
 
               <div className='modal-form-btn'>
-                <button type='submit'>Redakte et</button>
+                <button type='submit'>Redaktə et</button>
               </div>
             </Form>
           )}

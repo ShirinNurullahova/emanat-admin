@@ -50,11 +50,23 @@
     }
     #modal{
         width:auto;
-
+    
     }
     .service-modal{
-        position: absolute;
-        left: 30%;
+        display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 0.5s;
+    overflow: auto;
+    transition: all 0.3s linear;
+    backdrop-filter: blur(5px);
+    }
+    .service-modal form{
+        margin-top: 10%;
     }
 }
 @media screen and (max-width: 890px) and (min-width: 650px) {

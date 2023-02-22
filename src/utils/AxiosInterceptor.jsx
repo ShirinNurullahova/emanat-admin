@@ -1,22 +1,19 @@
 import axios from "axios";
 
-
 let endPoints = [
     `${process.env.REACT_APP_URL}/auth/login`,
     `${process.env.REACT_APP_URL}/auth/signup`,
     `${process.env.REACT_APP_URL}/auth/forgot-password`,
     `${process.env.REACT_APP_URL}/auth/reset-password/`,
     `${process.env.REACT_APP_URL}/auth/verify-account`
-
-
 ]
 
-export const axiosInterceptorHandle = (history) => {
+export const axiosInterceptorHandle = (navigate) => {
     axios.interceptors.response.use(
         (res) => {
-            if (res.url !== `${process.env.REACT_APP_URL}/auth/logout` && res.headers['emanat-refresh'] !== undefined) {
-                let headerAuth = res.headers['emanat-access'];
-                let headerRefresh = res.headers['emanat-refresh'];
+            if (res.config.url !== `${process.env.REACT_APP_URL}/auth/logout` && res.data['refresh'] !== undefined) {
+                let headerAuth = res.data['access'];
+                let headerRefresh = res.data['refresh'];
 
                 localStorage.setItem(process.env.REACT_APP_ACCESS_KEYWORD, headerAuth);
                 localStorage.setItem(process.env.REACT_APP_REFRESH_KEYWORD, headerRefresh);
@@ -25,7 +22,7 @@ export const axiosInterceptorHandle = (history) => {
         },
         (err) => {
             if (err.response.status === 401 || err.response.status === 400) {
-                history.push("/login");
+                navigate("/login");
                 localStorage.removeItem(process.env.REACT_APP_ACCESS_KEYWORD);
                 localStorage.removeItem(process.env.REACT_APP_REFRESH_KEYWORD);
                 return;

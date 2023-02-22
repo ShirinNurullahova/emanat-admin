@@ -23,7 +23,7 @@ const Login = () => {
         try {
             const response =await axios.post(`${process.env.REACT_APP_URL}/auth/login`, cred)
             if(response.status === 200 || response.status === 201){
-                   navigate('/')
+                navigate('/')
             }
         } catch (error) {
             alert('Email və ya parol səhvdir')

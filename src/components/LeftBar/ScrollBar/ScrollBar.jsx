@@ -84,7 +84,7 @@ const ScrollBar = () => {
                 </Link>
                 <Link to="/terminalform">
                   <div className="scroll-bar-dropdown-el-p">
-                    <p>Terminal</p>
+                    <p>Terminal yerləşdirilməsi</p>
                   </div>
                 </Link>
               </div>
@@ -131,11 +131,6 @@ const ScrollBar = () => {
           {!toggle3 && (
             <div className="scroll-bar-dropdown">
               <div className="scroll-bar-dropdown-el">
-                <Link to="/meta">
-                  <div className="scroll-bar-dropdown-el-p">
-                    <p>Meta</p>
-                  </div>
-                </Link>
                 {/* <Link to="/faqSchema">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>FaqSchema</p>
@@ -230,11 +225,11 @@ const ScrollBar = () => {
           {!toggle4 && (
             <div className="scroll-bar-dropdown">
               <div className="scroll-bar-dropdown-el">
-                <Link to="/meta">
+                {/* <Link to="/meta">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Meta</p>
                   </div>
-                </Link>
+                </Link> */}
                 <Link to="/hashtag">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Hashtag</p>

@@ -6,7 +6,14 @@ import PageImagesPatch from './PageImagesPatch/PageImagesPatch'
 const PageImages = () => {
     const [id, setId] = useState(null)
     const [btn, setBtn] = useState(false)
+    var body = document.getElementsByTagName('body')[0];
 
+    if (btn) {
+        body.style.overflow = 'hidden'
+    } else {
+        body.style.overflow = 'visible'
+
+    }
     return (
         <>
             <div className='pageImages' id='news'>
@@ -23,12 +30,11 @@ const PageImages = () => {
                 <div className='pageImages-card'>
                     <PageImagesData/>
                 </div>
-               <div>
-                <button onClick={()=>setBtn(true)}>Redakte Et</button>
-               </div>
-            </div>
-            {btn &&
-                <div className='pageImages-modal'  >
+               <div className='pg-button'>
+                <button onClick={()=>setBtn(true)}>Redaktə Et</button>
+               </div> 
+               {btn &&
+                <div>
 
                     <PageImagesPatch id={id} setBtn={setBtn} btn={btn} />
 
@@ -36,6 +42,8 @@ const PageImages = () => {
 
                 </div>
             }
+            </div>
+           
         </>
     )
 }

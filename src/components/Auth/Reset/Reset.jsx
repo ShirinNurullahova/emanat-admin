@@ -27,6 +27,8 @@ const Reset = () => {
 			}
         } catch (error) {}
     }
+
+    
     return (
         <div className='reset'>
            

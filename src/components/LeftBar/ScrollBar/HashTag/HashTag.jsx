@@ -23,7 +23,14 @@ const HashTag = () => {
         fetchData();
         }
     }, [open]);
+    var body = document.getElementsByTagName('body')[0];
 
+    if (open) {
+        body.style.overflow = 'hidden'
+    } else {
+        body.style.overflow = 'visible'
+  
+    }
     return (
         <div className='hashtag'>
             <div className='hashtag-btn' onClick={()=> setOpen(!open)}>
