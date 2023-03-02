@@ -35,6 +35,7 @@ import VakansiyaFilter from "./components/LeftBar/Vakansiya-Filter/VakansiyaFilt
 import FaqSchema from "./components/LeftBar/FaqSchema/FaqSchema";
 import PageImages from "./components/LeftBar/PageImages/PageImages";
 import AlertModalApi from "./components/LeftBar/AlertModalApi/AlertModalApi";
+import SuperAdmin from "./components/LeftBar/SuperAdmin/SuperAdmin";
 
 
 function debounce(fn, ms) {
@@ -148,6 +149,7 @@ function App() {
               <Route path="/vakansiyaFilter" element={<VakansiyaFilter />} />
               <Route path="/faqSchema" element={<FaqSchema/>}/>
               <Route path="/pageImages" element={<PageImages/>} />
+              <Route path="/superadmin" element={<SuperAdmin/>} />
             </Routes>
           </div>
         </div>

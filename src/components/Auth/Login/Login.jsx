@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import '../Login/Login.scss'
@@ -9,7 +9,7 @@ const Login = () => {
         password: ''
     }
     )
-    
+
     const handleChangeLogin = (e) => {
         const value = e.target.value;
         setCred({
@@ -21,8 +21,9 @@ const Login = () => {
     const handleSubmitLogin = async e => {
         e.preventDefault();
         try {
-            const response =await axios.post(`${process.env.REACT_APP_URL}/auth/login`, cred)
-            if(response.status === 200 || response.status === 201){
+            const response = await axios.post(`${process.env.REACT_APP_URL}/auth/login`, cred
+            )
+            if (response.status === 200 || response.status === 201) {
                 navigate('/')
             }
         } catch (error) {
@@ -30,19 +31,19 @@ const Login = () => {
         }
     }
     return (
-           <div className='login'>
-         
+        <div className='login'>
+
             <div className="login-div">
                 <div className="login-div-el">
                     <p className="login-div-el-p">Hesabınıza giriş edin</p>
-                    <form className="login-div-el-form" action="/"  onSubmit={handleSubmitLogin}>
+                    <form className="login-div-el-form" action="/" onSubmit={handleSubmitLogin}>
                         <div className="login-div-el-form-group">
                             <label htmlFor="signin-email" className="control-label"></label>
                             <input onChange={handleChangeLogin} type="email" className="form-control round" required name='email' id="signin-email" placeholder="admin@gmail.com" />
                         </div>
                         <div className="login-div-el-form-group">
                             <label htmlFor="signin-password" className="control-label"></label>
-                            <input onChange={handleChangeLogin} type="password" className="form-control round" required name='password' id="signin-password"  placeholder="parol" />
+                            <input onChange={handleChangeLogin} type="password" className="form-control round" required name='password' id="signin-password" placeholder="parol" />
                         </div>
                         {/* <div className="login-div-el-form-group">
                             <label >
@@ -58,8 +59,8 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-         
-            </div>
+
+        </div>
     )
 }
 
