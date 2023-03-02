@@ -1,5 +1,9 @@
-.App{
+body{
   background-color: rgba(34, 37, 42, 0.95);
+}
+
+.App{
+  /* background-color: rgba(34, 37, 42, 0.95); */
 }
 
 .main-page-up{

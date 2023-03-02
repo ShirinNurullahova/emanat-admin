@@ -7,8 +7,8 @@ import '../Register/Register.scss'
 const Register = () => {
     let navigate = useNavigate()
     const [cred, setCred] = useState({
-        firstName: "",
-        lastName: "",
+        name: "",
+        surname: "",
         email: "",
         password: "",
         confirmPassword: "",
@@ -40,10 +40,10 @@ const Register = () => {
                 <p className="register-div-el-p">Hesab yarat</p>
                 <form className="register-div-el-form" onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <input placeholder="Firstname" onChange={handleChange}  type="text" name='firstName' className="form-control round" />
+                        <input placeholder="Name" onChange={handleChange}  type="text" name='name' className="form-control round" />
                     </div>
                     <div className="form-group">
-                        <input placeholder='Lastname' onChange={handleChange}  type="text" name='lastName' className="form-control round" />
+                        <input placeholder='Surname' onChange={handleChange}  type="text" name='surname' className="form-control round" />
 
                     </div>
                     <div className="form-group">

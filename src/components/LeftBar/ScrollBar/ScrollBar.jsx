@@ -352,6 +352,11 @@ const ScrollBar = () => {
                     <p>Çıxış</p>
                   </div>
                 </Link>
+                <Link to="/superadmin">
+                  <div className="scroll-bar-dropdown-el-p">
+                    <p>Super Admin</p>
+                  </div>
+                </Link>
               </div>
             </div>
           )}

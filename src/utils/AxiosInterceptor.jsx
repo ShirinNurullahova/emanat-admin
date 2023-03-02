@@ -17,6 +17,7 @@ export const axiosInterceptorHandle = (navigate) => {
 
                 localStorage.setItem(process.env.REACT_APP_ACCESS_KEYWORD, headerAuth);
                 localStorage.setItem(process.env.REACT_APP_REFRESH_KEYWORD, headerRefresh);
+                
             }
             return res;
         },
@@ -39,9 +40,13 @@ export const axiosInterceptorHandle = (navigate) => {
 
                 req.headers['emanat-access'] = localDataAuth;
                 req.headers['emanat-refresh'] = localDataRefresh;
+                console.log(localDataAuth, localDataRefresh);
+                console.log(req);
             }
             return req;
+          
         },
+        
         (err) => {
             return Promise.reject(err);
         }
