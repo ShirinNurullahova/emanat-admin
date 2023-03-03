@@ -53,10 +53,10 @@ const FaqKategoriaCard = ({ data, setButton, button }) => {
             values,
             // handleChange
           }) => (
-            <Form className="modal-form1">
+            <Form className="modal-form">
               <div className="modal-form-div">
                 <div className="modal-form-div-el">
-                  <label>Title (az)</label>
+                  <label>Başlıq (az)</label>
                   <Field
                     onChange={(e) => handleChange(e, values.data)}
                     defaultValue={values.data.azTitle}
@@ -64,7 +64,7 @@ const FaqKategoriaCard = ({ data, setButton, button }) => {
                     name="azTitle"
                     required
                   />
-                  <label>Title (ru)</label>
+                  <label>Başlıq (ru)</label>
                   <Field
                     onChange={(e) => handleChange(e, values.data)}
                     defaultValue={values.data.ruTitle}
@@ -72,7 +72,7 @@ const FaqKategoriaCard = ({ data, setButton, button }) => {
                     name="ruTitle"
                     required
                   />
-                  <label>Title (en)</label>
+                  <label>Başlıq (en)</label>
                   <Field
                     onChange={(e) => handleChange(e, values.data)}
                     defaultValue={values.data.enTitle}

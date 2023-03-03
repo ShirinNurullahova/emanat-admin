@@ -28,6 +28,20 @@ const Item = ({ e }) => {
             alert("error")
         }
     }
+    var body = document.getElementsByTagName('body')[0];
+
+    if (buttonPost || editButton) {
+        body.style.overflow = 'hidden'
+    } else {
+        body.style.overflow = 'visible'
+
+    }
+    // if (editButton) {
+    //     body.style.overflow = 'hidden'
+    // } else {
+    //     body.style.overflow = 'visible'
+
+    // }
     return (
         <div>
             <div className='middle-main-comp'>
@@ -43,7 +57,7 @@ const Item = ({ e }) => {
                             <th>{e.azTitle}</th>
                             <th></th>
                             <th></th>
-                            <th onClick={() => setButtonPost(true)}>Item əlavə et</th>
+                            <th onClick={() => setButtonPost(true)}>Sual əlavə et</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,12 +80,22 @@ const Item = ({ e }) => {
 
             </div>
 
-            {
-                buttonPost && <FaqKategoriaPost id={e._id} button={buttonPost} setButton={setButtonPost} />
+            {buttonPost && 
+                <div className='xeber1'>
+
+                <FaqKategoriaPost id={e._id} button={buttonPost} setButton={setButtonPost} />
+                </div>
             }
             {
                 editButton && e.items.map(itm=>(
-                    (itm._id===idItem)?<EditModalCategories setButton={setEditButton} data={itm}/> : ""
+                 
+                    (itm._id===idItem)?
+                
+                        
+                        <EditModalCategories setButton={setEditButton} data={itm}/> : "" 
+                        
+                
+                   
                 ))
           }
         </div>
