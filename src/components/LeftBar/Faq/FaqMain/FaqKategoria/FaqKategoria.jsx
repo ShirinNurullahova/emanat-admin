@@ -65,6 +65,16 @@ const FaqKategoria = ({ data, idC }) => {
         }
     }
     var body = document.getElementsByTagName('body')[0];
+  useEffect(()=>{
+
+    if (addButton){
+        body.style.overflow = 'hidden'
+    } else {
+        body.style.overflow = 'visible'
+
+    }
+  },[addButton])
+  useEffect(()=>{
 
     if (button){
         body.style.overflow = 'hidden'
@@ -72,6 +82,7 @@ const FaqKategoria = ({ data, idC }) => {
         body.style.overflow = 'visible'
 
     }
+  },[button])
     return (
         <div className='card-main'>
 
