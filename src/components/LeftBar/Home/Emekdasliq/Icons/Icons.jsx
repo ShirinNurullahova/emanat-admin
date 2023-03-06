@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Icons = ({ setId, setOpen, open , setIcon }) => {
     const [data, setData] = useState(null)
-
+    const role = localStorage.getItem('roleName')
     const fetchData = () => {
         axios.get((`${process.env.REACT_APP_URL}/admin/main/cooperation/head`), {
             headers: {
@@ -63,9 +63,11 @@ const Icons = ({ setId, setOpen, open , setIcon }) => {
                             <div className='icons-img'>
                                 <img src={e.url} />
                             </div>
+                            {role && role === "SUPERADMIN" &&
                             <div className='delete'>
                                 <button  onClick={() => handleIconDelete(e.id)}>Sil</button>
                             </div>
+                            }
                         </div>
                     )
                 })

@@ -9,6 +9,7 @@ import Item from './Item';
 
 
 const FaqKategoria = ({ data, idC }) => {
+    const role = localStorage.getItem('roleName')
     const [addButton, setAddButton] = useState(null)
     const [editButton, setEditButton] = useState(null)
     const [button, setButton] = useState(false);
@@ -27,16 +28,16 @@ const FaqKategoria = ({ data, idC }) => {
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/faq/main/categories`, dataForm)
             if (response.status == 200 || response.status == 201) {
-                document.querySelector('.alertModalApi .text').innerHTML='Redaktə Edildi';
+                document.querySelector('.alertModalApi .text').innerHTML = 'Redaktə Edildi';
                 document.querySelector('.alertModalApi').classList.add('patch')
                 document.querySelector('.alertModalApi').classList.remove('post')
                 document.querySelector('.alertModalApi').classList.remove('delete')
                 document.querySelector('.alertModalApi').classList.add('visible')
                 document.querySelector('.alertModalApi').classList.remove('hidden')
-              setTimeout(()=>{
-                document.querySelector('.alertModalApi').classList.remove('visible')
-                document.querySelector('.alertModalApi').classList.add('hidden')
-             },1000)
+                setTimeout(() => {
+                    document.querySelector('.alertModalApi').classList.remove('visible')
+                    document.querySelector('.alertModalApi').classList.add('hidden')
+                }, 1000)
             }
 
         } catch (error) {
@@ -47,26 +48,39 @@ const FaqKategoria = ({ data, idC }) => {
         try {
             const response = await axios.delete(`${process.env.REACT_APP_URL}/admin/faq/main/categories/${id}`)
             if (response.status == 200 || response.status == 201) {
-                document.querySelector('.alertModalApi .text').innerHTML='Silindi';
+                document.querySelector('.alertModalApi .text').innerHTML = 'Silindi';
                 document.querySelector('.alertModalApi').classList.add('delete')
                 document.querySelector('.alertModalApi').classList.remove('post')
                 document.querySelector('.alertModalApi').classList.remove('patch')
                 document.querySelector('.alertModalApi').classList.add('visible')
                 document.querySelector('.alertModalApi').classList.remove('hidden')
-              setTimeout(()=>{
-                document.querySelector('.alertModalApi').classList.remove('visible')
-                document.querySelector('.alertModalApi').classList.add('hidden')
-             },1000)
+                setTimeout(() => {
+                    document.querySelector('.alertModalApi').classList.remove('visible')
+                    document.querySelector('.alertModalApi').classList.add('hidden')
+                }, 1000)
             }
 
         } catch (error) {
             alert("error")
         }
     }
+    var body = document.getElementsByTagName('body')[0];
+    useEffect(() => {
+        if (addButton) {
+            body.style.overflow = 'hidden'
+        } else {
+            body.style.overflow = 'visible'
+        }
+    }, [addButton])
+    useEffect(() => {
+        if (button) {
+            body.style.overflow = 'hidden'
+        } else {
+            body.style.overflow = 'visible'
+        }
+    }, [button])
     return (
         <div className='card-main'>
-
-
             <div className="table-main">
                 <table className="table-main-bottom">
                     <thead>
@@ -97,7 +111,9 @@ const FaqKategoria = ({ data, idC }) => {
                                         setButton(true)
                                         setDataC(e)
                                     }}>Redaktə et</td>
+                                    {role && role === "SUPERADMIN" &&
                                     <td onClick={() => handleDelete(e?._id)}>Sil</td>
+                                    }
 
                                 </tr>
                             </tbody>
@@ -108,17 +124,21 @@ const FaqKategoria = ({ data, idC }) => {
 
             </div>
             {button &&
-                <FaqKategoriaCard data={dataC} setButton={setButton} button={button} />
+                <div className='xeber'>
+                    <FaqKategoriaCard data={dataC} setButton={setButton} button={button} />
+
+                </div>
             }
 
             {/* {
                 buttonPost && <FaqKategoriaPost id={idPost} button={buttonPost} setButton={setButtonPost}/>
             } */}
 
-            {
-                addButton &&
-                <AddModalCategories button={addButton} idC={idC} setButton={setAddButton} />
+            {addButton &&
+                <div className='xeber' >
 
+                    <AddModalCategories button={addButton} idC={idC} setButton={setAddButton} />
+                </div>
             }
             {/* {
             editButton&& 
@@ -130,10 +150,10 @@ const FaqKategoria = ({ data, idC }) => {
                 data &&
                 data.map((e) => {
                     return (
-                         <Item e={e}/>
+                        <Item e={e} />
 
 
-                        )
+                    )
                 })
 
 

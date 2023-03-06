@@ -30,6 +30,7 @@ const Login = () => {
             alert('Email və ya parol səhvdir')
         }
     }
+
     return (
         <div className='login'>
 

@@ -5,6 +5,7 @@ import { Formik, Field, Form } from "formik";
 import FaqKategoriaPost from './FaqKategoriaPost';
 import EditModalCategories from './EditModalCategories';
 const Item = ({ e }) => {
+    const role = localStorage.getItem('roleName')
     const [buttonPost, setButtonPost] = useState(false);
     const [editButton, setEditButton] = useState(false)
     const [idItem,setIdItem]=useState(null)
@@ -28,6 +29,20 @@ const Item = ({ e }) => {
             alert("error")
         }
     }
+    var body = document.getElementsByTagName('body')[0];
+
+    if (buttonPost || editButton) {
+        body.style.overflow = 'hidden'
+    } else {
+        body.style.overflow = 'visible'
+
+    }
+    // if (editButton) {
+    //     body.style.overflow = 'hidden'
+    // } else {
+    //     body.style.overflow = 'visible'
+
+    // }
     return (
         <div>
             <div className='middle-main-comp'>
@@ -43,7 +58,7 @@ const Item = ({ e }) => {
                             <th>{e.azTitle}</th>
                             <th></th>
                             <th></th>
-                            <th onClick={() => setButtonPost(true)}>Item əlavə et</th>
+                            <th onClick={() => setButtonPost(true)}>Sual əlavə et</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,7 +71,8 @@ const Item = ({ e }) => {
                                         setEditButton(true)
                                         setIdItem(itm._id)
                                         }}>Redaktə et</td>
-                                    <td onClick={() => handleDelete(itm._id)}>Sil</td>
+                                        {role && role === "SUPERADMIN" &&
+                                    <td onClick={() => handleDelete(itm._id)}>Sil</td>}
                                 </tr>
                             ))
                         }
@@ -66,12 +82,22 @@ const Item = ({ e }) => {
 
             </div>
 
-            {
-                buttonPost && <FaqKategoriaPost id={e._id} button={buttonPost} setButton={setButtonPost} />
+            {buttonPost && 
+                <div className='xeber1'>
+
+                <FaqKategoriaPost id={e._id} button={buttonPost} setButton={setButtonPost} />
+                </div>
             }
             {
                 editButton && e.items.map(itm=>(
-                    (itm._id===idItem)?<EditModalCategories setButton={setEditButton} data={itm}/> : ""
+                 
+                    (itm._id===idItem)?
+                
+                        
+                        <EditModalCategories setButton={setEditButton} data={itm}/> : "" 
+                        
+                
+                   
                 ))
           }
         </div>

@@ -68,10 +68,10 @@ const FaqKategoriaPost = ({id , button , setButton}) => {
             handleSubmit,
             setFieldValue
           }) => (
-            <Form className="modal-form1">
+            <Form className="modal-form">
               <div className="modal-form-div">
                     <div className="modal-form-div-el">
-                      <label>Question (az)</label>
+                      <label>Sual (az)</label>
                       <Field
                         onChange={handleChange}
                         defaultValue={values.azQuestion}
@@ -79,7 +79,7 @@ const FaqKategoriaPost = ({id , button , setButton}) => {
                         name="azQuestion"
                         required
                       />
-                      <label>Answer (az)</label>
+                      <label>Cavab (az)</label>
                       <Field
                        onChange={handleChange}
                         defaultValue={values.azAnswer}
@@ -87,7 +87,7 @@ const FaqKategoriaPost = ({id , button , setButton}) => {
                         name="azAnswer"
                         required
                       />
-                      <label>Question (ru)</label>
+                      <label>Sual (ru)</label>
                       <Field
                          onChange={handleChange}
                         defaultValue={values.ruQuestion}
@@ -96,7 +96,7 @@ const FaqKategoriaPost = ({id , button , setButton}) => {
                         required
                       />
 
-                      <label>Answer (ru)</label>
+                      <label>Cavab (ru)</label>
                       <Field
                 onChange={handleChange}
                         defaultValue={values.ruAnswer}
@@ -104,7 +104,7 @@ const FaqKategoriaPost = ({id , button , setButton}) => {
                         name="ruAnswer"
                         required
                       />
-                      <label>Question (en)</label>
+                      <label>Sual (en)</label>
                       <Field
                        onChange={handleChange}
                         defaultValue={values.enQuestion}
@@ -113,7 +113,7 @@ const FaqKategoriaPost = ({id , button , setButton}) => {
                         required
                       />
 
-                      <label>Answer (en)</label>
+                      <label>Cavab (en)</label>
                       <Field
                         onChange={handleChange}
                         defaultValue={values.enAnswer}

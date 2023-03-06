@@ -48,7 +48,7 @@ const EditModalCategories = ({ setButton, button, data }) => {
     //   };
 
     return (
-        <div>
+        <div className='xeber1'>
 
             {initialValues && (
                 <Formik
@@ -63,7 +63,7 @@ const EditModalCategories = ({ setButton, button, data }) => {
                         handleChange,
                         handleSubmit
                     }) => (
-                        <Form className="modal-form1" >
+                        <Form className="modal-form" >
                             <div className="modal-form-div">
                                 <div className="modal-form-div-el">
                                     <label>Sual (az)</label>

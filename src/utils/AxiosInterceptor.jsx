@@ -17,6 +17,7 @@ export const axiosInterceptorHandle = (navigate) => {
 
                 localStorage.setItem(process.env.REACT_APP_ACCESS_KEYWORD, headerAuth);
                 localStorage.setItem(process.env.REACT_APP_REFRESH_KEYWORD, headerRefresh);
+                localStorage.setItem("roleName", res.data.userId.role.role )
                 
             }
             return res;
@@ -26,6 +27,7 @@ export const axiosInterceptorHandle = (navigate) => {
                 navigate("/login");
                 localStorage.removeItem(process.env.REACT_APP_ACCESS_KEYWORD);
                 localStorage.removeItem(process.env.REACT_APP_REFRESH_KEYWORD);
+                localStorage.removeItem("roleName")
                 return;
             }
             return Promise.reject(err);
@@ -40,8 +42,6 @@ export const axiosInterceptorHandle = (navigate) => {
 
                 req.headers['emanat-access'] = localDataAuth;
                 req.headers['emanat-refresh'] = localDataRefresh;
-                console.log(localDataAuth, localDataRefresh);
-                console.log(req);
             }
             return req;
           
