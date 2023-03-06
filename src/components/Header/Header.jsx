@@ -14,13 +14,14 @@ const Header = () => {
     setScrollTop(scrolled)
   }
   useEffect(() => {
-    
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  
-    
+
+
+  const role = localStorage.getItem('roleName');
 
 
 
@@ -30,34 +31,41 @@ const Header = () => {
     <div className='header'>
       <ul className='header-content'>
         <div>
-          <Link to="/">
-            <li>
-              Ana səhifə
-            </li>
-          </Link>
-          <Link to='/about'>
-            <li>
-              Haqqımızda
-            </li>
-          </Link>
+          {role && role !== "HR_MANAGER" &&
+            <Link to="/">
+              <li>
+                Ana səhifə
+              </li>
+            </Link>
+          }
+          {role && role !== "HR_MANAGER" &&
+            <Link to='/about'>
+              <li>
+                Haqqımızda
+              </li>
+            </Link>
+          }
 
-          <Link to='/partnership'>
-            <li>
-              Əməkdaşlıq
-            </li>
-          </Link>
+          {role && role !== "HR_MANAGER" &&
+            <Link to='/partnership'>
+              <li>
+                Əməkdaşlıq
+              </li>
+            </Link>
+          }
           <Link to='/career'>
             <li>
               Karyera
             </li>
           </Link>
-          <Link to='/news'>
-            <li>
-              Xəbərlər
-            </li>
+          {role && role !== "HR_MANAGER" &&
+            <Link to='/news'>
+              <li>
+                Xəbərlər
+              </li>
 
-          </Link>
-
+            </Link>
+          }
         </div>
         <div>
           {/* <li onClick={() => setToggle(!toggle)}>

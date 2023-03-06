@@ -5,8 +5,9 @@ import { useState } from 'react'
 import { logDOM } from '@testing-library/react'
 
 export const Card = ({ setId, setBtn, btn }) => {
+    const role = localStorage.getItem('roleName')
     const [data, setData] = useState(null);
-
+    
    
 
     const fetchData = () => {
@@ -67,9 +68,11 @@ export const Card = ({ setId, setBtn, btn }) => {
                                 {e.title}
                             </p>
                             </div>
+                            {role && role === "SUPERADMIN" &&
                             <div className='delete'>
                                 <button onClick={()=>handleDeleteCard(e.id)}>Sil</button>
                             </div>
+                            }
                         </div>
                     )
                 })

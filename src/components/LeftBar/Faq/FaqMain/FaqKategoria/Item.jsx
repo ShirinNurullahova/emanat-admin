@@ -5,6 +5,7 @@ import { Formik, Field, Form } from "formik";
 import FaqKategoriaPost from './FaqKategoriaPost';
 import EditModalCategories from './EditModalCategories';
 const Item = ({ e }) => {
+    const role = localStorage.getItem('roleName')
     const [buttonPost, setButtonPost] = useState(false);
     const [editButton, setEditButton] = useState(false)
     const [idItem,setIdItem]=useState(null)
@@ -70,7 +71,8 @@ const Item = ({ e }) => {
                                         setEditButton(true)
                                         setIdItem(itm._id)
                                         }}>Redaktə et</td>
-                                    <td onClick={() => handleDelete(itm._id)}>Sil</td>
+                                        {role && role === "SUPERADMIN" &&
+                                    <td onClick={() => handleDelete(itm._id)}>Sil</td>}
                                 </tr>
                             ))
                         }

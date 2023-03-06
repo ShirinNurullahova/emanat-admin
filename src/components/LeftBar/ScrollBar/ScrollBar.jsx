@@ -11,6 +11,8 @@ const ScrollBar = () => {
   const [toggle3, setToggle3] = useState(true);
   const [toggle4, setToggle4] = useState(true);
   const [toggle5, setToggle5] = useState(true);
+  const role = localStorage.getItem('roleName')
+
 
   return (
     <>
@@ -352,11 +354,20 @@ const ScrollBar = () => {
                     <p>Çıxış</p>
                   </div>
                 </Link>
-                <Link to="/superadmin">
-                  <div className="scroll-bar-dropdown-el-p">
-                    <p>Super Admin</p>
-                  </div>
-                </Link>
+                {role && role === "SUPERADMIN" &&
+                  <>
+                    <Link to="/create-editor">
+                      <div className="scroll-bar-dropdown-el-p">
+                        <p>Editor vəzifəsi əlavə et</p>
+                      </div>
+                    </Link>
+                    <Link to="/create-hr-manager">
+                      <div className="scroll-bar-dropdown-el-p">
+                        <p>Hr manager vəzifəsi əlavə et</p>
+                      </div>
+                    </Link>
+                  </>
+                }
               </div>
             </div>
           )}

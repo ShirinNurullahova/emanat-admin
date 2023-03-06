@@ -36,6 +36,7 @@ import FaqSchema from "./components/LeftBar/FaqSchema/FaqSchema";
 import PageImages from "./components/LeftBar/PageImages/PageImages";
 import AlertModalApi from "./components/LeftBar/AlertModalApi/AlertModalApi";
 import SuperAdmin from "./components/LeftBar/SuperAdmin/SuperAdmin";
+import HrMeneger from "./components/LeftBar/HrMeneger/HrMeneger";
 
 
 function debounce(fn, ms) {
@@ -49,7 +50,9 @@ function debounce(fn, ms) {
   };
 }
 function App() {
-  const [dimensions, setDimensions] = useState({ 
+  const role = localStorage.getItem('roleName');
+  console.log(role);
+  const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth
   })
@@ -65,8 +68,8 @@ function App() {
 
     return _ => {
       window.removeEventListener('resize', debouncedHandleResize)
-    
-}
+
+    }
   })
   const header = document.getElementsByClassName("main-page-up")
   const two_components = document.getElementsByClassName("two-components")
@@ -101,40 +104,40 @@ function App() {
       navigate("/");
     }
 
-    if(windowLocation === "/login" ||  windowLocation === "/logout" ||  windowLocation === "/reset"){
-        document.getElementsByClassName('two')[0].style.display='none'
-    }else{
-      document.getElementsByClassName('two')[0].style.display='flex'
+    if (windowLocation === "/login" || windowLocation === "/logout" || windowLocation === "/reset") {
+      document.getElementsByClassName('two')[0].style.display = 'none'
+    } else {
+      document.getElementsByClassName('two')[0].style.display = 'flex'
     }
 
 
   }, [windowLocation])
-    
+
   return (
     <div className="App" >
-      <AlertModalApi/>
-        <div className='main-page-up' id="main-page-up">
-          <Profile dimensions={dimensions}/>
-          <Header />
+      <AlertModalApi />
+      <div className='main-page-up' id="main-page-up">
+        <Profile dimensions={dimensions} />
+        <Header />
+      </div>
+      <div className="two">
+        <div className='two-components' id='scrollBar'>
+          <ScrollBar />
         </div>
-        <div className="two">
-          <div className='two-components' id='scrollBar'>
-            <ScrollBar />
-          </div>
-          <div className="two-right">
-            <Routes>
+        <div className="two-right">
+          <Routes>
+            {role && role !== "HR_MANAGER" &&
+              <>
               <Route path="/" element={<Main />} />
               <Route path="/terminalusage" element={<TerminalUsage />} />
               <Route path="/terminalmap" element={<TerminalMap />} />
               <Route path="/hashtag" element={<HashTag />} />
-              <Route path="/vakansiya" element={<Vakansiya />} />
               <Route path="/about" element={<About />} />
               <Route path="/faq" element={<Faq />} />
               <Route path="/cooperative" element={<Cooperative />} />
               <Route path="/partnership" element={<Partnership />} />
               <Route path="/internship" element={<InternShipProgram />} />
               <Route path="/uni" element={<Uni />} />
-              <Route path="/career" element={<Career />} />
               <Route path="/meta" element={<MetaPage />} />
               <Route path="/news" element={<News />} />
               <Route path='/register' element={<Register />} />
@@ -149,11 +152,17 @@ function App() {
               <Route path="/vakansiyaFilter" element={<VakansiyaFilter />} />
               <Route path="/faqSchema" element={<FaqSchema/>}/>
               <Route path="/pageImages" element={<PageImages/>} />
-              <Route path="/superadmin" element={<SuperAdmin/>} />
-            </Routes>
-          </div>
+              <Route path="/create-editor" element={<SuperAdmin/>} />
+              <Route path="/create-hr-manager" element={<HrMeneger/>} />
+              </>
+            }
+            <Route path="/vakansiya" element={<Vakansiya />} />
+            <Route path="/career" element={<Career />} />
+
+          </Routes>
         </div>
-        
+      </div>
+
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path='/logout' element={<Logout />} />

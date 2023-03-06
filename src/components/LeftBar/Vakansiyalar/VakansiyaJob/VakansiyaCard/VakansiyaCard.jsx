@@ -4,6 +4,7 @@ import ElementCard from './ElementCard/ElementCard';
 import VakansiyaPost from './VakansiyaPost/VakansiyaPost';
 
 const VakansiyaCard = () => {
+    const role = localStorage.getItem('roleName')
     const [data, setData] = useState(null);
     const [id, setId] = useState(null);
     const [button, setButton] = useState(false);
@@ -69,7 +70,9 @@ const VakansiyaCard = () => {
                                                 setButton(true)
                                                 setId(e?.id)
                                             }}>Redaktə et</button>
+                                                {role && role === "SUPERADMIN" &&
                                             <button onClick={() => deleteHandler(e?.id)}>Sil</button>
+                                            }
                                         </div>
                                     </td>
                                 </tr>

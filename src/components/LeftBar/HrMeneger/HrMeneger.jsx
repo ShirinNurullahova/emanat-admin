@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
 import { useNavigate } from 'react-router-dom'
 import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
-import '../SuperAdmin/SuperAdmin.scss';
 
 
-const SuperAdmin = () => {
+
+const HrMeneger = () => {
     let navigate = useNavigate()
     const initialValues = {
         name: "",
@@ -17,7 +16,7 @@ const SuperAdmin = () => {
     const onSubmitHandler = async (values) => {
         console.log(values);
         try {
-            const response = await axios.post(`${process.env.REACT_APP_URL}/superadmin/create`, values)
+            const response = await axios.post(`${process.env.REACT_APP_URL}/superadmin/createHrManager`, values)
             if(response.status === 201 || response.status === 200){
                 console.log(response);
                 // navigate("/");
@@ -33,7 +32,7 @@ const SuperAdmin = () => {
     <div className='middle-main-comp'>
         <div className='middle-main-comp-p'>
             <p>
-              SuperAdmin
+              Hr Menecer
             </p>
         </div>
         <div className='middle-main-comp-bottom'>
@@ -82,4 +81,4 @@ const SuperAdmin = () => {
   )
 }
 
-export default SuperAdmin
+export default HrMeneger

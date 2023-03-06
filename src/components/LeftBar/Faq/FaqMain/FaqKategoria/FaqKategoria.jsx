@@ -9,7 +9,7 @@ import Item from './Item';
 
 
 const FaqKategoria = ({ data, idC }) => {
-   
+    const role = localStorage.getItem('roleName')
     const [addButton, setAddButton] = useState(null)
     const [editButton, setEditButton] = useState(null)
     const [button, setButton] = useState(false);
@@ -65,28 +65,22 @@ const FaqKategoria = ({ data, idC }) => {
         }
     }
     var body = document.getElementsByTagName('body')[0];
-  useEffect(()=>{
-
-    if (addButton){
-        body.style.overflow = 'hidden'
-    } else {
-        body.style.overflow = 'visible'
-
-    }
-  },[addButton])
-  useEffect(()=>{
-
-    if (button){
-        body.style.overflow = 'hidden'
-    } else {
-        body.style.overflow = 'visible'
-
-    }
-  },[button])
+    useEffect(() => {
+        if (addButton) {
+            body.style.overflow = 'hidden'
+        } else {
+            body.style.overflow = 'visible'
+        }
+    }, [addButton])
+    useEffect(() => {
+        if (button) {
+            body.style.overflow = 'hidden'
+        } else {
+            body.style.overflow = 'visible'
+        }
+    }, [button])
     return (
         <div className='card-main'>
-
-
             <div className="table-main">
                 <table className="table-main-bottom">
                     <thead>
@@ -117,7 +111,9 @@ const FaqKategoria = ({ data, idC }) => {
                                         setButton(true)
                                         setDataC(e)
                                     }}>Redaktə et</td>
+                                    {role && role === "SUPERADMIN" &&
                                     <td onClick={() => handleDelete(e?._id)}>Sil</td>
+                                    }
 
                                 </tr>
                             </tbody>
@@ -128,8 +124,8 @@ const FaqKategoria = ({ data, idC }) => {
 
             </div>
             {button &&
-            <div className='xeber'>
-                <FaqKategoriaCard data={dataC} setButton={setButton} button={button} />
+                <div className='xeber'>
+                    <FaqKategoriaCard data={dataC} setButton={setButton} button={button} />
 
                 </div>
             }
@@ -138,9 +134,9 @@ const FaqKategoria = ({ data, idC }) => {
                 buttonPost && <FaqKategoriaPost id={idPost} button={buttonPost} setButton={setButtonPost}/>
             } */}
 
-            { addButton &&
+            {addButton &&
                 <div className='xeber' >
-                   
+
                     <AddModalCategories button={addButton} idC={idC} setButton={setAddButton} />
                 </div>
             }

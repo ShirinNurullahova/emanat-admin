@@ -3,6 +3,7 @@ import { Formik, Field, Form } from "formik";
 import axios from "axios";
 let unknown='';
 const VakansiyaFilterData = () => {
+  const role = localStorage.getItem('roleName')
   const [initialValues, setInitialValues] = useState(null);
   const [vl,setVl]=useState(null);
   const fetchData = () => {
@@ -164,9 +165,11 @@ const handleDeleteData=async(id)=>{
                     </div>
                   </div>
                 <div style={{display:"flex",flexDirection:"row-reverse"}}>
+                {role && role === "SUPERADMIN" &&
                  <div className="middle-main-bottom-form-btn" id="delete">
-                    <button onClick={()=>handleDeleteData(vl?._id)} className='delete'>Delete</button>
+                    <button onClick={()=>handleDeleteData(vl?._id)} className='delete'>Sil</button>
                   </div>
+                  }
                   <div className="middle-main-bottom-form-btn">
                     <button type="submit" onClick={()=>setVl(vl)}>Yadda saxla</button>
                   </div>
