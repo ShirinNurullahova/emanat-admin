@@ -23,7 +23,8 @@ const ScrollBar = () => {
             <p>Əsas</p>
           </div>
 
-
+          {role && role !== "HR_MANAGER" &&
+          <>
           <div
             className="scroll-bar-el-down"
             onClick={() => setToggle2(!toggle2)}
@@ -92,7 +93,8 @@ const ScrollBar = () => {
               </div>
             </div>
           )}
-
+          </>
+          }
           <div
             className="scroll-bar-el-down"
             onClick={() => setToggle3(!toggle3)}
@@ -138,36 +140,44 @@ const ScrollBar = () => {
                     <p>FaqSchema</p>
                   </div>
                 </Link> */}
+              {role && role !== "HR_MANAGER" &&
                 <Link to="/uni">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Uni</p>
                   </div>
                 </Link>
+                }
+                {role && role !== "HR_MANAGER" &&
                 <Link to="/faq">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Faq</p>
                   </div>
-                </Link>
+                </Link>}
+                {role && role !== "HR_MANAGER" &&
                 <Link to="/internship">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Təcrübə proqramları</p>
                   </div>
-                </Link>
+                </Link>}
+
                 <Link to="/vakansiya">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Vakansiya</p>
                   </div>
                 </Link>
+                {role && role !== "HR_MANAGER" &&
                 <Link to="/vakansiyaFilter">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Vakansiya Filter</p>
                   </div>
-                </Link>
+                </Link>}
+                {role && role !== "HR_MANAGER" &&
                 <Link to="/partnership">
                   <div className="scroll-bar-dropdown-el-p">
                     <p>Əməkdaşlıq</p>
                   </div>
                 </Link>
+                }
               </div>
             </div>
           )}
@@ -186,7 +196,8 @@ const ScrollBar = () => {
               </div>
             </div>
           </Link> */}
-
+{role && role !== "HR_MANAGER" &&
+<>
           <div
             className="scroll-bar-el-down"
             onClick={() => setToggle4(!toggle4)}
@@ -245,7 +256,10 @@ const ScrollBar = () => {
               </div>
             </div>
           )}
-
+          </>
+         }
+         {role && role !== "HR_MANAGER" &&
+         <>
           <div
             className="scroll-bar-el-down"
             onClick={() => setToggle5(!toggle5)}
@@ -299,7 +313,8 @@ const ScrollBar = () => {
               </div>
             </div>
           )}
-
+          </>
+          }
 
 
 

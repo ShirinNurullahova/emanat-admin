@@ -1,6 +1,7 @@
 import VakansiyaCard from './VakansiyaCard/VakansiyaCard';
 
 const VakansiyaJob = () => {
+   
     return (
         <>
             <div className='news-main'>

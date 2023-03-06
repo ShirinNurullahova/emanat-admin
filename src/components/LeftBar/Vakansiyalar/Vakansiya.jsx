@@ -4,6 +4,7 @@ import VakansiyaHeader from './VakansiyaHeader/VakansiyaHeader'
 import VakansiyaJob from './VakansiyaJob/VakansiyaJob'
 import VakansiyaTeam from './VakansiyaTeam/VakansiyaTeam'
 const Vakansiya = () => {
+    const role = localStorage.getItem('roleName');
     return (
         <div className='main-vakansiya'>
             <div className='news-main'>
@@ -15,9 +16,13 @@ const Vakansiya = () => {
                     </div>
                 </div>
             </div>
-          <VakansiyaHeader/>
-          <VakansiyaTeam/>
-          <VakansiyaJob/>
+            {role && role !== "HR_MANAGER" &&
+                <>
+                    <VakansiyaHeader />
+                    <VakansiyaTeam />
+                </>
+            }
+            <VakansiyaJob />
         </div>
     )
 }
