@@ -16,6 +16,8 @@ const Header = () => {
   useEffect(() => {
 
     window.addEventListener("scroll", onScroll);
+    localStorage.removeItem("editorData");
+    console.log("removed");
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
