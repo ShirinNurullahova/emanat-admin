@@ -10,7 +10,7 @@ const CareerHeader = () => {
     const initialValuesRaw = {}
     const fetchData = () => {
             
-        axios.get((`${process.env.REACT_APP_URL}/admin/career/header`))
+        axios.get((`${process.env.REACT_APP_URL}/manager/career/header`))
             .then(res => {
                 initialValuesRaw.azTitle = res.data[0]?.azTitle;
                 initialValuesRaw.azDescription = res.data[0]?.azDescription;
@@ -45,7 +45,7 @@ const CareerHeader = () => {
         }
        
         try {
-            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/career/header`, dataForm)
+            const response = await axios.patch(`${process.env.REACT_APP_URL}/manager/career/header`, dataForm)
             if (response.status == 200 || response.status == 201) {
                 document.querySelector('.alertModalApi .text').innerHTML='Redaktə edildi';
                 document.querySelector('.alertModalApi').classList.add('patch')

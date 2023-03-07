@@ -1,0 +1,65 @@
+#editorjs .ce-toolbar__actions {
+  left: 15px;
+  top: 0;
+  background-color: transparent;
+  color: white;
+}
+/* #editorjs .ce-paragraph {
+  position: relative; 
+  z-index: 10; 
+} */
+#editorjs .ce-toolbar__actions svg {
+  color: black;
+}
+#editorjs .ce-block__content,
+#editorjs .ce-toolbar__content {
+  padding-left: 60px;
+  max-width: 100%;
+}
+.ce-toolbar__settings-btn {
+  margin: 0;
+}
+.ce-toolbar__content,
+.codex-editor {
+  position: static;
+}
+.ce-popover--opened {
+  width: 400px;
+}
+.ce-popover {
+  background-color: black;
+  border-color: transparent;
+  z-index: 100065867544;
+}
+#editorjs .ce-toolbar__plus svg,
+#editorjs .ce-toolbar__settings-btn svg {
+  color: white;
+}
+.ce-popover__item:hover:not(.ce-popover__item--no-visible-hover) {
+  background-color: #333;
+}
+.cdx-search-field {
+  display: none;
+}
+.codex-editor__redactor {
+  padding-bottom: 0 !important;
+}
+.ce-inline-toolbar--showed {
+  z-index: 564865775;
+  background-color: white;
+  position: fixed;
+  left: 5% !important;
+  top: 40px !important;
+}
+.icon--toggler-down {
+  display: none;
+}
+.ce-inline-tool--link svg {
+  display: none;
+}
+.ce-inline-tool--link::after {
+  content: "@";
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}

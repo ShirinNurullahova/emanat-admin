@@ -9,7 +9,7 @@ const CareerWhyEmanat = () => {
 
   const fetchData = () => {
     axios
-      .get(`${process.env.REACT_APP_URL}/admin/career/eManat`)
+      .get(`${process.env.REACT_APP_URL}/manager/career/eManat`)
       .then((res) => {
         initialValuesRaw.azTitle = res.data[0]?.azTitle;
         initialValuesRaw.azDescription = res.data[0]?.azDescription;
@@ -79,7 +79,7 @@ const CareerWhyEmanat = () => {
 
     try {
       const response = await axios.patch(
-        `${process.env.REACT_APP_URL}/admin/career/eManat`,
+        `${process.env.REACT_APP_URL}/manager/career/eManat`,
         dataForm
       );
       if (response.status == 200 || response.status == 201) {

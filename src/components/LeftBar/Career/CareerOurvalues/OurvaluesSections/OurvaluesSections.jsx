@@ -16,7 +16,7 @@ const OurvaluesSections = ({initialValues}) => {
             dataForm.append('CareerPageOurValuesSectionIcon', values.icon)
         }
         try {
-            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/career/our-values/sections`, dataForm)
+            const response = await axios.patch(`${process.env.REACT_APP_URL}/manager/career/our-values/sections`, dataForm)
             if (response.status == 200 || response.status == 201) {
                 document.querySelector('.alertModalApi .text').innerHTML='Redaktə edildi';
                 document.querySelector('.alertModalApi').classList.add('patch')
