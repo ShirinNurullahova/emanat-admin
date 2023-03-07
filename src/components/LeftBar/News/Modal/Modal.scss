@@ -1,9 +1,9 @@
-.modal{
-    position: absolute;
-    // backdrop-filter: blur(10px);
-    // -webkit-backdrop-filter: blur(10px);
-    z-index: 999;
-    background-color: #6c757d;
+.modal {
+  position: absolute;
+  // backdrop-filter: blur(10px);
+  // -webkit-backdrop-filter: blur(10px);
+  z-index: 999;
+  background-color: #6c757d;
   float: left;
   left: 50%;
   top: 30%;
@@ -11,9 +11,10 @@
   overflow-y: scroll;
   height: 400px;
   min-height: 300px;
-  &-form{
+  &-form {
+    position: relative;
     border-radius: 3px;
-    width: 360px;
+    width: 800px !important;
     padding: 20px;
     font-weight: 400;
     color: #a5a8ad;
@@ -23,10 +24,9 @@
     // transform: translate(0 , 50%);
     text-align: center;
 
-  
-    &-btn{
+    &-btn {
       margin: 5%;
-      button{
+      button {
         color: #fff;
         background-color: #007bff;
         border: 1px solid #007bff;
@@ -36,10 +36,10 @@
         padding: 5px;
       }
     }
-    &-div{
+    &-div {
       text-align: left;
-      &-el{
-        input{
+      &-el {
+        input {
           padding: 5px;
           box-shadow: none;
           background-color: transparent;
@@ -51,12 +51,10 @@
         }
         display: flex;
         flex-direction: column;
-        label{
+        label {
           margin: 3%;
         }
       }
-    
     }
   }
- 
 }
