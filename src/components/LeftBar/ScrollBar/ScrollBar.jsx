@@ -181,9 +181,6 @@ const ScrollBar = () => {
               </div>
             </div>
           )}
-
-
-
           {/* <Link to="/terminal">
             <div className="scroll-bar-el-down">
               <div className="scroll-bar-el-down-div">

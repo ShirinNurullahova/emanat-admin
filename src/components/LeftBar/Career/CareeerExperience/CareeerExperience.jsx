@@ -9,7 +9,7 @@ const CareerExperience = () => {
 
   const fetchData = () => {
     axios
-      .get(`${process.env.REACT_APP_URL}/admin/career/experience`)
+      .get(`${process.env.REACT_APP_URL}/manager/career/experience`)
       .then((res) => {
         initialValuesRaw.azTitle = res.data[0]?.azTitle;
         initialValuesRaw.azDescription = res.data[0]?.azDescription;
@@ -64,7 +64,7 @@ const CareerExperience = () => {
     }
    
     try {
-      const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/career/experience`,dataForm);
+      const response = await axios.patch(`${process.env.REACT_APP_URL}/manager/career/experience`,dataForm);
       if (response.status == 200 || response.status == 201) {
         document.querySelector('.alertModalApi .text').innerHTML='Redaktə edildi';
         document.querySelector('.alertModalApi').classList.add('patch')

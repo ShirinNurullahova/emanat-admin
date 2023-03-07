@@ -13,7 +13,7 @@ const AnswerSections = ({initialValues}) => {
         dataForm.enSubTitle=values.enSubTitle
         dataForm.ruSubTitle=values.ruSubTitle
         try {
-            const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/career/answers/sections`, dataForm)
+            const response = await axios.patch(`${process.env.REACT_APP_URL}/manager/career/answers/sections`, dataForm)
             if (response.status == 200 || response.status == 201) {
                 document.querySelector('.alertModalApi .text').innerHTML='Redaktə edildi';
                 document.querySelector('.alertModalApi').classList.add('patch')

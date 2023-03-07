@@ -10,7 +10,7 @@ const [initialValuesSection , setInitialValuesSection]= useState(null);
 const [id,setId]=useState('')
     const fetchData = () => {
         
-        axios.get((`${process.env.REACT_APP_URL}/admin/career/answers/head`))
+        axios.get((`${process.env.REACT_APP_URL}/manager/career/answers/head`))
             .then(res => {
                 setInitialValuesSection(res.data.message.dtoHead[0].sections)
                 setInitialValuesHead(res.data.message.dtoHead[0])

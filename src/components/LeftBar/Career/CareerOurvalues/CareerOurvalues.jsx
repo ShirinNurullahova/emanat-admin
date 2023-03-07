@@ -10,7 +10,7 @@ const [initialValuesSection2 , setInitialValuesSection2]= useState(null)
 const [initialValuesSection3 , setInitialValuesSection3]= useState(null)
     const fetchData = () => {
         
-        axios.get((`${process.env.REACT_APP_URL}/admin/career/our-values/head`))
+        axios.get((`${process.env.REACT_APP_URL}/manager/career/our-values/head`))
             .then(res => {
                 setInitialValuesSection1(res.data.dtoHead[0].sections[0])
                 setInitialValuesSection2(res.data.dtoHead[0].sections[1])
