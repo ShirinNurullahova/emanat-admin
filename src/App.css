@@ -43,6 +43,9 @@ height: 10vh;
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+.remove-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 @media screen and (max-width: 850px) and (min-width: 650px) {
   .two-right{
     width: 70%;
