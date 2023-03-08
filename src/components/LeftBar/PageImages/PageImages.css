@@ -1,0 +1,93 @@
+.pageImages {
+  padding-right: 20px;
+  height: 100vh;
+}
+.pageImages .modal-pi {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s linear;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.pageImages .modal-pi form {
+  margin-top: 10%;
+}
+.pageImages .pg-button {
+  text-align: right;
+  padding-right: 40px;
+}
+.pageImages .pg-button button {
+  cursor: pointer;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+.pageImages-main-comp {
+  -webkit-padding-start: 40px;
+          padding-inline-start: 40px;
+}
+.pageImages-main-comp-p p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.pageImages-main-comp-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+.pageImages-main-comp-bottom p {
+  display: block;
+  -webkit-margin-before: 0em;
+          margin-block-start: 0em;
+  -webkit-margin-after: 0em;
+          margin-block-end: 0em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  color: #6c757d;
+}
+.pageImages-main-comp-bottom p span {
+  color: #007bff;
+}
+.pageImages-main-comp-bottom .pageImages-modal {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.pageImages-main-comp-bottom-btn button {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 50px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  outline: none;
+}
+.pageImages-card {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  -webkit-padding-start: 40px;
+          padding-inline-start: 40px;
+}
+
+@media screen and (max-width: 650px) and (min-width: 300px) {
+  .pageImages .modal-pi form {
+    width: auto;
+    margin-top: 20%;
+  }
+}/*# sourceMappingURL=PageImages.css.map */

@@ -1,0 +1,42 @@
+.faqSchema {
+  padding-right: 20px;
+}
+.faqSchema textarea {
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  border-color: #393d42;
+  font-size: 14px;
+  color: #77797c;
+  padding: 10px;
+  outline: none;
+}
+.faqSchema .card-main {
+  position: relative;
+}
+.faqSchema .vakansiyafilter-btn {
+  text-align: right;
+}
+.faqSchema .vakansiyafilter-btn button {
+  cursor: pointer;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+.faqSchema .modal {
+  position: absolute;
+  z-index: 999;
+  background-color: #6c757d;
+  top: 5%;
+  max-height: 90vh;
+  overflow-y: scroll;
+}/*# sourceMappingURL=FaqSchema.css.map */
