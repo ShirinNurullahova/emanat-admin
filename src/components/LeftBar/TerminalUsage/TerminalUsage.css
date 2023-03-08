@@ -1,0 +1,15 @@
+.terminal-usage {
+  padding-right: 20px;
+}
+.terminal-usage textarea {
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  border-color: #393d42;
+  font-size: 14px;
+  color: #77797c;
+}/*# sourceMappingURL=TerminalUsage.css.map */

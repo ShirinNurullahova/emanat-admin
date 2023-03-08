@@ -1,0 +1,35 @@
+.alertModalApi {
+  height: 5rem;
+  width: 30rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 30px;
+  left: 35%;
+  z-index: 12000000;
+  border-radius: 0.4rem;
+  visibility: hidden;
+  color: white;
+}
+
+.alertModalApi.patch {
+  background: blue;
+}
+
+.alertModalApi.post {
+  background: green;
+}
+
+.alertModalApi.delete {
+  background: red;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}/*# sourceMappingURL=AlertModalApi.css.map */

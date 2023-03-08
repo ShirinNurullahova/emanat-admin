@@ -4,7 +4,7 @@
   width: 85% !important;
   z-index: 999px;
   background-color: rgba(34, 37, 42, 0.95);
-  padding: 20px;
+  padding: 10px;
   width: 80%;
   overflow: hidden;
 }
@@ -57,4 +57,197 @@
 .header-content div li:hover {
   color: white;
   transition: 0.2s ease;
+}
+
+@media screen and (max-width: 1920px) and (min-width: 650px) {
+  .menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 850px) and (min-width: 650px) {
+  .header-content {
+    justify-content: flex-start;
+  }
+  .header-content div li {
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 650px) and (min-width: 300px) {
+  .header-content {
+    display: none;
+  }
+  .profile-part-hr {
+    width: 100%;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+  }
+  .menu {
+    display: block;
+  }
+  .menu .svg-div {
+    text-align: right;
+  }
+  .menu .svg-div svg {
+    width: 6%;
+  }
+  .modalMenu {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.4s ease-in;
+    background-color: rgb(34, 37, 42);
+    display: block;
+  }
+  .modalMenu.active {
+    z-index: 1001;
+    background-color: rgb(34, 37, 42);
+    right: -20vw;
+    transition: all 0.4s ease-in;
+  }
+  .modalMenu.active .div-active {
+    margin-left: 40vh;
+  }
+  .modalMenu .header-content-1 {
+    width: 70%;
+    margin-top: 20%;
+  }
+  .modalMenu .header-content-1 .up {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+  }
+  .modalMenu .header-content-1 .up li {
+    margin-bottom: 40px;
+    font-size: 30px;
+    list-style: none;
+    text-decoration: none;
+    text-decoration: none;
+    margin-right: 40px;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  .modalMenu .header-content-1 .up li a {
+    margin-top: 5%;
+  }
+  .modalMenu .header-content-1 .up li:hover {
+    color: white;
+    transition: 0.2s ease;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1 {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1 a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: none !important;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-dropdown-el-p {
+    position: relative;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-dropdown-el-p p {
+    color: #bbbec2;
+    font-size: 14px;
+    padding: 6px 15px 6px 38px;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-dropdown-el-p:hover p {
+    color: #17C2D7;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-dropdown-el-p::before {
+    transition: all 0.4s ease-out;
+    border-radius: 5px;
+    background: #57595d;
+    content: "";
+    position: absolute;
+    left: 5px;
+    height: 1px;
+    width: 15px;
+    top: 17px;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-dropdown-el-p:hover::before {
+    width: 200px;
+    background: #17C2D7;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down-div {
+    display: flex;
+    align-items: center;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down-div-text {
+    display: block;
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+    -webkit-margin-after: 0em;
+            margin-block-end: 0em;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 5px;
+    font-size: 22px;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down .svg-icon-two-1 {
+    margin-left: 5%;
+    width: 1em;
+    height: 1em;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down .svg-icon-two-1 path,
+  .modalMenu .header-content-1 .scroll-bar-1-el-down .svg-icon-two-1 polygon,
+  .modalMenu .header-content-1 .scroll-bar-1-el-down .svg-icon-two-1 rect {
+    fill: #bbbec2;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down .svg-icon-1 {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down .svg-icon-1 path,
+  .modalMenu .header-content-1 .scroll-bar-1-el-down .svg-icon-1 polygon,
+  .modalMenu .header-content-1 .scroll-bar-1-el-down .svg-icon-1 rect {
+    fill: #bbbec2;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down p {
+    color: #bbbec2;
+    margin-left: 10%;
+    display: block;
+    -webkit-margin-before: 0em;
+            margin-block-start: 0em;
+    -webkit-margin-after: 0em;
+            margin-block-end: 0em;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down:hover .svg-icon-two-1 path, .modalMenu .header-content-1 .scroll-bar-1-el .svg-icon-two-1 polygon, .modalMenu .header-content-1 .scroll-bar-1-el .svg-icon-two-1 rect {
+    fill: #17C2D7;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down:hover .svg-icon-1 path, .modalMenu .header-content-1 .scroll-bar-1-el .svg-icon-1 polygon, .modalMenu .header-content-1 .scroll-bar-1-el .svg-icon-1 rect {
+    fill: #17C2D7;
+  }
+  .modalMenu .header-content-1 .scroll-bar-1-el-down:hover p {
+    color: #17C2D7;
+  }
+}
+@media screen and (max-width: 350px) and (min-width: 300px) {
+  .profile-part-text p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 2000px) and (min-width: 650px) {
+  .modalMenu {
+    display: none;
+  }
 }/*# sourceMappingURL=Header.css.map */

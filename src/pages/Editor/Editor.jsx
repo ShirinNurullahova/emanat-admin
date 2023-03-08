@@ -25,7 +25,6 @@ export default function Editor({ customStyles, placeholder, value }) {
     copyValue[placeholder] = savedData;
     localStorage.setItem("editorData", JSON.stringify(copyValue));
   }, [setData]);
-  console.log(JSON.parse(localStorage.getItem("editorData")));
   return (
     <div>
       <div style={customStyles} id="editorjs">
@@ -36,13 +35,19 @@ export default function Editor({ customStyles, placeholder, value }) {
           placeholder="Bura yazIn"
           onChange={() => handleSave()}
           defaultValue={{
-            blocks: JSON.parse(localStorage.getItem("editorData"))
-              ? JSON.parse(localStorage.getItem("editorData"))[placeholder]
-                  ?.blocks
-                ? JSON.parse(localStorage.getItem("editorData"))[placeholder]
-                    ?.blocks
-                : JSON.parse(JSON.parse(localStorage.getItem("editorData"))[placeholder])
-                    ?.blocks
+            blocks: localStorage.getItem("editorData")
+              ? ( 
+                JSON.parse(localStorage.getItem("editorData"))?.[placeholder] ? 
+                (
+                  (typeof(JSON.parse(localStorage.getItem("editorData"))?.[placeholder])==='object')?JSON.parse(localStorage.getItem("editorData"))?.[placeholder]?.blocks
+                  :(
+                  (typeof(JSON.parse(JSON.parse(localStorage.getItem("editorData"))?.[placeholder]))==='object') ? 
+                  (JSON.parse(JSON.parse(localStorage.getItem("editorData"))?.[placeholder])?.blocks)
+                  :(
+                    (typeof(JSON.parse(JSON.parse(JSON.parse(localStorage.getItem("editorData"))?.[placeholder])))==='object') ?JSON.parse(JSON.parse(JSON.parse(localStorage.getItem("editorData"))?.[placeholder]))?.blocks :[]
+                  ))
+                  ): []  
+                )   
               : [],
           }}
         />

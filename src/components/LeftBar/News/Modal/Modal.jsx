@@ -34,15 +34,15 @@ const Modal = ({ id, setBtn, btn }) => {
   console.log({ eeennnvv: process.env.REACT_APP_URL });
   const onSubmitHandler = async (values) => {
     const mainData = JSON.parse(localStorage.getItem("editorData"));
-    console.log({ mainData });
+
     const dataForm = new FormData();
     if (mainData) {
-      dataForm.append("azTitle", JSON.stringify(mainData.azTitle));
-      dataForm.append("enTitle", JSON.stringify(mainData.enTitle));
-      dataForm.append("ruTitle", JSON.stringify(mainData.ruTitle));
-      dataForm.append("azDescription", JSON.stringify(mainData.azDescription));
-      dataForm.append("enDescription", JSON.stringify(mainData.enDescription));
-      dataForm.append("ruDescription", JSON.stringify(mainData.ruDescription));
+      dataForm.append("azTitle", JSON.stringify((typeof(mainData.azTitle)==='string')?(JSON.parse(mainData?.azTitle)):mainData.azTitle));
+      dataForm.append("enTitle", JSON.stringify((typeof(mainData.enTitle)==='string')?(JSON.parse(mainData?.enTitle)):mainData.enTitle));
+      dataForm.append("ruTitle", JSON.stringify((typeof(mainData.ruTitle)==='string')?(JSON.parse(mainData?.ruTitle)):mainData.ruTitle));
+      dataForm.append("azDescription", JSON.stringify((typeof(mainData.azDescription)==='string')?(JSON.parse(mainData?.azDescription)):mainData.azDescription));
+      dataForm.append("enDescription", JSON.stringify((typeof(mainData.enDescription)==='string')?(JSON.parse(mainData?.enDescription)):mainData.enDescription));
+      dataForm.append("ruDescription", JSON.stringify((typeof(mainData.ruDescription)==='string')?(JSON.parse(mainData?.ruDescription)):mainData.ruDescription));
       dataForm.append("page", values.page);
     }
 
@@ -81,9 +81,8 @@ const Modal = ({ id, setBtn, btn }) => {
         alert("error");
       }
     } else if (btn === "Redaktə et") {
-      const mainData = JSON.parse(localStorage.getItem("editorData"));
-      console.log({ mainData });
       try {
+        localStorage.removeItem("editorData")
         const response = await axios.patch(
           `${process.env.REACT_APP_URL}/admin/news`,
           dataForm
@@ -292,7 +291,6 @@ const Modal = ({ id, setBtn, btn }) => {
                       type="text"
                       placeholder=""
                       name="page"
-                      required
                     />
                   </div>
                   <div className="modal-form-div-el">

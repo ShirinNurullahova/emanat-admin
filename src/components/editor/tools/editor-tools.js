@@ -106,6 +106,17 @@ export const EDITOR_JS_TOOLS = {
   //   inlineToolbar: true,
   // },
   strikethrough: Strikethrough,
+  // header: {
+  //           class: Header,
+  //           inlineToolbar: true,
+  //           tunes: ["anyTuneName"],
+  //           config: {
+  //             placeholder: "Enter a header",
+  //             inlineToolbar: true,
+  //             levels: [1, 2, 3, 4, 5, 6],
+  //             defaultLevel: 1,
+  //           },
+  //         },
   link: {
     class: Hyperlink,
     config: {

@@ -10,7 +10,7 @@ export default function convertDataToHtml(blocks) {
         convertedHtml += `<div><iframe width="560" height="315" src="${block?.data?.embed}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>`;
         break;
       case "paragraph":
-        convertedHtml += `<p style="text-align:${block?.tunes?.anyTuneName?.alignment}">${block?.data?.text}</p>`;
+        convertedHtml += `<p style="margin-bottom:30px">${block?.data?.text}</p>`;
         break;
       case "delimiter":
         convertedHtml += "<br />";
@@ -19,7 +19,7 @@ export default function convertDataToHtml(blocks) {
         convertedHtml += `<img class="img-fluid" src="${block.data.file.url}" title="${block.data.caption}" alt="${block.data.caption}"`;
         break;
       case "list":
-        convertedHtml += block?.data?.style == "ordered" ? "<ol>" : "<ul>";
+        convertedHtml += block?.data?.style == "ordered" ? `<ol style="margin-left:50px">` : `<ul style="margin-left:50px">`;
         block?.data?.items.forEach(function (li) {
           convertedHtml += `<li>${li}</li><br/>`;
         });

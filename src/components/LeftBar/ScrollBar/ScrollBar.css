@@ -1,0 +1,128 @@
+.two {
+  position: relative;
+  display: flex;
+}
+.two-components {
+  position: fixed;
+  width: 200px;
+  padding: 20px;
+}
+.two-components .scroll-bar {
+  text-align: left;
+  height: 100vh;
+  min-height: 500px;
+  margin-top: 30%;
+  overflow-y: scroll;
+}
+.two-components .scroll-bar a:-webkit-any-link {
+  color: transparent !important;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+.two-components .scroll-bar-dropdown-el-p {
+  position: relative;
+}
+.two-components .scroll-bar-dropdown-el-p p {
+  color: #bbbec2;
+  font-size: 14px;
+  padding: 6px 15px 6px 38px;
+}
+.two-components .scroll-bar-dropdown-el-p:hover p {
+  color: #17C2D7;
+}
+.two-components .scroll-bar-dropdown-el-p::before {
+  transition: all 0.4s ease-out;
+  border-radius: 5px;
+  background: #57595d;
+  content: "";
+  position: absolute;
+  left: 5px;
+  height: 1px;
+  width: 15px;
+  top: 17px;
+}
+.two-components .scroll-bar-dropdown-el-p:hover::before {
+  width: 200px;
+  background: #17C2D7;
+}
+.two-components .scroll-bar-el-text {
+  display: block;
+  -webkit-margin-before: 0em;
+          margin-block-start: 0em;
+  -webkit-margin-after: 0em;
+          margin-block-end: 0em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+.two-components .scroll-bar-el-down {
+  position: relative;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.two-components .scroll-bar-el-down-div {
+  display: flex;
+  align-items: center;
+}
+.two-components .scroll-bar-el-down .svg-icon-two {
+  width: 1em;
+  height: 1em;
+}
+.two-components .scroll-bar-el-down .svg-icon-two path,
+.two-components .scroll-bar-el-down .svg-icon-two polygon,
+.two-components .scroll-bar-el-down .svg-icon-two rect {
+  fill: #bbbec2;
+}
+.two-components .scroll-bar-el-down .svg-icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+.two-components .scroll-bar-el-down .svg-icon path,
+.two-components .scroll-bar-el-down .svg-icon polygon,
+.two-components .scroll-bar-el-down .svg-icon rect {
+  fill: #bbbec2;
+}
+.two-components .scroll-bar-el-down p {
+  color: #bbbec2;
+  margin-left: 10%;
+}
+.two-components .scroll-bar-el-down:hover .svg-icon-two path, .two-components .scroll-bar-el .svg-icon-two polygon, .two-components .scroll-bar-el .svg-icon-two rect {
+  fill: #17C2D7;
+}
+.two-components .scroll-bar-el-down:hover .svg-icon path, .two-components .scroll-bar-el .svg-icon polygon, .two-components .scroll-bar-el .svg-icon rect {
+  fill: #17C2D7;
+}
+.two-components .scroll-bar-el-down:hover p {
+  color: #17C2D7;
+}
+.two-components .scroll-bar::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media screen and (max-width: 800px) and (min-width: 610px) {
+  .two-components {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 610px) and (min-width: 300px) {
+  .svg-icon-two {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) and (min-width: 300px) {
+  .two-components {
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 650px) and (min-width: 300px) {
+  .two-components {
+    display: none !important;
+  }
+}/*# sourceMappingURL=ScrollBar.css.map */
