@@ -23,7 +23,8 @@ const ElementCard = ({ id, setButton }) => {
     dataForm.id = id;
     dataForm.data = values;
     dataForm.page = "Career";
-
+    dataForm.last_date=values[1].azItems[0]
+    console.log(values);
     try {
       const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/vacation/job`, dataForm)
       if (response.status == 200 || response.status == 201) {

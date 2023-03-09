@@ -14,7 +14,9 @@ const Modal = ({ id, setBtn, btn }) => {
     azTitle: "",
     enDescription: "",
     enTitle: "",
-    NewsImage: "",
+    AzNewsImage: "",
+    EnNewsImage: "",
+    RuNewsImage: "",
     page: "",
     ruDescription: "",
     ruTitle: "",
@@ -49,10 +51,20 @@ const Modal = ({ id, setBtn, btn }) => {
     if (btn === "Redaktə et") {
       dataForm.append("id", values._id);
     }
-    if (values.image) {
-      dataForm.append("NewsImage", values.image);
+    if (values.azImage) {
+      dataForm.append("AzNewsImage", values.azImage);
     } else {
-      dataForm.append("NewsImage", values.newsImage);
+      dataForm.append("AzNewsImage", values.AzNewsImage);
+    }
+    if (values.ruImage) {
+      dataForm.append("RuNewsImage", values.ruImage);
+    } else {
+      dataForm.append("RuNewsImage", values.RuNewsImage);
+    }
+    if (values.enImage) {
+      dataForm.append("EnNewsImage", values.enImage);
+    } else {
+      dataForm.append("EnNewsImage", values.EnNewsImage);
     }
    if(mainData.azTitle.length!==0 && mainData.enTitle.length!==0 && mainData.ruTitle.length!==0 && mainData.azDescription.length!==0 && mainData.enDescription.length!==0 && mainData.ruDescription.length!==0){
     if (btn === "Əlavə et") {
@@ -185,6 +197,17 @@ const Modal = ({ id, setBtn, btn }) => {
                     </div>
                   </div>
                   <div className="modal-form-div-el">
+                    <label>Şəkil (az)</label>
+                    <Field
+                      value={values.filename}
+                      onChange={(e) =>
+                        setFieldValue("azImage", e.currentTarget.files[0])
+                      }
+                      type="file"
+                      name="azImage"
+                    />
+                  </div>
+                  <div className="modal-form-div-el">
                     <label>Başlıq (ru)</label>
                     <div
                       className="remove-scrollbar"
@@ -233,6 +256,17 @@ const Modal = ({ id, setBtn, btn }) => {
                         value={initialValues}
                       />
                     </div>
+                  </div>
+                  <div className="modal-form-div-el">
+                    <label>Şəkil (ru)</label>
+                    <Field
+                      value={values.filename}
+                      onChange={(e) =>
+                        setFieldValue("ruImage", e.currentTarget.files[0])
+                      }
+                      type="file"
+                      name="ruImage"
+                    />
                   </div>
                   <div className="modal-form-div-el">
                     <label>Başlıq (en)</label>
@@ -285,23 +319,23 @@ const Modal = ({ id, setBtn, btn }) => {
                     </div>
                   </div>
                   <div className="modal-form-div-el">
+                    <label>Şəkil (en)</label>
+                    <Field
+                      value={values.filename}
+                      onChange={(e) =>
+                        setFieldValue("enImage", e.currentTarget.files[0])
+                      }
+                      type="file"
+                      name="enImage"
+                    />
+                  </div>
+                  <div className="modal-form-div-el">
                     <label>Səhifə</label>
                     <Field
                       value={values.page}
                       type="text"
                       placeholder=""
                       name="page"
-                    />
-                  </div>
-                  <div className="modal-form-div-el">
-                    <label>Şəkil</label>
-                    <Field
-                      value={values.filename}
-                      onChange={(e) =>
-                        setFieldValue("image", e.currentTarget.files[0])
-                      }
-                      type="file"
-                      name="filename"
                     />
                   </div>
                 </div>
