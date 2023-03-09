@@ -19,7 +19,9 @@ const NewsMain = () => {
                 initialValuesRaw.ruDescription = res.data[0]?.ruDescription;
                 initialValuesRaw.enTitle = res.data[0]?.enTitle;
                 initialValuesRaw.enDescription = res.data[0]?.enDescription;
-                initialValuesRaw.NewsPageHeaderImage= res.data[0]?.images[0]?.url;
+                initialValuesRaw.AzNewsPageHeaderImage= res.data[0]?.azImages[0]?.url;
+                initialValuesRaw.EnNewsPageHeaderImage= res.data[0]?.enImages[0]?.url;
+                initialValuesRaw.RuNewsPageHeaderImage= res.data[0]?.ruImages[0]?.url;
                 setInitialValues(initialValuesRaw)
                 setId(res.data[0]?._id)
             })
@@ -39,10 +41,20 @@ const NewsMain = () => {
         dataForm.append('azDescription', values.azDescription)
         dataForm.append('enDescription', values.enDescription)
         dataForm.append('ruDescription', values.ruDescription)
-        if (values.image) {
-            dataForm.append('NewsPageHeaderImage', values.image)
+        if (values.azImage) {
+            dataForm.append('AzNewsPageHeaderImage', values.azImage)
         } else {
-            dataForm.append('NewsPageHeaderImage', values.NewsPageHeaderImage)
+            dataForm.append('AzNewsPageHeaderImage', values.AzNewsPageHeaderImage)
+        }
+        if (values.ruImage) {
+            dataForm.append('RuNewsPageHeaderImage', values.ruImage)
+        } else {
+            dataForm.append('RuNewsPageHeaderImage', values.RuNewsPageHeaderImage)
+        }
+        if (values.enImage) {
+            dataForm.append('EnNewsPageHeaderImage', values.enImage)
+        } else {
+            dataForm.append('EnNewsPageHeaderImage', values.EnNewsPageHeaderImage)
         }
         try {
             const response = await axios.patch(`${process.env.REACT_APP_URL}/admin/news/page/header`, dataForm)
@@ -93,6 +105,10 @@ const NewsMain = () => {
                                         <label>Mətn (az)</label>
                                         <Field onChange={handleChange} value={values.azDescription} type="text" placeholder='' name="azDescription"   required/>
                                     </div>
+                                    <div className='middle-main-bottom-form-div-el'>
+                                        <label>Şəkil (az)</label>
+                                        <Field value={values.filename} onChange={e => setFieldValue("azImage", e.currentTarget.files[0])} type="file" name="azImage" />
+                                    </div>
                                 </div>
                                 <div className='middle-main-bottom-form-div'>
                                     <div className='middle-main-bottom-form-div-el'>
@@ -102,6 +118,11 @@ const NewsMain = () => {
                                     <div className='middle-main-bottom-form-div-el'>
                                         <label>Mətn (ru)</label>
                                         <Field onChange={handleChange} value={values.ruDescription} type="text" name="ruDescription"   required/>
+                                    </div>
+
+                                    <div className='middle-main-bottom-form-div-el'>
+                                        <label>Şəkil (ru)</label>
+                                        <Field value={values.filename} onChange={e => setFieldValue("ruImage", e.currentTarget.files[0])} type="file" name="ruImage" />
                                     </div>
                                 </div>
 
@@ -116,8 +137,8 @@ const NewsMain = () => {
                                     </div>
 
                                     <div className='middle-main-bottom-form-div-el'>
-                                        <label>Şəkil</label>
-                                        <Field value={values.filename} onChange={e => setFieldValue("image", e.currentTarget.files[0])} type="file" name="filename" />
+                                        <label>Şəkil (en)</label>
+                                        <Field value={values.filename} onChange={e => setFieldValue("enImage", e.currentTarget.files[0])} type="file" name="enImage" />
                                     </div>
                                 </div>
                                 <div className='middle-main-bottom-form-btn'>
