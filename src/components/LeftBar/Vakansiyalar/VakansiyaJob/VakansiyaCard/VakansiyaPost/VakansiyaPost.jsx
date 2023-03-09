@@ -10,6 +10,8 @@ const VakansiyaPost = ({ setBtnAdd }) => {
     const dataForm = {};
     dataForm.data = vacancyValues;
     dataForm.page = values.page;
+    console.log(vacancyValues);
+    dataForm.last_date=vacancyValues[1].azItems[0]
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_URL}/admin/vacation/job/`, dataForm)
@@ -25,7 +27,7 @@ const VakansiyaPost = ({ setBtnAdd }) => {
         document.querySelector('.alertModalApi').classList.add('hidden')
      },1000)
     }
-    } catch (error) { }
+    } catch (error) {console.log(error); }
 
     setBtnAdd(false)
   }
