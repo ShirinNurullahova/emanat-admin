@@ -33,7 +33,7 @@ export default function Editor({ customStyles, placeholder, value }) {
           onInitialize={handleInitialize}
           tools={EDITOR_JS_TOOLS}
           holder={placeholder}
-          placeholder="Bura yazIn"
+          placeholder="Bura yazın"
           onChange={() => handleSave()}
           defaultValue={{
             blocks: JSON.parse(localStorage.getItem("editorData"))

@@ -23,7 +23,18 @@
     border-top: 1px solid rgba(255, 255, 255, 0.09);
     // transform: translate(0 , 50%);
     text-align: center;
-
+     &-cancel{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: end;
+         svg{
+          text-align: right !important;
+          width: 5%;
+          height: 5%;
+         }
+     }
     &-btn {
       margin: 5%;
       button {

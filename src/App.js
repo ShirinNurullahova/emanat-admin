@@ -37,6 +37,7 @@ import PageImages from "./components/LeftBar/PageImages/PageImages";
 import AlertModalApi from "./components/LeftBar/AlertModalApi/AlertModalApi";
 import SuperAdmin from "./components/LeftBar/SuperAdmin/SuperAdmin";
 import HrMeneger from "./components/LeftBar/HrMeneger/HrMeneger";
+import GetAllAdmins from "./components/LeftBar/GetAllAdmins/GetAllAdmins";
 
 
 function debounce(fn, ms) {
@@ -154,6 +155,8 @@ function App() {
               <Route path="/pageImages" element={<PageImages/>} />
               <Route path="/create-editor" element={<SuperAdmin/>} />
               <Route path="/create-hr-manager" element={<HrMeneger/>} />
+              <Route path="/getalladmins" element={<GetAllAdmins/>} />
+
               </>
             }
             <Route path="/vakansiya" element={<Vakansiya />} />
