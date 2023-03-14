@@ -1,0 +1,59 @@
+.getAll {
+    padding: 40px;
+    table,
+
+    th {
+        text-align: left;
+        // border-bottom: 1px solid;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    tr {
+        margin-bottom: 5%;
+    }
+
+    .table-main {
+        margin-left: 20px;
+        border-radius: 3px;
+        font-weight: 400;
+        color: #a5a8ad;
+        background: #282b2f;
+        padding: 22px;
+        // width: 70%;
+        border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+        .adminDelete {
+                cursor: pointer;
+                color: #fff;
+                background-color: orangered;
+                border-color: orangered;
+                border: none;
+                font-size: 14px;
+                outline: none;
+                padding: 0.375rem 0.75rem;
+                border-radius: 0.25rem;
+        }
+    }
+
+    td {
+        background: rgba(255, 255, 255, 0.01);
+    }
+
+    tbody {
+        // background: rgba(255, 255, 255, 0.01);
+        padding: 35px;
+        width: 100%;
+        position: relative;
+        margin: 5px 0;
+
+    }
+
+    td {
+        padding: 20px 20px 20px 0;
+        width: calc(100% - 70px);
+    }
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import pp from '../../../../Images/favicon.png';
 import '../ProfileMain/ProfileMain.scss'
 const ProfileMain = () => {
+    const role = localStorage.getItem('roleName')
     const [toggle, setToggle] = useState(true)
 
     return (
@@ -11,9 +12,9 @@ const ProfileMain = () => {
                 <img src={pp} />
             </div>
             <div className='profile-main-text'>
-                <p>Profil,</p>
-                <p className={`profile-main-text-p ${!toggle && 'clickDiv'} `}>eManat</p>
-                {!toggle && (
+                <p>Profil</p>
+                <p className="profile-main-text-p">{role}</p>
+                {/* {!toggle && (
 
                     <div className='toogleMenu'>
                         <p>Mənim profilim</p>
@@ -24,7 +25,7 @@ const ProfileMain = () => {
                     </div>
 
 
-                )}
+                )} */}
             </div>
 
         </div>

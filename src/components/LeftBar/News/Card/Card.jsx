@@ -64,7 +64,7 @@ export const Card = ({ setId, setBtn, btn }) => {
             <div className="card">
               <div onClick={() => onClickHandler(e.id)}>
                 <div className="card-img">
-                  <img src={e.newsImage} />
+                  <img src={e.image} />
                 </div>
                 <div
                   dangerouslySetInnerHTML={{

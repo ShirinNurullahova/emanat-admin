@@ -3,6 +3,7 @@ import profile from '../../../Images/asdf.svg'
 import '../Profile/Profile.scss';
 import ModalMenu from '../../Header/ModalMenu';
 const Profile = ({dimensions}) => {
+    const role = localStorage.getItem('roleName')
     const [toggle, setToggle] = useState(false);
     const menuRef = useRef()
     useEffect(() => {

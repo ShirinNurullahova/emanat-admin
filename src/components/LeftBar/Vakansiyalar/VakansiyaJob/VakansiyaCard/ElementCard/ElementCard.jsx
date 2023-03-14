@@ -36,7 +36,7 @@ const ElementCard = ({ id, setButton }) => {
       setTimeout(()=>{
         document.querySelector('.alertModalApi').classList.remove('visible')
         document.querySelector('.alertModalApi').classList.add('hidden')
-     },1000)
+     },1000);
       }
 
     } catch (error) {

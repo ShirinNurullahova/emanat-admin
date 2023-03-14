@@ -15,17 +15,17 @@
             color: #96989c;
             font-size: 14px;
             transition: 0.5s ease;
-        &-p::after{
-            display: inline-block;
-            margin-left: 0.255em;
-            vertical-align: 0.255em;
-            content: "";
-            border-top: 0.3em solid;
-            border-right: 0.3em solid transparent;
-            border-bottom: 0;
-            transition: 0.5s ease;
-            border-left: 0.3em solid transparent;
-        }
+        // &-p::after{
+        //     display: inline-block;
+        //     margin-left: 0.255em;
+        //     vertical-align: 0.255em;
+        //     content: "";
+        //     border-top: 0.3em solid;
+        //     border-right: 0.3em solid transparent;
+        //     border-bottom: 0;
+        //     transition: 0.5s ease;
+        //     border-left: 0.3em solid transparent;
+        // }
         
        .clickDiv{
         color:white;

@@ -368,6 +368,16 @@ const ScrollBar = () => {
                 </Link>
                 {role && role === "SUPERADMIN" &&
                   <>
+                    <Link to="/getalladmins">
+                      <div className="scroll-bar-dropdown-el-p">
+                        <p>Bütün adminlər</p>
+                      </div>
+                    </Link>
+                   
+                  </>
+                }
+                {role && role === "SUPERADMIN" &&
+                  <>
                     <Link to="/create-editor">
                       <div className="scroll-bar-dropdown-el-p">
                         <p>Editor vəzifəsi əlavə et</p>
@@ -380,6 +390,7 @@ const ScrollBar = () => {
                     </Link>
                   </>
                 }
+               
               </div>
             </div>
           )}

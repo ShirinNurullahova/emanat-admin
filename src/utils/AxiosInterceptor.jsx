@@ -39,9 +39,9 @@ export const axiosInterceptorHandle = (navigate) => {
             if (!endPoints.includes(req.url)) {
                 let localDataAuth = localStorage.getItem(process.env.REACT_APP_ACCESS_KEYWORD);
                 let localDataRefresh = localStorage.getItem(process.env.REACT_APP_REFRESH_KEYWORD);
-
-                req.headers['emanat-access'] = localDataAuth;
-                req.headers['emanat-refresh'] = localDataRefresh;
+                
+                req.headers['emanat-access'] = 'Bearer' + ' ' + localDataAuth;
+                req.headers['emanat-refresh'] = 'Bearer' + ' ' + localDataRefresh;
             }
             return req;
           
